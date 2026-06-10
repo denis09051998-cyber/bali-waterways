@@ -96,7 +96,7 @@ const en: Dict = {
   // programs preview tags
   "prog.kids.t": "Kids Swimming",
   "prog.kids.d": "Safety-first, confidence-building lessons through play.",
-  "prog.kids.tag": "Ages 3–14",
+  "prog.kids.tag": "From 2 months to 14 years old",
   "prog.adults.t": "Adult Lessons",
   "prog.adults.d": "Beginners, fear of water, technique & endurance.",
   "prog.adults.tag": "All levels",
@@ -105,10 +105,10 @@ const en: Dict = {
   "prog.private.tag": "Private",
   "prog.ocean.t": "Ocean Swimming",
   "prog.ocean.d": "Open-water confidence for advanced swimmers.",
-  "prog.ocean.tag": "Advanced",
+  "prog.ocean.tag": "Any Level",
   "prog.freedive.t": "Freediving",
   "prog.freedive.d": "Breath-hold, relaxation and safe open-water diving.",
-  "prog.freedive.tag": "Premium",
+  "prog.freedive.tag": "Advanced",
   // philosophy pillars
   "phil.safety.t": "Water Safety",
   "phil.safety.d": "Survival and safety skills before strokes.",

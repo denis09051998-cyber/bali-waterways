@@ -12,15 +12,12 @@ export function Logo({ size = 36, dark = false, className = "" }: { size?: numbe
 }
 
 /**
- * Brand wordmark — renders "UNITY" in the same slanted/italic style as the logo.
- * Use this anywhere the brand name UNITY appears in body or UI text.
+ * Brand wordmark — renders "UNITY" in the standard display typography
+ * used across the site. Kept as a component so we can adjust globally later.
  */
 export function BrandText({ className = "" }: { className?: string }) {
   return (
-    <span
-      className={`font-display font-bold italic tracking-tight ${className}`}
-      style={{ fontStyle: "italic", transform: "skewX(-6deg)", display: "inline-block" }}
-    >
+    <span className={`font-display font-semibold tracking-tight ${className}`}>
       UNITY
     </span>
   );
