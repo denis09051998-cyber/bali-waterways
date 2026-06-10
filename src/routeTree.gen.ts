@@ -14,11 +14,14 @@ import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as OceanSwimmingRouteImport } from './routes/ocean-swimming'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as KidsSwimmingRouteImport } from './routes/kids-swimming'
+import { Route as FreedivingRouteImport } from './routes/freediving'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as AdultSwimmingRouteImport } from './routes/adult-swimming'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PhilosophyTopicRouteImport } from './routes/philosophy.$topic'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -45,6 +48,11 @@ const KidsSwimmingRoute = KidsSwimmingRouteImport.update({
   path: '/kids-swimming',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FreedivingRoute = FreedivingRouteImport.update({
+  id: '/freediving',
+  path: '/freediving',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
@@ -53,6 +61,11 @@ const FaqRoute = FaqRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoachesRoute = CoachesRouteImport.update({
+  id: '/coaches',
+  path: '/coaches',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdultSwimmingRoute = AdultSwimmingRouteImport.update({
@@ -70,43 +83,57 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PhilosophyTopicRoute = PhilosophyTopicRouteImport.update({
+  id: '/philosophy/$topic',
+  path: '/philosophy/$topic',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/adult-swimming': typeof AdultSwimmingRoute
+  '/coaches': typeof CoachesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/freediving': typeof FreedivingRoute
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/philosophy/$topic': typeof PhilosophyTopicRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/adult-swimming': typeof AdultSwimmingRoute
+  '/coaches': typeof CoachesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/freediving': typeof FreedivingRoute
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/philosophy/$topic': typeof PhilosophyTopicRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/adult-swimming': typeof AdultSwimmingRoute
+  '/coaches': typeof CoachesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/freediving': typeof FreedivingRoute
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/philosophy/$topic': typeof PhilosophyTopicRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -114,50 +141,62 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/adult-swimming'
+    | '/coaches'
     | '/contact'
     | '/faq'
+    | '/freediving'
     | '/kids-swimming'
     | '/locations'
     | '/ocean-swimming'
     | '/programs'
     | '/sitemap.xml'
+    | '/philosophy/$topic'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/adult-swimming'
+    | '/coaches'
     | '/contact'
     | '/faq'
+    | '/freediving'
     | '/kids-swimming'
     | '/locations'
     | '/ocean-swimming'
     | '/programs'
     | '/sitemap.xml'
+    | '/philosophy/$topic'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/adult-swimming'
+    | '/coaches'
     | '/contact'
     | '/faq'
+    | '/freediving'
     | '/kids-swimming'
     | '/locations'
     | '/ocean-swimming'
     | '/programs'
     | '/sitemap.xml'
+    | '/philosophy/$topic'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AdultSwimmingRoute: typeof AdultSwimmingRoute
+  CoachesRoute: typeof CoachesRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  FreedivingRoute: typeof FreedivingRoute
   KidsSwimmingRoute: typeof KidsSwimmingRoute
   LocationsRoute: typeof LocationsRoute
   OceanSwimmingRoute: typeof OceanSwimmingRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  PhilosophyTopicRoute: typeof PhilosophyTopicRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -197,6 +236,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsSwimmingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/freediving': {
+      id: '/freediving'
+      path: '/freediving'
+      fullPath: '/freediving'
+      preLoaderRoute: typeof FreedivingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
@@ -209,6 +255,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coaches': {
+      id: '/coaches'
+      path: '/coaches'
+      fullPath: '/coaches'
+      preLoaderRoute: typeof CoachesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/adult-swimming': {
@@ -232,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/philosophy/$topic': {
+      id: '/philosophy/$topic'
+      path: '/philosophy/$topic'
+      fullPath: '/philosophy/$topic'
+      preLoaderRoute: typeof PhilosophyTopicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -239,14 +299,27 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AdultSwimmingRoute: AdultSwimmingRoute,
+  CoachesRoute: CoachesRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  FreedivingRoute: FreedivingRoute,
   KidsSwimmingRoute: KidsSwimmingRoute,
   LocationsRoute: LocationsRoute,
   OceanSwimmingRoute: OceanSwimmingRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  PhilosophyTopicRoute: PhilosophyTopicRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
