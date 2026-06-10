@@ -5,8 +5,9 @@ import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
 import kidImg from "@/assets/ph_kid.jpg.asset.json";
-import freediveImg from "@/assets/ph_freedive.jpg.asset.json";
+import freediveImg from "@/assets/ph_freedive_new.jpg.asset.json";
 import underwaterImg from "@/assets/ph_underwater.jpg.asset.json";
+import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 import adultsImg from "@/assets/ph_adults.jpg.asset.json";
 import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 
@@ -30,7 +31,7 @@ export const Route = createFileRoute("/")({
 const PROGRAMS = [
   { to: "/kids-swimming", img: kidImg.url, k: "kids" },
   { to: "/adult-swimming", img: adultsImg.url, k: "adults" },
-  { to: "/ocean-swimming", img: underwaterImg.url, k: "ocean" },
+  { to: "/ocean-swimming", img: oceanImg.url, k: "ocean" },
   { to: "/freediving", img: freediveImg.url, k: "freedive" },
 ] as const;
 

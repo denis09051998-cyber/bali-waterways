@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
-import freediveImg from "@/assets/ph_freedive.jpg.asset.json";
-import underwaterImg from "@/assets/ph_underwater.jpg.asset.json";
+import freediveImg from "@/assets/ph_freedive_new.jpg.asset.json";
+import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 
 export const Route = createFileRoute("/freediving")({
   head: () => ({
@@ -39,7 +39,7 @@ function Freediving() {
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
         <div className="grid gap-6 lg:grid-cols-2">
           <img src={freediveImg.url} alt="Freediver descending in clear blue ocean" className="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" />
-          <img src={underwaterImg.url} alt="Underwater seagrass and swimmers" className="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" />
+          <img src={oceanImg.url} alt="Swimmers and seagrass in clear ocean water" className="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" />
         </div>
       </section>
       <section className="mx-auto max-w-4xl px-5 lg:px-10 pb-20 space-y-10">

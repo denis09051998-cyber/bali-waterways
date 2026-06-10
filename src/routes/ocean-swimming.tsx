@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
+import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 
 export const Route = createFileRoute("/ocean-swimming")({
   head: () => ({
@@ -22,6 +23,14 @@ function Ocean() {
   return (
     <>
       <PageHero eyebrow={t("oc.eyebrow")} title={t("oc.title")} subtitle={t("oc.sub")} />
+      <section className="mx-auto max-w-6xl px-5 lg:px-10 pt-12">
+        <img
+          src={oceanImg.url}
+          alt="Swimmers gliding above seagrass in clear ocean water in Bali"
+          className="aspect-[16/9] w-full rounded-3xl object-cover"
+          loading="lazy"
+        />
+      </section>
       <section className="mx-auto max-w-4xl px-5 lg:px-10 py-20 space-y-10">
         {[1,2,3].map((i) => (
           <div key={i}>
