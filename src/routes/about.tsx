@@ -7,9 +7,9 @@ import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Unity Swimming School Bali — Our Coaching Philosophy" },
-      { name: "description", content: "Meet Unity Swimming School Bali — safety-first coaching for kids and adults across Bukit, Sanur and Ubud. Ocean experience, individual approach." },
-      { property: "og:title", content: "About Unity Swimming School Bali" },
+      { title: "About UNITY Swimming School Bali — Our Coaching Philosophy" },
+      { name: "description", content: "Meet UNITY Swimming School Bali — safety-first coaching for kids and adults across Bukit, Sanur and Ubud. Ocean experience, individual approach." },
+      { property: "og:title", content: "About UNITY Swimming School Bali" },
       { property: "og:description", content: "Safety-first coaching for kids and adults across Bukit, Sanur and Ubud." },
       { property: "og:url", content: "/about" },
     ],
@@ -55,7 +55,7 @@ function About() {
         <div>
           <SectionEyebrow>{t("co.eyebrow")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl font-semibold">{t("co.title")}</h2>
-          <p className="mt-5 text-ink/70">Head Coach Denis Kozhenkov plus a specialist team for kids, adults, ocean swimming and freediving.</p>
+          <p className="mt-5 text-ink/70">{t("ab.teamBody")}</p>
           <div className="mt-6">
             <Link to="/coaches" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("nav.coaches")} →</Link>
           </div>
@@ -65,7 +65,7 @@ function About() {
           <h3 className="font-display text-2xl font-semibold text-ocean">{t("cta.start")}</h3>
           <p className="mt-2 text-ink/70">{t("cta.startSub")}</p>
           <div className="mt-6 flex justify-center">
-            <WhatsAppCTA message="Hi Unity! I'd like to learn more about your lessons." label={t("cta.book")} />
+            <WhatsAppCTA message="Hi UNITY! I'd like to learn more about your lessons." label={t("cta.book")} />
           </div>
         </div>
       </section>

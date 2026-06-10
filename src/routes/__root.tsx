@@ -84,10 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Unity Swimming School Bali — Lessons for Kids & Adults" },
-      { name: "description", content: "Professional private and group swimming lessons in Bukit, Sanur and Ubud. Kids, adults, beginners, ocean swimming." },
-      { name: "author", content: "Unity Swimming School Bali" },
-      { property: "og:site_name", content: "Unity Swimming School Bali" },
+      { title: "UNITY Swimming School Bali — Lessons for Kids & Adults" },
+      { name: "description", content: "Professional private and group swimming lessons in Bukit, Sanur, Ubud and Canggu. Kids, adults, beginners, ocean swimming, freediving." },
+      { name: "author", content: "UNITY Swimming School Bali" },
+      { property: "og:site_name", content: "UNITY Swimming School Bali" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -110,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "SportsActivityLocation",
           name: SITE.name,
           description:
-            "Professional swimming school offering private and group lessons for kids and adults across Bukit, Sanur and Ubud, Bali.",
+            "Professional swimming school offering private and group lessons for kids and adults across Bukit, Sanur, Ubud and Canggu, Bali.",
           areaServed: SITE.areas.map((a) => ({ "@type": "Place", name: `${a}, Bali` })),
           address: { "@type": "PostalAddress", addressRegion: "Bali", addressCountry: "ID" },
           telephone: SITE.whatsappNumber,

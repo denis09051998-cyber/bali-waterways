@@ -12,14 +12,14 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 font-display text-lg font-semibold text-ocean">
               <Logo size={36} />
-              Unity Swimming
+              {t("brand.short")}
             </div>
             <p className="mt-4 max-w-[30ch] text-sm text-ink/60">
               {t("footer.tagline")}
             </p>
             <div className="mt-5 flex gap-3">
               <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="rounded-md border border-ocean/15 px-3 py-1.5 text-xs font-medium hover:bg-pool/10">Instagram</a>
-              <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="rounded-md bg-pool px-3 py-1.5 text-xs font-medium text-surface">{t("cta.book")}</a>
+              <Link to="/contact" className="rounded-md bg-pool px-3 py-1.5 text-xs font-medium text-surface">{t("cta.bookLesson")}</Link>
             </div>
           </div>
           <div>
@@ -51,7 +51,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 border-t border-ocean/10 pt-6">
-          <p className="text-xs text-ink/50">© {new Date().getFullYear()} Unity Swimming School Bali. {t("footer.rights")}</p>
+          <p className="text-xs text-ink/50">© {new Date().getFullYear()} UNITY Swimming School Bali. {t("footer.rights")}</p>
           <p className="text-xs text-ink/50">{t("footer.sub")}</p>
         </div>
       </div>
