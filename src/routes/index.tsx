@@ -1,15 +1,25 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
 import { SITE } from "@/lib/site";
+import { useI18n } from "@/lib/i18n";
+import heroImg from "@/assets/ph_crawl.jpg.asset.json";
+import kidImg from "@/assets/ph_kid.jpg.asset.json";
+import freediveImg from "@/assets/ph_freedive.jpg.asset.json";
+import underwaterImg from "@/assets/ph_underwater.jpg.asset.json";
+import adultsImg from "@/assets/ph_adults.jpg.asset.json";
+import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Unity Swimming School Bali — Lessons in Bukit, Sanur & Ubud" },
       { name: "description", content: "Private and group swimming lessons for kids and adults in Bali. Safety-first coaching across Bukit, Sanur and Ubud. Book via WhatsApp." },
+      { name: "keywords", content: "swimming school Bali, kids swimming lessons Bali, adult swimming lessons Bali, freediving Bali, private swimming lessons Bali, ocean swimming Bali, swimming lessons Bukit, swimming lessons Sanur, swimming lessons Ubud" },
       { property: "og:title", content: "Unity Swimming School Bali" },
       { property: "og:description", content: "Private and group swimming lessons for kids and adults across Bukit, Sanur and Ubud." },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: heroImg.url },
+      { name: "twitter:image", content: heroImg.url },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -17,10 +27,19 @@ export const Route = createFileRoute("/")({
 });
 
 const PROGRAMS = [
-  { to: "/kids-swimming", title: "Kids Swimming", text: "Safety-first, confidence-building lessons through play.", tag: "Ages 3–14" },
-  { to: "/adult-swimming", title: "Adult Lessons", text: "Beginners, fear of water, technique & endurance.", tag: "All levels" },
-  { to: "/programs", title: "Private Sessions", text: "One-on-one coaching at your villa or partner pool.", tag: "Private" },
-  { to: "/ocean-swimming", title: "Ocean Swimming", text: "Open-water confidence for advanced swimmers.", tag: "Advanced" },
+  { to: "/kids-swimming", img: kidImg.url, k: "kids" },
+  { to: "/adult-swimming", img: adultsImg.url, k: "adults" },
+  { to: "/ocean-swimming", img: underwaterImg.url, k: "ocean" },
+  { to: "/freediving", img: freediveImg.url, k: "freedive" },
+] as const;
+
+const PHILOSOPHY = [
+  { slug: "water-safety", k: "safety" },
+  { slug: "learn-to-swim", k: "learn" },
+  { slug: "technique", k: "technique" },
+  { slug: "ocean-swimming", k: "ocean" },
+  { slug: "freediving", k: "freedive" },
+  { slug: "confidence", k: "confidence" },
 ] as const;
 
 const LOCATIONS = [
@@ -30,30 +49,33 @@ const LOCATIONS = [
 ];
 
 function Index() {
+  const { t } = useI18n();
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-ocean via-ocean to-pool text-surface">
-        <div className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(circle_at_15%_20%,white,transparent_40%),radial-gradient(circle_at_85%_70%,#f43f5e,transparent_45%),radial-gradient(circle_at_50%_100%,#0d9488,transparent_50%)]" />
-        <div className="relative mx-auto max-w-7xl px-5 lg:px-10 py-24 sm:py-32 lg:py-40">
+      {/* Hero — full-bleed swimming photo */}
+      <section className="relative min-h-[88vh] overflow-hidden text-surface flex items-end">
+        <img src={heroImg.url} alt="Swimmer practicing freestyle stroke in clear blue pool" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-ocean/85 via-ocean/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ocean/80 via-transparent to-transparent" />
+        <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-10 pb-16 pt-32 sm:pb-24 sm:pt-40">
           <div className="max-w-3xl">
-            <SectionEyebrow>Professional Swim School · Bali</SectionEyebrow>
-            <h1 className="mt-5 font-display text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] text-balance">
-              Unity Swimming School in Bali
+            <p className="text-[11px] font-semibold tracking-[0.25em] text-surface/85 uppercase">{t("home.eyebrow")}</p>
+            <h1 className="mt-5 font-display text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.02] text-balance">
+              {t("home.title")}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg sm:text-xl text-surface/85 text-pretty">
-              Private and group swimming lessons for kids and adults in Bukit, Sanur and Ubud. Build confidence, master technique, enjoy the water safely.
+            <p className="mt-6 max-w-2xl text-lg sm:text-xl text-surface/90 text-pretty">
+              {t("home.sub")}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <WhatsAppCTA message="Hi Unity! I'd like to book a swimming lesson." label="Book a Lesson" />
-              <Link to="/programs" className="inline-flex items-center justify-center rounded-full border border-surface/30 px-5 py-3 text-sm font-semibold hover:bg-surface/10">
-                View Programs
+              <WhatsAppCTA message="Hi Unity! I'd like to book a swimming lesson." label={t("cta.bookLesson")} />
+              <Link to="/programs" className="inline-flex items-center justify-center rounded-full border border-surface/40 bg-white/5 backdrop-blur px-5 py-3 text-sm font-semibold hover:bg-surface/15">
+                {t("cta.viewPrograms")}
               </Link>
             </div>
-            <div className="mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-surface/15 pt-6">
-              <div><p className="font-display text-2xl">500+</p><p className="text-xs text-surface/70">Students taught</p></div>
-              <div><p className="font-display text-2xl">9</p><p className="text-xs text-surface/70">Areas covered</p></div>
-              <div><p className="font-display text-2xl">100%</p><p className="text-xs text-surface/70">Safety record</p></div>
+            <div className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-surface/20 pt-6">
+              <div><p className="font-display text-3xl">500+</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.students")}</p></div>
+              <div><p className="font-display text-3xl">9</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.areas")}</p></div>
+              <div><p className="font-display text-3xl">100%</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.safety")}</p></div>
             </div>
           </div>
         </div>
@@ -63,72 +85,113 @@ function Index() {
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-end">
           <div>
-            <SectionEyebrow>Welcome</SectionEyebrow>
+            <SectionEyebrow>{t("home.welcome")}</SectionEyebrow>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl font-semibold tracking-tight">
-              A trusted swim school for Bali's international community.
+              {t("home.welcomeTitle")}
             </h2>
           </div>
           <p className="text-base sm:text-lg text-ink/70 text-pretty">
-            Unity Swimming School is built around safety, individualized attention and the joy of being in the water. We teach children and adults — from absolute beginners and those with fear of water, to swimmers refining technique or training for the open ocean.
+            {t("home.welcomeBody")}
           </p>
         </div>
       </section>
 
-      {/* Programs */}
+      {/* Programs with real photos */}
       <section className="bg-sand/40 border-y border-ocean/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <SectionEyebrow>Programs</SectionEyebrow>
-              <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">Professional coaching for every level</h2>
+              <SectionEyebrow>{t("home.programs")}</SectionEyebrow>
+              <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.programsTitle")}</h2>
             </div>
-            <Link to="/programs" className="text-sm font-semibold text-pool hover:text-ocean">All programs →</Link>
+            <Link to="/programs" className="text-sm font-semibold text-pool hover:text-ocean">{t("cta.allPrograms")} →</Link>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {PROGRAMS.map((p) => (
-              <Link key={p.to} to={p.to} className="group rounded-2xl border border-ocean/10 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-pool/40 hover:shadow-lg">
-                <div className="aspect-[4/3] w-full rounded-xl bg-gradient-to-br from-pool/30 via-pool/10 to-tropical/20" />
-                <p className="mt-4 text-[11px] font-semibold tracking-widest uppercase text-tropical">{p.tag}</p>
-                <h3 className="mt-2 font-display text-xl font-semibold text-ocean">{p.title}</h3>
-                <p className="mt-2 text-sm text-ink/60">{p.text}</p>
-                <p className="mt-4 text-sm font-semibold text-pool group-hover:text-ocean">Learn more →</p>
+              <Link key={p.to} to={p.to} className="group overflow-hidden rounded-2xl border border-ocean/10 bg-white transition-all hover:-translate-y-0.5 hover:border-pool/40 hover:shadow-xl">
+                <div className="aspect-[4/3] w-full overflow-hidden">
+                  <img src={p.img} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div className="p-6">
+                  <p className="text-[11px] font-semibold tracking-widest uppercase text-tropical">{t(`prog.${p.k}.tag`)}</p>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-ocean">{t(`prog.${p.k}.t`)}</h3>
+                  <p className="mt-2 text-sm text-ink/60">{t(`prog.${p.k}.d`)}</p>
+                  <p className="mt-4 text-sm font-semibold text-pool group-hover:text-ocean">{t("cta.learnMore")} →</p>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why us */}
+      {/* Coaching Philosophy — interactive cards */}
+      <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
+        <div className="max-w-2xl">
+          <SectionEyebrow>{t("home.philosophy")}</SectionEyebrow>
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.philosophyTitle")}</h2>
+          <p className="mt-3 text-ink/65">{t("home.philosophySub")}</p>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {PHILOSOPHY.map((p, i) => (
+            <Link
+              key={p.slug}
+              to="/philosophy/$topic"
+              params={{ topic: p.slug }}
+              className="group relative overflow-hidden rounded-2xl border border-ocean/10 bg-gradient-to-br from-ocean to-pool p-6 text-surface min-h-[180px] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-tropical/30 opacity-0 transition-opacity group-hover:opacity-100" />
+              <p className="relative text-[11px] font-semibold tracking-widest uppercase text-surface/70">{String(i + 1).padStart(2, "0")}</p>
+              <div className="relative">
+                <h3 className="font-display text-xl font-semibold">{t(`phil.${p.k}.t`)}</h3>
+                <p className="mt-1 text-sm text-surface/80">{t(`phil.${p.k}.d`)}</p>
+                <p className="mt-4 text-xs font-semibold tracking-widest uppercase text-surface group-hover:text-tropical">Read article →</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Why us with real image */}
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-gradient-to-br from-pool via-pool/70 to-ocean">
-            <div className="absolute inset-0 [background:radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.3),transparent_45%)]" />
-            <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/15 backdrop-blur-md p-5 text-surface">
-              <p className="text-xs uppercase tracking-widest opacity-80">Photo placeholder</p>
-              <p className="mt-1 font-display text-lg">Coach with student · Bukit villa pool</p>
-            </div>
+          <div className="relative aspect-square w-full overflow-hidden rounded-3xl">
+            <img src={kidsGroupImg.url} alt="Coach teaching a group of kids by the pool in Bali" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ocean/40 via-transparent to-transparent" />
           </div>
           <div>
-            <SectionEyebrow>Why Unity</SectionEyebrow>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">Built on trust, safety and progress.</h2>
+            <SectionEyebrow>{t("home.why")}</SectionEyebrow>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.whyTitle")}</h2>
             <div className="mt-8 space-y-6">
-              {[
-                ["Safety-first methodology", "Water survival and safety skills come before strokes — every lesson, every level."],
-                ["Individual approach", "We tailor pace, drills and atmosphere to each student's temperament and goals."],
-                ["Kids & adults specialists", "Years of experience with international families, expats, tourists and adult beginners."],
-                ["Ocean experience", "Real open-water coaching from coaches who actually swim Bali's coastline."],
-              ].map(([t, d]) => (
-                <div key={t} className="flex gap-4">
+              {[1,2,3,4].map((i) => (
+                <div key={i} className="flex gap-4">
                   <div className="mt-1 flex size-7 shrink-0 items-center justify-center rounded-full bg-pool/15">
                     <div className="size-2 rounded-full bg-pool" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-ocean">{t}</h4>
-                    <p className="mt-1 text-sm text-ink/65">{d}</p>
+                    <h4 className="font-semibold text-ocean">{t(`home.why.${i}.t`)}</h4>
+                    <p className="mt-1 text-sm text-ink/65">{t(`home.why.${i}.d`)}</p>
                   </div>
                 </div>
               ))}
             </div>
+            <div className="mt-8">
+              <Link to="/coaches" className="text-sm font-semibold text-pool hover:text-ocean">{t("nav.coaches")} →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery strip */}
+      <section className="bg-ocean/5 border-y border-ocean/10">
+        <div className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
+          <SectionEyebrow>Moments</SectionEyebrow>
+          <h2 className="mt-3 font-display text-3xl font-semibold">From our pools and the Bali ocean.</h2>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[kidImg, adultsImg, freediveImg, underwaterImg].map((g, i) => (
+              <div key={i} className="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src={g.url} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -137,16 +200,16 @@ function Index() {
       <section className="bg-sand/40 border-y border-ocean/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
           <div className="max-w-2xl">
-            <SectionEyebrow>Service Areas</SectionEyebrow>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">We come to your villa across Bali</h2>
-            <p className="mt-3 text-ink/65">From Uluwatu's cliffs to the calm shores of Sanur and the lush Ubud highlands.</p>
+            <SectionEyebrow>{t("home.areas")}</SectionEyebrow>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.areasTitle")}</h2>
+            <p className="mt-3 text-ink/65">{t("home.areasSub")}</p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {LOCATIONS.map((l) => (
               <Link key={l.name} to="/locations" className="group rounded-2xl border border-ocean/10 bg-white p-6 hover:border-pool/40">
                 <h3 className="font-display text-xl font-semibold text-ocean">{l.name}</h3>
                 <p className="mt-2 text-sm text-ink/65">{l.text}</p>
-                <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool group-hover:text-ocean">Explore →</p>
+                <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool group-hover:text-ocean">{t("cta.learnMore")} →</p>
               </Link>
             ))}
           </div>
@@ -162,23 +225,24 @@ function Index() {
       <section className="bg-ocean text-surface">
         <div className="mx-auto max-w-4xl px-5 lg:px-10 py-24 text-center">
           <p className="font-display text-2xl sm:text-3xl lg:text-4xl leading-snug text-balance">
-            "Our kids went from being afraid of the water to swimming independently in two weeks. Patient, professional, and genuinely warm coaches."
+            {t("home.testimonial")}
           </p>
-          <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool">Sarah M. · Expat parent, Sanur</p>
+          <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool">{t("home.testimonialAuthor")}</p>
         </div>
       </section>
 
       {/* FAQ preview */}
       <section className="mx-auto max-w-3xl px-5 lg:px-10 py-20">
         <div className="text-center">
-          <SectionEyebrow>FAQ</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">Common questions</h2>
+          <SectionEyebrow>{t("home.faq")}</SectionEyebrow>
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.faqTitle")}</h2>
         </div>
         <div className="mt-10 space-y-3">
           {[
             ["Can you come to our villa?", "Yes — most private lessons happen in our students' own villa pools across Bukit, Sanur and Ubud."],
             ["Do you teach adults afraid of the water?", "Absolutely. Our Fear of Water program is built specifically for adults, at your own pace."],
             ["Do you teach absolute beginners?", "Yes — kids and adults. Beginners are the heart of what we do."],
+            ["Do you teach freediving?", "Yes — we offer beginner freediving courses, breath-hold technique and ocean practice with safety protocols."],
           ].map(([q, a]) => (
             <details key={q} className="group rounded-xl border border-ocean/10 bg-white p-5">
               <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-ocean">
@@ -190,7 +254,7 @@ function Index() {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <Link to="/faq" className="text-sm font-semibold text-pool hover:text-ocean">View all FAQs →</Link>
+          <Link to="/faq" className="text-sm font-semibold text-pool hover:text-ocean">{t("home.viewFaq")} →</Link>
         </div>
       </section>
 
@@ -199,14 +263,14 @@ function Index() {
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-tropical via-tropical/80 to-pool px-8 py-16 sm:px-12 sm:py-20 text-surface">
           <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(circle_at_80%_20%,white,transparent_40%)]" />
           <div className="relative max-w-2xl">
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight">Ready to get in the water?</h2>
-            <p className="mt-4 text-surface/85">Message us on WhatsApp — tell us the area, age and level, and we'll recommend the best format.</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight">{t("home.finalTitle")}</h2>
+            <p className="mt-4 text-surface/85">{t("home.finalSub")}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-surface px-5 py-3 text-sm font-semibold text-ocean hover:bg-white">
-                Book via WhatsApp
+                {t("cta.book")}
               </a>
               <Link to="/contact" className="inline-flex items-center justify-center rounded-full border border-surface/40 px-5 py-3 text-sm font-semibold hover:bg-surface/10">
-                Contact form
+                {t("cta.contactForm")}
               </Link>
             </div>
           </div>
