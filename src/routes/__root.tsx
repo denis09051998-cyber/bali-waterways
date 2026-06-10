@@ -15,6 +15,9 @@ import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { FloatingWhatsApp } from "../components/site/FloatingWhatsApp";
 import { SITE } from "../lib/site";
+import { I18nProvider } from "../lib/i18n";
+import faviconAsset from "../assets/favicon.png.asset.json";
+import logoAsset from "../assets/logo_unity.png.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -93,6 +96,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/png", href: faviconAsset.url },
+      { rel: "apple-touch-icon", href: logoAsset.url },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" },
@@ -139,15 +144,17 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col bg-surface text-ink">
-        <Header />
-        <main className="flex-1">
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
-      </div>
+      <I18nProvider>
+        <div className="flex min-h-screen flex-col bg-surface text-ink">
+          <Header />
+          <main className="flex-1">
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+          </main>
+          <Footer />
+          <FloatingWhatsApp />
+        </div>
+      </I18nProvider>
     </QueryClientProvider>
   );
 }
