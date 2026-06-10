@@ -40,7 +40,7 @@ const TOPICS: Record<string, Topic> = {
   "technique": {
     slug: "technique", titleKey: "phil.technique.t", descKey: "phil.technique.d", hero: crawlImg,
     body: [
-      "Beautiful, efficient swimming is the product of deliberate practice — not just laps. Every stroke at Unity is built from body position, rotation, catch and breath rhythm.",
+      "Beautiful, efficient swimming is the product of deliberate practice — not just laps. Every stroke at UNITY is built from body position, rotation, catch and breath rhythm.",
       "We use simple, focused drills that isolate one element at a time, then reassemble them into smooth full-stroke swimming.",
       "Video feedback is available on request for intermediate and advanced swimmers refining freestyle, backstroke or breaststroke.",
     ],
