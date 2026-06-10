@@ -201,10 +201,10 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
           <SectionEyebrow>{t("home.moments")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl font-semibold">{t("home.momentsTitle")}</h2>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {[kidImg, adultsImg, freediveImg, underwaterImg].map((g, i) => (
-              <div key={i} className="group relative aspect-square overflow-hidden rounded-2xl">
-                <img src={g.url} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+          <div className="mt-10 grid gap-3 grid-cols-2 lg:grid-cols-4">
+            {MOMENTS.map((g, i) => (
+              <div key={i} className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ocean/10">
+                <img src={g.url} alt="UNITY Swimming School moment" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
               </div>
             ))}
           </div>
