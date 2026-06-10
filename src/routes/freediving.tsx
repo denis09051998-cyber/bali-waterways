@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
-import freediveImg from "@/assets/ph_freediving_v2.jpg.asset.json";
+import freediveImg from "@/assets/ph_freediving_v3.jpg.asset.json";
 import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 
 export const Route = createFileRoute("/freediving")({
