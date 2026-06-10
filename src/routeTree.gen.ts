@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as KidsSwimmingRouteImport } from './routes/kids-swimming'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KidsSwimmingRoute = KidsSwimmingRouteImport.update({
+  id: '/kids-swimming',
+  path: '/kids-swimming',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/kids-swimming': typeof KidsSwimmingRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/kids-swimming': typeof KidsSwimmingRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/kids-swimming': typeof KidsSwimmingRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/programs'
+  fullPaths: '/' | '/about' | '/kids-swimming' | '/programs'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/programs'
-  id: '__root__' | '/' | '/about' | '/programs'
+  to: '/' | '/about' | '/kids-swimming' | '/programs'
+  id: '__root__' | '/' | '/about' | '/kids-swimming' | '/programs'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  KidsSwimmingRoute: typeof KidsSwimmingRoute
   ProgramsRoute: typeof ProgramsRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kids-swimming': {
+      id: '/kids-swimming'
+      path: '/kids-swimming'
+      fullPath: '/kids-swimming'
+      preLoaderRoute: typeof KidsSwimmingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  KidsSwimmingRoute: KidsSwimmingRoute,
   ProgramsRoute: ProgramsRoute,
 }
 export const routeTree = rootRouteImport
