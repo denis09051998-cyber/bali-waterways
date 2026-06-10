@@ -83,11 +83,11 @@ export const Route = createFileRoute("/philosophy/$topic")({
   },
   head: ({ params }) => {
     const topic = TOPICS[params.topic];
-    const title = topic ? `${params.topic.replace(/-/g, " ")} — Coaching Philosophy | Unity Swimming Bali` : "Philosophy — Unity Swimming Bali";
+    const title = topic ? `${params.topic.replace(/-/g, " ")} — Coaching Philosophy | UNITY Swimming Bali` : "Philosophy — UNITY Swimming Bali";
     return {
       meta: [
         { title },
-        { name: "description", content: topic ? topic.body[0].slice(0, 158) : "Unity Swimming School coaching philosophy." },
+        { name: "description", content: topic ? topic.body[0].slice(0, 158) : "UNITY Swimming School coaching philosophy." },
         { property: "og:url", content: `/philosophy/${params.topic}` },
         ...(topic ? [{ property: "og:image", content: topic.hero.url } as const] : []),
       ],
@@ -98,7 +98,7 @@ export const Route = createFileRoute("/philosophy/$topic")({
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl px-5 lg:px-10 py-32 text-center">
       <h1 className="font-display text-3xl text-ocean">Article not found</h1>
-      <Link to="/" className="mt-6 inline-block text-pool font-semibold">← Back home</Link>
+      <Link to="/" className="mt-6 inline-block text-pool font-semibold">← Home</Link>
     </div>
   ),
   errorComponent: ({ reset }) => (
@@ -134,14 +134,14 @@ function Article() {
           ))}
         </div>
         <div className="mt-12 rounded-3xl bg-sand/50 border border-ocean/10 p-8">
-          <SectionEyebrow>Related programs</SectionEyebrow>
+          <SectionEyebrow>{t("phart.related")}</SectionEyebrow>
           <div className="mt-4 flex flex-wrap gap-3">
             {topic.related.map((r: { to: string; label: string }) => (
               <Link key={r.to} to={r.to} className="rounded-full border border-ocean/15 bg-white px-4 py-2 text-sm font-semibold text-ocean hover:border-pool/40 hover:text-pool">{r.label} →</Link>
             ))}
           </div>
           <div className="mt-8">
-            <WhatsAppCTA message={`Hi Unity! I'd like to learn more about ${t(topic.titleKey)}.`} label={t("cta.book")} />
+            <WhatsAppCTA message={`Hi UNITY! I'd like to learn more about ${t(topic.titleKey)}.`} label={t("cta.book")} />
           </div>
         </div>
       </article>

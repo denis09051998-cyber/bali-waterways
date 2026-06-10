@@ -55,7 +55,7 @@ function About() {
         <div>
           <SectionEyebrow>{t("co.eyebrow")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl font-semibold">{t("co.title")}</h2>
-          <p className="mt-5 text-ink/70">Head Coach Denis Kozhenkov plus a specialist team for kids, adults, ocean swimming and freediving.</p>
+          <p className="mt-5 text-ink/70">{t("ab.teamBody")}</p>
           <div className="mt-6">
             <Link to="/coaches" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("nav.coaches")} →</Link>
           </div>
@@ -65,7 +65,7 @@ function About() {
           <h3 className="font-display text-2xl font-semibold text-ocean">{t("cta.start")}</h3>
           <p className="mt-2 text-ink/70">{t("cta.startSub")}</p>
           <div className="mt-6 flex justify-center">
-            <WhatsAppCTA message="Hi Unity! I'd like to learn more about your lessons." label={t("cta.book")} />
+            <WhatsAppCTA message="Hi UNITY! I'd like to learn more about your lessons." label={t("cta.book")} />
           </div>
         </div>
       </section>
