@@ -5,11 +5,14 @@ import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
 import kidImg from "@/assets/ph_kid.jpg.asset.json";
-import freediveImg from "@/assets/ph_freediving_v5.jpg.asset.json";
-import underwaterImg from "@/assets/ph_underwater.jpg.asset.json";
+import freediveImg from "@/assets/ph_freediving_v6.jpg.asset.json";
 import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 import adultsImg from "@/assets/ph_adults.jpg.asset.json";
 import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
+import moment1 from "@/assets/ph_moment_1.jpg.asset.json";
+import moment2 from "@/assets/ph_moment_2.jpg.asset.json";
+import moment3 from "@/assets/ph_moment_3.webp.asset.json";
+import moment4 from "@/assets/ph_moment_4.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,6 +53,10 @@ const LOCATIONS = [
   { k: "ubud" },
   { k: "canggu" },
 ] as const;
+
+const MOMENTS = [moment1, moment2, moment3, moment4] as const;
+const REVIEWS = [1, 2, 3, 4] as const;
+const FAQS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
 function Index() {
   const { t } = useI18n();
@@ -194,10 +201,10 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
           <SectionEyebrow>{t("home.moments")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl font-semibold">{t("home.momentsTitle")}</h2>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {[kidImg, adultsImg, freediveImg, underwaterImg].map((g, i) => (
-              <div key={i} className="group relative aspect-square overflow-hidden rounded-2xl">
-                <img src={g.url} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+          <div className="mt-10 grid gap-3 grid-cols-2 lg:grid-cols-4">
+            {MOMENTS.map((g, i) => (
+              <div key={i} className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ocean/10">
+                <img src={g.url} alt="UNITY Swimming School moment" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
               </div>
             ))}
           </div>
@@ -229,13 +236,29 @@ function Index() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="bg-ocean text-surface">
-        <div className="mx-auto max-w-4xl px-5 lg:px-10 py-24 text-center">
-          <p className="font-display text-2xl sm:text-3xl lg:text-4xl leading-snug text-balance">
-            {t("home.testimonial")}
-          </p>
-          <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool">{t("home.testimonialAuthor")}</p>
+      {/* Testimonials */}
+      <section className="bg-gradient-to-b from-ocean to-ocean/90 text-surface">
+        <div className="mx-auto max-w-7xl px-5 lg:px-10 py-24">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-tropical">{t("home.testimonialsEyebrow")}</p>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.testimonialsTitle")}</h2>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {REVIEWS.map((i) => (
+              <figure key={i} className="relative rounded-3xl bg-white/[0.06] backdrop-blur-sm border border-white/10 p-7 sm:p-8 flex flex-col">
+                <span aria-hidden className="font-display text-6xl leading-none text-tropical/70 select-none">“</span>
+                <blockquote className="-mt-4 text-surface/90 leading-relaxed text-[15px] sm:text-base whitespace-pre-line">
+                  {t(`home.rev${i}.text`)}
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3 pt-5 border-t border-white/10">
+                  <div className="grid size-10 place-items-center rounded-full bg-tropical/20 text-tropical font-semibold text-sm">
+                    {t(`home.rev${i}.name`).trim().charAt(0)}
+                  </div>
+                  <div className="font-semibold text-surface">{t(`home.rev${i}.name`)}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -246,7 +269,7 @@ function Index() {
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.faqTitle")}</h2>
         </div>
         <div className="mt-10 space-y-3">
-          {[1,2,3,4].map((i) => (
+          {FAQS.map((i) => (
             <details key={i} className="group rounded-xl border border-ocean/10 bg-white p-5">
               <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-ocean">
                 {t(`home.faq${i}.q`)}
@@ -263,8 +286,75 @@ function Index() {
 
       {/* Final CTA */}
       <section className="mx-auto max-w-7xl px-5 lg:px-10 pb-24">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-tropical via-tropical/80 to-pool px-8 py-16 sm:px-12 sm:py-20 text-surface">
-          <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(circle_at_80%_20%,white,transparent_40%)]" />
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-ocean via-pool to-tropical px-8 py-16 sm:px-12 sm:py-20 text-surface">
+          <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(circle_at_85%_20%,white,transparent_45%)]" />
+
+          {/* Animated waves */}
+          <svg
+            aria-hidden
+            viewBox="0 0 1200 200"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-40 w-full opacity-40"
+          >
+            <defs>
+              <linearGradient id="ctaWave" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="white" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="white" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#ctaWave)">
+              <animate
+                attributeName="d"
+                dur="9s"
+                repeatCount="indefinite"
+                values="
+                  M0,120 C200,170 400,70 600,110 C800,150 1000,90 1200,120 L1200,200 L0,200 Z;
+                  M0,110 C220,80 420,160 620,120 C820,90 1020,150 1200,110 L1200,200 L0,200 Z;
+                  M0,120 C200,170 400,70 600,110 C800,150 1000,90 1200,120 L1200,200 L0,200 Z" />
+            </path>
+            <path fill="white" fillOpacity="0.15">
+              <animate
+                attributeName="d"
+                dur="6s"
+                repeatCount="indefinite"
+                values="
+                  M0,150 C200,120 400,180 600,150 C800,120 1000,180 1200,150 L1200,200 L0,200 Z;
+                  M0,150 C200,180 400,120 600,150 C800,180 1000,120 1200,150 L1200,200 L0,200 Z;
+                  M0,150 C200,120 400,180 600,150 C800,120 1000,180 1200,150 L1200,200 L0,200 Z" />
+            </path>
+          </svg>
+
+          {/* Animated swimmer */}
+          <svg
+            aria-hidden
+            viewBox="0 0 200 80"
+            className="pointer-events-none absolute right-6 sm:right-10 top-8 sm:top-10 w-40 sm:w-56 text-surface/80"
+          >
+            <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* arm */}
+              <path d="M70 38 Q95 10 130 28">
+                <animate attributeName="d" dur="2.2s" repeatCount="indefinite"
+                  values="
+                    M70 38 Q95 10 130 28;
+                    M70 38 Q95 60 130 48;
+                    M70 38 Q95 10 130 28" />
+              </path>
+              {/* body */}
+              <path d="M40 42 Q90 50 150 40" />
+              {/* head */}
+              <circle cx="155" cy="38" r="6" />
+              {/* splash */}
+              <g opacity="0.7">
+                <path d="M30 44 q-6 -2 -10 2">
+                  <animate attributeName="opacity" dur="1.1s" repeatCount="indefinite" values="0.2;0.9;0.2" />
+                </path>
+                <path d="M22 50 q-5 0 -8 4">
+                  <animate attributeName="opacity" dur="1.1s" begin="0.3s" repeatCount="indefinite" values="0.2;0.9;0.2" />
+                </path>
+              </g>
+            </g>
+          </svg>
+
           <div className="relative max-w-2xl">
             <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight">{t("home.finalTitle")}</h2>
             <p className="mt-4 text-surface/85">{t("home.finalSub")}</p>
