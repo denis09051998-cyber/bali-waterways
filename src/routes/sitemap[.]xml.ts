@@ -23,7 +23,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/ocean-swimming", changefreq: "monthly", priority: "0.8" },
           { path: "/freediving", changefreq: "monthly", priority: "0.9" },
           { path: "/coaches", changefreq: "monthly", priority: "0.8" },
-          { path: "/contact", changefreq: "monthly", priority: "0.7" },
           { path: "/philosophy/water-safety", changefreq: "monthly", priority: "0.6" },
           { path: "/philosophy/learn-to-swim", changefreq: "monthly", priority: "0.6" },
           { path: "/philosophy/technique", changefreq: "monthly", priority: "0.6" },
