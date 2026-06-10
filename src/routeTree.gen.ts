@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as OceanSwimmingRouteImport } from './routes/ocean-swimming'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as KidsSwimmingRouteImport } from './routes/kids-swimming'
 import { Route as AdultSwimmingRouteImport } from './routes/adult-swimming'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OceanSwimmingRoute = OceanSwimmingRouteImport.update({
+  id: '/ocean-swimming',
+  path: '/ocean-swimming',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsRoute = LocationsRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/adult-swimming': typeof AdultSwimmingRoute
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
+  '/ocean-swimming': typeof OceanSwimmingRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/adult-swimming': typeof AdultSwimmingRoute
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
+  '/ocean-swimming': typeof OceanSwimmingRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/adult-swimming': typeof AdultSwimmingRoute
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
+  '/ocean-swimming': typeof OceanSwimmingRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/adult-swimming'
     | '/kids-swimming'
     | '/locations'
+    | '/ocean-swimming'
     | '/programs'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/adult-swimming'
     | '/kids-swimming'
     | '/locations'
+    | '/ocean-swimming'
     | '/programs'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/adult-swimming'
     | '/kids-swimming'
     | '/locations'
+    | '/ocean-swimming'
     | '/programs'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   AdultSwimmingRoute: typeof AdultSwimmingRoute
   KidsSwimmingRoute: typeof KidsSwimmingRoute
   LocationsRoute: typeof LocationsRoute
+  OceanSwimmingRoute: typeof OceanSwimmingRoute
   ProgramsRoute: typeof ProgramsRoute
 }
 
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ocean-swimming': {
+      id: '/ocean-swimming'
+      path: '/ocean-swimming'
+      fullPath: '/ocean-swimming'
+      preLoaderRoute: typeof OceanSwimmingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations': {
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdultSwimmingRoute: AdultSwimmingRoute,
   KidsSwimmingRoute: KidsSwimmingRoute,
   LocationsRoute: LocationsRoute,
+  OceanSwimmingRoute: OceanSwimmingRoute,
   ProgramsRoute: ProgramsRoute,
 }
 export const routeTree = rootRouteImport
