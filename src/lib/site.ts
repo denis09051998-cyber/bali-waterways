@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "Unity Swimming School Bali",
-  shortName: "Unity Swimming",
+  name: "UNITY Swimming School Bali",
+  shortName: "UNITY Swimming",
   whatsappNumber: "+62 821-4723-2648",
   whatsappHref: "https://wa.me/6282147232648",
   instagramHandle: "@swimming.unity.bali",

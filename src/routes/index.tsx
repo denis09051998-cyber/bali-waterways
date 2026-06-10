@@ -12,10 +12,10 @@ import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Unity Swimming School Bali — Lessons in Bukit, Sanur & Ubud" },
+      { title: "UNITY Swimming School Bali — Lessons in Bukit, Sanur, Ubud UNITY Swimming School Bali — Lessons in Bukit, Sanur & Ubud Canggu" },
       { name: "description", content: "Private and group swimming lessons for kids and adults in Bali. Safety-first coaching across Bukit, Sanur and Ubud. Book via WhatsApp." },
       { name: "keywords", content: "swimming school Bali, kids swimming lessons Bali, adult swimming lessons Bali, freediving Bali, private swimming lessons Bali, ocean swimming Bali, swimming lessons Bukit, swimming lessons Sanur, swimming lessons Ubud" },
-      { property: "og:title", content: "Unity Swimming School Bali" },
+      { property: "og:title", content: "UNITY Swimming School Bali" },
       { property: "og:description", content: "Private and group swimming lessons for kids and adults across Bukit, Sanur and Ubud." },
       { property: "og:url", content: "/" },
       { property: "og:image", content: heroImg.url },

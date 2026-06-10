@@ -51,7 +51,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 border-t border-ocean/10 pt-6">
-          <p className="text-xs text-ink/50">© {new Date().getFullYear()} Unity Swimming School Bali. {t("footer.rights")}</p>
+          <p className="text-xs text-ink/50">© {new Date().getFullYear()} UNITY Swimming School Bali. {t("footer.rights")}</p>
           <p className="text-xs text-ink/50">{t("footer.sub")}</p>
         </div>
       </div>

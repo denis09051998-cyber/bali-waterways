@@ -7,9 +7,9 @@ import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Unity Swimming School Bali — Our Coaching Philosophy" },
-      { name: "description", content: "Meet Unity Swimming School Bali — safety-first coaching for kids and adults across Bukit, Sanur and Ubud. Ocean experience, individual approach." },
-      { property: "og:title", content: "About Unity Swimming School Bali" },
+      { title: "About UNITY Swimming School Bali — Our Coaching Philosophy" },
+      { name: "description", content: "Meet UNITY Swimming School Bali — safety-first coaching for kids and adults across Bukit, Sanur and Ubud. Ocean experience, individual approach." },
+      { property: "og:title", content: "About UNITY Swimming School Bali" },
       { property: "og:description", content: "Safety-first coaching for kids and adults across Bukit, Sanur and Ubud." },
       { property: "og:url", content: "/about" },
     ],

@@ -84,10 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Unity Swimming School Bali — Lessons for Kids & Adults" },
+      { title: "UNITY Swimming School Bali — Lessons for Kids & Adults" },
       { name: "description", content: "Professional private and group swimming lessons in Bukit, Sanur and Ubud. Kids, adults, beginners, ocean swimming." },
-      { name: "author", content: "Unity Swimming School Bali" },
-      { property: "og:site_name", content: "Unity Swimming School Bali" },
+      { name: "author", content: "UNITY Swimming School Bali" },
+      { property: "og:site_name", content: "UNITY Swimming School Bali" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
