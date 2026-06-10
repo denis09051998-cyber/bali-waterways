@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
+import denisImg from "@/assets/coach_denis.png.asset.json";
+import assistantImg from "@/assets/coach_assistant.png.asset.json";
 
 export const Route = createFileRoute("/coaches")({
   head: () => ({
@@ -19,29 +21,39 @@ export const Route = createFileRoute("/coaches")({
 type Coach = {
   num: 1 | 2;
   roleKey: string;
+  photo: string;
   head?: boolean;
 };
 
 const COACHES: Coach[] = [
-  { num: 1, roleKey: "co.head", head: true },
-  { num: 2, roleKey: "co.coach" },
+  { num: 1, roleKey: "co.head", photo: denisImg.url, head: true },
+  { num: 2, roleKey: "co.coach", photo: assistantImg.url },
 ];
 
-function CoachCard({ c, featured }: { c: Coach; featured?: boolean }) {
+function CoachCard({ c }: { c: Coach }) {
   const { t } = useI18n();
   const name = t(`co.name${c.num}`);
   return (
-    <article className={`rounded-3xl border border-ocean/10 bg-white overflow-hidden ${featured ? "lg:grid lg:grid-cols-[1.1fr_1fr]" : ""}`}>
-      <div className={`relative ${featured ? "aspect-[4/5] lg:aspect-auto" : "aspect-[4/5]"} w-full bg-gradient-to-br from-ocean via-ocean/85 to-pool/60 flex items-end p-6`}>
-        <div className="text-surface">
-          <p className="text-[11px] font-semibold tracking-[0.2em] uppercase opacity-80">{t(c.roleKey)}</p>
+    <article className="group rounded-3xl border border-ocean/10 bg-white overflow-hidden flex flex-col h-full transition-shadow hover:shadow-xl">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-gradient-to-br from-ocean/90 via-pool/70 to-tropical/60">
+        <img
+          src={c.photo}
+          alt={`${name} — ${t(c.roleKey)} at UNITY Swimming School Bali`}
+          className="absolute inset-0 h-full w-full object-cover object-top"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ocean/85 via-ocean/10 to-transparent" />
+        {c.head && (
+          <span className="absolute left-4 top-4 rounded-full bg-tropical px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-surface shadow">
+            {t("co.head")}
+          </span>
+        )}
+        <div className="absolute inset-x-0 bottom-0 p-6 text-surface">
+          <p className="text-[11px] font-semibold tracking-[0.2em] uppercase opacity-90">{t(c.roleKey)}</p>
           <h3 className="mt-1 font-display text-2xl sm:text-3xl font-semibold leading-tight">{name}</h3>
         </div>
-        <span className="absolute right-4 top-4 rounded-full bg-white/15 backdrop-blur px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-surface">
-          {t("co.photoSoon")}
-        </span>
       </div>
-      <div className="p-6 sm:p-8">
+      <div className="p-6 sm:p-8 flex-1 flex flex-col">
         <p className="text-[11px] font-semibold tracking-widest uppercase text-tropical">{t("co.exp")}</p>
         <p className="mt-1 text-sm text-ink/80 font-medium">{t(`co.exp${c.num}`)}</p>
         <p className="mt-4 text-[11px] font-semibold tracking-widest uppercase text-tropical">{t("co.spec")}</p>
@@ -53,7 +65,7 @@ function CoachCard({ c, featured }: { c: Coach; featured?: boolean }) {
             <span key={tg} className="rounded-full bg-pool/10 px-3 py-1 text-[11px] font-semibold text-pool">{t(`co.tag${c.num}.${tg}`)}</span>
           ))}
         </div>
-        <div className="mt-6">
+        <div className="mt-auto pt-6">
           <WhatsAppCTA message={`Hi UNITY! I'd like to book a lesson with the ${t(c.roleKey)}.`} label={t("cta.bookLesson")} />
         </div>
       </div>
@@ -66,9 +78,12 @@ function Coaches() {
   return (
     <>
       <PageHero eyebrow={t("co.eyebrow")} title={t("co.title")} subtitle={t("co.sub")} />
-      <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20 space-y-8">
-        <CoachCard c={COACHES[0]} featured />
-        <CoachCard c={COACHES[1]} />
+      <section className="mx-auto max-w-6xl px-5 lg:px-10 py-20">
+        <div className="grid gap-8 md:grid-cols-2">
+          {COACHES.map((c) => (
+            <CoachCard key={c.num} c={c} />
+          ))}
+        </div>
       </section>
     </>
   );

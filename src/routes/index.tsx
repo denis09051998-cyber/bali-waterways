@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionEyebrow } from "@/components/site/CTA";
 import { SITE } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
+import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
 import kidImg from "@/assets/ph_kid.jpg.asset.json";
 import freediveImg from "@/assets/ph_freedive.jpg.asset.json";
@@ -12,7 +13,7 @@ import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UNITY Swimming School Bali — Lessons in Bukit, Sanur, Ubud UNITY Swimming School Bali — Lessons in Bukit, Sanur & Ubud Canggu" },
+      { title: "UNITY Swimming School Bali — Lessons in Bukit, Sanur, Ubud & Canggu" },
       { name: "description", content: "Private and group swimming lessons for kids and adults in Bali. Safety-first coaching across Bukit, Sanur and Ubud. Book via WhatsApp." },
       { name: "keywords", content: "swimming school Bali, kids swimming lessons Bali, adult swimming lessons Bali, freediving Bali, private swimming lessons Bali, ocean swimming Bali, swimming lessons Bukit, swimming lessons Sanur, swimming lessons Ubud" },
       { property: "og:title", content: "UNITY Swimming School Bali" },
@@ -62,7 +63,7 @@ function Index() {
           <div className="max-w-3xl">
             <p className="text-[11px] font-semibold tracking-[0.25em] text-surface/85 uppercase">{t("home.eyebrow")}</p>
             <h1 className="mt-5 font-display text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.02] text-balance">
-              {t("home.title")}
+              <BrandText /> {t("home.title").replace(/UNITY\s*/i, "")}
             </h1>
             <p className="mt-6 max-w-2xl text-lg sm:text-xl text-surface/90 text-pretty">
               {t("home.sub")}
