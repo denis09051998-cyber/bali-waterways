@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
+import pgKids from "@/assets/pg_kids.jpg.asset.json";
+import pgAdults from "@/assets/pg_adults.jpg.asset.json";
+import pgPrivate from "@/assets/pg_private.jpg.asset.json";
+import pgGroup from "@/assets/pg_group.jpg.asset.json";
+import pgOcean from "@/assets/pg_ocean.webp.asset.json";
+import pgDiving from "@/assets/pg_diving.jpg.asset.json";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -19,7 +25,8 @@ export const Route = createFileRoute("/programs")({
 
 function Programs() {
   const { t } = useI18n();
-  const programs = [1,2,3,4,5,6,7,8];
+  const programImages = [pgKids, pgAdults, pgPrivate, pgGroup, pgOcean, pgDiving];
+  const programs = [1, 2, 3, 4, 5, 6];
   return (
     <>
       <PageHero eyebrow={t("pgs.eyebrow")} title={t("pgs.title")} subtitle={t("pgs.sub")} />
@@ -29,7 +36,12 @@ function Programs() {
             <div>
               <SectionEyebrow>{t("pgs.programLabel")} {String(i).padStart(2, "0")}</SectionEyebrow>
               <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold text-ocean">{t(`pgs.p${i}.t`)}</h2>
-              <div className="mt-6 aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-pool/30 via-pool/10 to-tropical/20" />
+              <img
+                src={programImages[i - 1].url}
+                alt={t(`pgs.p${i}.t`)}
+                loading="lazy"
+                className="mt-6 aspect-[4/3] w-full rounded-2xl object-cover"
+              />
             </div>
             <div className="grid gap-5 sm:grid-cols-2 self-center">
               <Field label={t("pgs.who")} value={t(`pgs.p${i}.who`)} />
