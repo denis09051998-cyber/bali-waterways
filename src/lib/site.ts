@@ -10,6 +10,7 @@ export const SITE = {
     "Bukit",
     "Sanur",
     "Ubud",
+    "Canggu",
     "Ungasan",
     "Pecatu",
     "Jimbaran",
