@@ -5,11 +5,14 @@ import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
 import kidImg from "@/assets/ph_kid.jpg.asset.json";
-import freediveImg from "@/assets/ph_freediving_v5.jpg.asset.json";
-import underwaterImg from "@/assets/ph_underwater.jpg.asset.json";
+import freediveImg from "@/assets/ph_freediving_v6.jpg.asset.json";
 import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 import adultsImg from "@/assets/ph_adults.jpg.asset.json";
 import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
+import moment1 from "@/assets/ph_moment_1.jpg.asset.json";
+import moment2 from "@/assets/ph_moment_2.jpg.asset.json";
+import moment3 from "@/assets/ph_moment_3.webp.asset.json";
+import moment4 from "@/assets/ph_moment_4.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,6 +53,10 @@ const LOCATIONS = [
   { k: "ubud" },
   { k: "canggu" },
 ] as const;
+
+const MOMENTS = [moment1, moment2, moment3, moment4] as const;
+const REVIEWS = [1, 2, 3, 4] as const;
+const FAQS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
 function Index() {
   const { t } = useI18n();
