@@ -1,4 +1,5 @@
 import { waLink } from "@/lib/site";
+import { useI18n } from "@/lib/i18n";
 
 export function WhatsAppCTA({
   message,
@@ -9,15 +10,17 @@ export function WhatsAppCTA({
   label?: string;
   variant?: "primary" | "outline";
 }) {
+  const { t } = useI18n();
   const base =
     "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-colors";
   const styles =
     variant === "primary"
       ? "bg-pool text-surface hover:bg-ocean"
       : "border border-ocean/20 text-ocean hover:bg-ocean hover:text-surface";
+  const displayLabel = label === "Book via WhatsApp" ? t("cta.book") : label;
   return (
     <a href={waLink(message)} target="_blank" rel="noopener noreferrer" className={`${base} ${styles}`}>
-      {label}
+      {displayLabel}
     </a>
   );
 }

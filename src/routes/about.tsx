@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
+import { useI18n } from "@/lib/i18n";
+import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -16,64 +19,53 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
+  const { t } = useI18n();
   return (
     <>
       <PageHero
-        eyebrow="About Us"
-        title="A trusted swim school for Bali's international families."
-        subtitle="Built on safety, individualized attention, and a genuine love for the water. We coach kids, adults, beginners, and ocean swimmers across the island."
+        eyebrow={t("ab.eyebrow")}
+        title={t("ab.title")}
+        subtitle={t("ab.sub")}
       />
+      <section className="mx-auto max-w-7xl px-5 lg:px-10 -mt-10">
+        <img src={kidsGroupImg.url} alt="Coach teaching kids by the pool in Bali" className="aspect-[16/9] w-full rounded-3xl object-cover shadow-xl" />
+      </section>
       <section className="mx-auto max-w-4xl px-5 lg:px-10 py-20 space-y-12">
         <div>
-          <SectionEyebrow>Our Story</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl font-semibold">Born in Bali, for Bali.</h2>
-          <p className="mt-5 text-ink/70 leading-relaxed">
-            Unity Swimming School was founded by coaches who fell in love with Bali's waters and recognized something missing: a calm, professional, family-friendly swim school for the international community. We bring international coaching standards to villa pools across Bukit, Sanur and Ubud — and to the open ocean for those ready for it.
-          </p>
+          <SectionEyebrow>{t("ab.story")}</SectionEyebrow>
+          <h2 className="mt-3 font-display text-3xl font-semibold">{t("ab.storyTitle")}</h2>
+          <p className="mt-5 text-ink/70 leading-relaxed">{t("ab.storyBody")}</p>
         </div>
 
         <div>
-          <SectionEyebrow>Coaching Philosophy</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl font-semibold">Patience, progression, presence.</h2>
-          <p className="mt-5 text-ink/70 leading-relaxed">
-            We don't push students. We meet them where they are. A nervous four-year-old, an adult who's never put their face under water, a triathlete refining their freestyle — each gets a curriculum tailored to their pace, body and goals.
-          </p>
+          <SectionEyebrow>{t("ab.phil")}</SectionEyebrow>
+          <h2 className="mt-3 font-display text-3xl font-semibold">{t("ab.philTitle")}</h2>
+          <p className="mt-5 text-ink/70 leading-relaxed">{t("ab.philBody")}</p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {[
-            ["Safety-first approach", "Water safety, rescue posture and breathing are non-negotiable foundations in every lesson."],
-            ["Individual approach", "Plans, pace, and even music are adapted to each student. No assembly-line teaching."],
-            ["Kids & adults", "Two distinct teaching mindsets. We're fluent in both — playful with kids, calm with adults."],
-            ["Ocean experience", "We swim Bali's coastline ourselves. Our open-water coaching comes from real practice, not theory."],
-          ].map(([t, d]) => (
-            <div key={t} className="rounded-2xl border border-ocean/10 bg-white p-6">
-              <h3 className="font-display text-lg font-semibold text-ocean">{t}</h3>
-              <p className="mt-2 text-sm text-ink/65">{d}</p>
+          {[1,2,3,4].map((i) => (
+            <div key={i} className="rounded-2xl border border-ocean/10 bg-white p-6">
+              <h3 className="font-display text-lg font-semibold text-ocean">{t(`ab.v${i}.t`)}</h3>
+              <p className="mt-2 text-sm text-ink/65">{t(`ab.v${i}.d`)}</p>
             </div>
           ))}
         </div>
 
         <div>
-          <SectionEyebrow>Our Coaches</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl font-semibold">The team</h2>
-          <p className="mt-5 text-ink/70">Real photos coming soon. Below are placeholder cards for our coaches.</p>
-          <div className="mt-8 grid gap-5 sm:grid-cols-3">
-            {["Head Coach", "Kids Specialist", "Ocean Coach"].map((role) => (
-              <div key={role} className="rounded-2xl border border-ocean/10 bg-white p-5">
-                <div className="aspect-square w-full rounded-xl bg-gradient-to-br from-pool/30 to-ocean/30" />
-                <p className="mt-4 text-xs font-semibold tracking-widest uppercase text-tropical">{role}</p>
-                <p className="mt-1 font-display text-lg text-ocean">Photo placeholder</p>
-              </div>
-            ))}
+          <SectionEyebrow>{t("co.eyebrow")}</SectionEyebrow>
+          <h2 className="mt-3 font-display text-3xl font-semibold">{t("co.title")}</h2>
+          <p className="mt-5 text-ink/70">Head Coach Denis Kozhenkov plus a specialist team for kids, adults, ocean swimming and freediving.</p>
+          <div className="mt-6">
+            <Link to="/coaches" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("nav.coaches")} →</Link>
           </div>
         </div>
 
         <div className="rounded-3xl border border-ocean/10 bg-sand/40 p-8 text-center">
-          <h3 className="font-display text-2xl font-semibold text-ocean">Ready to start?</h3>
-          <p className="mt-2 text-ink/70">Tell us your area, the student's age and level — we'll suggest the best lesson format.</p>
+          <h3 className="font-display text-2xl font-semibold text-ocean">{t("cta.start")}</h3>
+          <p className="mt-2 text-ink/70">{t("cta.startSub")}</p>
           <div className="mt-6 flex justify-center">
-            <WhatsAppCTA message="Hi Unity! I'd like to learn more about your lessons." />
+            <WhatsAppCTA message="Hi Unity! I'd like to learn more about your lessons." label={t("cta.book")} />
           </div>
         </div>
       </section>
