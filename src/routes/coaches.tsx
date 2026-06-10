@@ -16,7 +16,18 @@ export const Route = createFileRoute("/coaches")({
   component: Coaches,
 });
 
-const COACHES = [
+type Coach = {
+  head?: boolean;
+  name: string;
+  role: string;
+  exp: string;
+  spec: string;
+  bio: string;
+  tags: string[];
+  placeholder?: boolean;
+};
+
+const COACHES: Coach[] = [
   {
     head: true,
     name: "Denis Kozhenkov",
@@ -52,9 +63,9 @@ const COACHES = [
     tags: ["Ocean Support", "Group Classes", "Safety"],
     placeholder: true,
   },
-] as const;
+];
 
-function CoachCard({ c, t, featured }: { c: (typeof COACHES)[number]; t: (k: string) => string; featured?: boolean }) {
+function CoachCard({ c, t, featured }: { c: Coach; t: (k: string) => string; featured?: boolean }) {
   return (
     <article className={`rounded-3xl border border-ocean/10 bg-white overflow-hidden ${featured ? "lg:col-span-2 lg:grid lg:grid-cols-[1.1fr_1fr]" : ""}`}>
       <div className={`relative ${featured ? "aspect-[4/5] lg:aspect-auto" : "aspect-[4/5]"} w-full bg-gradient-to-br from-ocean via-ocean/85 to-pool/60 flex items-end p-6`}>

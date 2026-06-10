@@ -126,17 +126,17 @@ function Article() {
       </section>
       <article className="mx-auto max-w-3xl px-5 lg:px-10 py-20">
         <div className="space-y-6 text-lg text-ink/75 leading-relaxed">
-          {topic.body.map((p, i) => <p key={i}>{p}</p>)}
+          {topic.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          {topic.gallery.map((g, i) => (
+          {topic.gallery.map((g: { url: string }, i: number) => (
             <img key={i} src={g.url} alt="" className="aspect-[4/3] w-full rounded-2xl object-cover" loading="lazy" />
           ))}
         </div>
         <div className="mt-12 rounded-3xl bg-sand/50 border border-ocean/10 p-8">
           <SectionEyebrow>Related programs</SectionEyebrow>
           <div className="mt-4 flex flex-wrap gap-3">
-            {topic.related.map((r) => (
+            {topic.related.map((r: { to: string; label: string }) => (
               <Link key={r.to} to={r.to} className="rounded-full border border-ocean/15 bg-white px-4 py-2 text-sm font-semibold text-ocean hover:border-pool/40 hover:text-pool">{r.label} →</Link>
             ))}
           </div>
