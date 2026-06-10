@@ -40,7 +40,7 @@ const en: Dict = {
   "wa.float": "WhatsApp",
   "wa.msg.default": "Hi UNITY! I'd like to book a swimming lesson.",
   // footer
-  "footer.tagline": "Professional swimming education for the international community in Bali. Safety, technique, confidence.",
+  "footer.tagline": "Professional swimming lessons in Bali for children and adults. Safety, technique, confidence.",
   "footer.programs": "Programs",
   "footer.areas": "Service Areas",
   "footer.contact": "Contact",
