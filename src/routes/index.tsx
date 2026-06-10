@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
+import { SectionEyebrow } from "@/components/site/CTA";
 import { SITE } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
@@ -43,10 +43,11 @@ const PHILOSOPHY = [
 ] as const;
 
 const LOCATIONS = [
-  { name: "Bukit Peninsula", text: "Uluwatu, Ungasan, Pecatu, Jimbaran, Kutuh, Nusa Dua." },
-  { name: "Sanur", text: "Calm waters perfect for beginners and family lessons." },
-  { name: "Ubud", text: "Private villa pool sessions in Bali's jungle heart." },
-];
+  { k: "bukit" },
+  { k: "sanur" },
+  { k: "ubud" },
+  { k: "canggu" },
+] as const;
 
 function Index() {
   const { t } = useI18n();
@@ -67,7 +68,12 @@ function Index() {
               {t("home.sub")}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <WhatsAppCTA message="Hi Unity! I'd like to book a swimming lesson." label={t("cta.bookLesson")} />
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean transition-colors"
+              >
+                {t("cta.bookLesson")}
+              </Link>
               <Link to="/programs" className="inline-flex items-center justify-center rounded-full border border-surface/40 bg-white/5 backdrop-blur px-5 py-3 text-sm font-semibold hover:bg-surface/15">
                 {t("cta.viewPrograms")}
               </Link>
@@ -144,7 +150,7 @@ function Index() {
               <div className="relative">
                 <h3 className="font-display text-xl font-semibold">{t(`phil.${p.k}.t`)}</h3>
                 <p className="mt-1 text-sm text-surface/80">{t(`phil.${p.k}.d`)}</p>
-                <p className="mt-4 text-xs font-semibold tracking-widest uppercase text-surface group-hover:text-tropical">Read article →</p>
+                  <p className="mt-4 text-xs font-semibold tracking-widest uppercase text-surface group-hover:text-tropical">{t("home.philosophyRead")} →</p>
               </div>
             </Link>
           ))}
@@ -184,8 +190,8 @@ function Index() {
       {/* Gallery strip */}
       <section className="bg-ocean/5 border-y border-ocean/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
-          <SectionEyebrow>Moments</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl font-semibold">From our pools and the Bali ocean.</h2>
+          <SectionEyebrow>{t("home.moments")}</SectionEyebrow>
+          <h2 className="mt-3 font-display text-3xl font-semibold">{t("home.momentsTitle")}</h2>
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[kidImg, adultsImg, freediveImg, underwaterImg].map((g, i) => (
               <div key={i} className="group relative aspect-square overflow-hidden rounded-2xl">
@@ -204,11 +210,11 @@ function Index() {
             <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.areasTitle")}</h2>
             <p className="mt-3 text-ink/65">{t("home.areasSub")}</p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {LOCATIONS.map((l) => (
-              <Link key={l.name} to="/locations" className="group rounded-2xl border border-ocean/10 bg-white p-6 hover:border-pool/40">
-                <h3 className="font-display text-xl font-semibold text-ocean">{l.name}</h3>
-                <p className="mt-2 text-sm text-ink/65">{l.text}</p>
+              <Link key={l.k} to="/locations" className="group rounded-2xl border border-ocean/10 bg-white p-6 hover:border-pool/40">
+                <h3 className="font-display text-xl font-semibold text-ocean">{t(`loc.${l.k}.t`)}</h3>
+                <p className="mt-2 text-sm text-ink/65">{t(`loc.${l.k}.d`)}</p>
                 <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool group-hover:text-ocean">{t("cta.learnMore")} →</p>
               </Link>
             ))}
@@ -238,18 +244,13 @@ function Index() {
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.faqTitle")}</h2>
         </div>
         <div className="mt-10 space-y-3">
-          {[
-            ["Can you come to our villa?", "Yes — most private lessons happen in our students' own villa pools across Bukit, Sanur and Ubud."],
-            ["Do you teach adults afraid of the water?", "Absolutely. Our Fear of Water program is built specifically for adults, at your own pace."],
-            ["Do you teach absolute beginners?", "Yes — kids and adults. Beginners are the heart of what we do."],
-            ["Do you teach freediving?", "Yes — we offer beginner freediving courses, breath-hold technique and ocean practice with safety protocols."],
-          ].map(([q, a]) => (
-            <details key={q} className="group rounded-xl border border-ocean/10 bg-white p-5">
+          {[1,2,3,4].map((i) => (
+            <details key={i} className="group rounded-xl border border-ocean/10 bg-white p-5">
               <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-ocean">
-                {q}
+                {t(`home.faq${i}.q`)}
                 <span className="text-pool group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <p className="mt-3 text-sm text-ink/70">{a}</p>
+              <p className="mt-3 text-sm text-ink/70">{t(`home.faq${i}.a`)}</p>
             </details>
           ))}
         </div>
@@ -266,12 +267,12 @@ function Index() {
             <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight">{t("home.finalTitle")}</h2>
             <p className="mt-4 text-surface/85">{t("home.finalSub")}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-surface px-5 py-3 text-sm font-semibold text-ocean hover:bg-white">
+              <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-surface px-5 py-3 text-sm font-semibold text-ocean hover:bg-white">
+                {t("cta.bookLesson")}
+              </Link>
+              <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-surface/40 px-5 py-3 text-sm font-semibold hover:bg-surface/10">
                 {t("cta.book")}
               </a>
-              <Link to="/contact" className="inline-flex items-center justify-center rounded-full border border-surface/40 px-5 py-3 text-sm font-semibold hover:bg-surface/10">
-                {t("cta.contactForm")}
-              </Link>
             </div>
           </div>
         </div>
