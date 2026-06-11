@@ -35,7 +35,7 @@ function CoachCard({ c }: { c: Coach }) {
   const name = t(`co.name${c.num}`);
   return (
     <article className="group rounded-3xl border border-ocean/10 bg-white overflow-hidden flex flex-col md:flex-row transition-shadow hover:shadow-xl">
-      <div className="relative w-full md:w-60 lg:w-64 aspect-[4/3] md:aspect-auto overflow-hidden bg-gradient-to-br from-ocean/90 via-pool/70 to-tropical/60 shrink-0">
+      <div className="relative w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-auto overflow-hidden bg-gradient-to-br from-ocean/90 via-pool/70 to-tropical/60 shrink-0">
         <img
           src={c.photo}
           alt={`${name} — ${t(c.roleKey)} at UNITY Swimming School Bali`}
@@ -53,17 +53,17 @@ function CoachCard({ c }: { c: Coach }) {
           <h3 className="mt-1 font-display text-xl sm:text-2xl font-semibold leading-tight">{name}</h3>
         </div>
       </div>
-      <div className="p-6 sm:p-7 flex-1 flex flex-col">
+      <div className="p-6 sm:p-8 flex-1 flex flex-col">
         <p className="text-[11px] font-semibold tracking-widest uppercase text-tropical">{t("co.spec")}</p>
         <p className="mt-1 text-sm text-ink/80">{t(`co.spec${c.num}`)}</p>
         <p className="mt-4 text-[11px] font-semibold tracking-widest uppercase text-tropical">{t("co.bio")}</p>
         <p className="mt-2 text-sm text-ink/70 leading-relaxed">{t(`co.bio${c.num}`)}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap gap-2">
           {[1,2,3,4].map((tg) => (
             <span key={tg} className="rounded-full bg-pool/10 px-3 py-1 text-[11px] font-semibold text-pool">{t(`co.tag${c.num}.${tg}`)}</span>
           ))}
         </div>
-        <div className="mt-auto pt-5">
+        <div className="mt-auto pt-6">
           <WhatsAppCTA message={`Hi UNITY! I'd like to book a lesson with the ${t(c.roleKey)}.`} label={t("cta.bookLesson")} />
         </div>
       </div>
@@ -76,7 +76,7 @@ function Coaches() {
   return (
     <>
       <PageHero eyebrow={t("co.eyebrow")} title={t("co.title")} subtitle={t("co.sub")} />
-      <section className="mx-auto max-w-4xl px-5 lg:px-10 py-16">
+      <section className="mx-auto max-w-5xl px-5 lg:px-10 py-20">
         <div className="grid gap-8">
           {COACHES.map((c) => (
             <CoachCard key={c.num} c={c} />

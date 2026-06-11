@@ -27,10 +27,10 @@ function About() {
         title={t("ab.title")}
         subtitle={t("ab.sub")}
       />
-      <section className="mx-auto max-w-6xl px-5 lg:px-10 -mt-10">
+      <section className="mx-auto max-w-7xl px-5 lg:px-10 -mt-10">
         <img src={kidsGroupImg.url} alt="Coach teaching kids by the pool in Bali" className="aspect-[16/9] w-full rounded-3xl object-cover shadow-xl" />
       </section>
-      <section className="mx-auto max-w-4xl px-5 lg:px-10 py-14 space-y-10">
+      <section className="mx-auto max-w-4xl px-5 lg:px-10 py-20 space-y-12">
         <div>
           <SectionEyebrow>{t("ab.story")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl font-semibold">{t("ab.storyTitle")}</h2>

@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="border-t border-ocean/10 bg-surface mt-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2 font-display text-lg font-semibold text-ocean">
               <Logo size={36} />
@@ -34,14 +34,19 @@ export function Footer() {
             </ul>
           </div>
           <div>
+            <h4 className="text-xs font-semibold tracking-wider text-ink/50 uppercase">{t("footer.areas")}</h4>
+            <ul className="mt-4 grid grid-cols-2 gap-y-2 text-sm text-ink/70">
+              {SITE.areas.map((a) => (
+                <li key={a}><Link to="/locations" className="hover:text-pool">{a}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div>
             <h4 className="text-xs font-semibold tracking-wider text-ink/50 uppercase">{t("footer.contact")}</h4>
             <ul className="mt-4 space-y-2 text-sm text-ink/70">
-              <li><Link to="/locations" className="hover:text-pool">{t("nav.locations")}</Link></li>
-              <li><Link to="/faq" className="hover:text-pool">{t("nav.faq")}</Link></li>
-              <li><Link to="/contact" className="hover:text-pool">{t("nav.contact")}</Link></li>
               <li><a href={SITE.whatsappHref} className="hover:text-pool">WhatsApp: {SITE.whatsappNumber}</a></li>
               <li><a href={SITE.instagramUrl} className="hover:text-pool">{SITE.instagramHandle}</a></li>
-              <li className="text-ink/50">Bukit · Sanur · Ubud · Canggu</li>
+              <li>Bali, Indonesia</li>
             </ul>
           </div>
         </div>
