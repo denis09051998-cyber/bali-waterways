@@ -3,10 +3,8 @@ import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import pgKids from "@/assets/pg_kids.jpg.asset.json";
 import pgAdults from "@/assets/pg_adults.jpg.asset.json";
-import pgPrivate from "@/assets/pg_private.jpg.asset.json";
-import pgGroup from "@/assets/pg_group.jpg.asset.json";
 import pgOcean from "@/assets/pg_ocean.webp.asset.json";
-import pgDiving from "@/assets/pg_diving.jpg.asset.json";
+import pgFreediving from "@/assets/ph_freediving_v6.jpg.asset.json";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -25,19 +23,23 @@ export const Route = createFileRoute("/programs")({
 
 function Programs() {
   const { t } = useI18n();
-  const programImages = [pgKids, pgAdults, pgPrivate, pgGroup, pgOcean, pgDiving];
-  const programs = [1, 2, 3, 4, 5, 6];
+  const programs: { id: number; image: { url: string } }[] = [
+    { id: 1, image: pgKids },
+    { id: 2, image: pgAdults },
+    { id: 5, image: pgOcean },
+    { id: 6, image: pgFreediving },
+  ];
   return (
     <>
       <PageHero eyebrow={t("pgs.eyebrow")} title={t("pgs.title")} subtitle={t("pgs.sub")} />
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20 space-y-6">
-        {programs.map((i) => (
+        {programs.map(({ id: i, image }, idx) => (
           <article key={i} className="grid gap-8 rounded-3xl border border-ocean/10 bg-white p-6 sm:p-10 lg:grid-cols-[1fr_2fr]">
             <div>
-              <SectionEyebrow>{t("pgs.programLabel")} {String(i).padStart(2, "0")}</SectionEyebrow>
+              <SectionEyebrow>{t("pgs.programLabel")} {String(idx + 1).padStart(2, "0")}</SectionEyebrow>
               <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold text-ocean">{t(`pgs.p${i}.t`)}</h2>
               <img
-                src={programImages[i - 1].url}
+                src={image.url}
                 alt={t(`pgs.p${i}.t`)}
                 loading="lazy"
                 className="mt-6 aspect-[4/3] w-full rounded-2xl object-cover"
