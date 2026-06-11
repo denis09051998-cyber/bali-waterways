@@ -78,7 +78,7 @@ function Adults() {
         <div className="mt-6 overflow-hidden rounded-2xl border border-ocean/10 shadow-sm">
           <iframe
             title="UNITY Swimming locations on Bali"
-            src="https://www.google.com/maps/embed/v1/search?key=&q=Bukit+Sanur+Ubud+Canggu+Bali"
+            src="https://maps.google.com/maps?q=Bukit%20Bali%7CSanur%20Bali%7CUbud%20Bali%7CCanggu%20Bali&z=10&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="block h-[260px] w-full sm:h-[340px]"
