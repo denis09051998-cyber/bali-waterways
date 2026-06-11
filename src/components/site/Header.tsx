@@ -8,11 +8,12 @@ import { Logo, BrandText } from "./Logo";
 const NAV = [
   { to: "/", key: "nav.home" },
   { to: "/about", key: "nav.about" },
-  { to: "/programs", key: "nav.programs" },
-  { to: "/kids-swimming", key: "nav.kids" },
-  { to: "/adult-swimming", key: "nav.adults" },
-  { to: "/ocean-swimming", key: "nav.ocean" },
-  { to: "/freediving", key: "nav.freediving" },
+  { to: "/programs", key: "nav.programs", children: [
+    { to: "/kids-swimming", key: "nav.kids" },
+    { to: "/adult-swimming", key: "nav.adults" },
+    { to: "/ocean-swimming", key: "nav.ocean" },
+    { to: "/freediving", key: "nav.freediving" },
+  ]},
   { to: "/coaches", key: "nav.coaches" },
   { to: "/locations", key: "nav.locations" },
   { to: "/faq", key: "nav.faq" },
@@ -29,18 +30,45 @@ export function Header() {
           <Logo size={36} />
           <span className="hidden sm:inline"><BrandText /> Swimming</span>
         </Link>
-        <nav className="hidden xl:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-6">
           {NAV.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              activeOptions={{ exact: n.to === "/" }}
-              activeProps={{ className: "text-pool" }}
-              inactiveProps={{ className: "text-ink/70 hover:text-pool" }}
-              className="text-sm font-medium transition-colors"
-            >
-              {t(n.key)}
-            </Link>
+            "children" in n && n.children ? (
+              <div key={n.to} className="group relative">
+                <Link
+                  to={n.to}
+                  activeProps={{ className: "text-pool" }}
+                  inactiveProps={{ className: "text-ink/70 group-hover:text-pool" }}
+                  className="inline-flex items-center gap-1 text-sm font-medium transition-colors"
+                >
+                  {t(n.key)}
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M3 4.5l3 3 3-3" /></svg>
+                </Link>
+                <div className="invisible absolute left-1/2 top-full z-50 mt-2 w-56 -translate-x-1/2 rounded-xl border border-ocean/10 bg-surface p-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                  {n.children.map((c) => (
+                    <Link
+                      key={c.to}
+                      to={c.to}
+                      activeProps={{ className: "bg-pool/10 text-pool" }}
+                      inactiveProps={{ className: "text-ink/75 hover:bg-pool/5 hover:text-pool" }}
+                      className="block rounded-lg px-3 py-2 text-sm font-medium"
+                    >
+                      {t(c.key)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={n.to}
+                to={n.to}
+                activeOptions={{ exact: n.to === "/" }}
+                activeProps={{ className: "text-pool" }}
+                inactiveProps={{ className: "text-ink/70 hover:text-pool" }}
+                className="text-sm font-medium transition-colors"
+              >
+                {t(n.key)}
+              </Link>
+            )
           ))}
         </nav>
         <div className="flex items-center gap-3">
@@ -68,7 +96,7 @@ export function Header() {
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={t("menu.toggle")}
-            className="xl:hidden inline-flex size-9 items-center justify-center rounded-md border border-ocean/15 text-ocean"
+            className="lg:hidden inline-flex size-9 items-center justify-center rounded-md border border-ocean/15 text-ocean"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {open ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 6h18M3 12h18M3 18h18" />}
@@ -77,18 +105,42 @@ export function Header() {
         </div>
       </div>
       {open && (
-        <nav className="xl:hidden border-t border-ocean/10 bg-surface px-5 py-3">
-          <div className="grid grid-cols-2 gap-2">
+        <nav className="lg:hidden border-t border-ocean/10 bg-surface px-5 py-3">
+          <div className="flex flex-col gap-1">
             {NAV.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-ink/80 hover:bg-pool/10 hover:text-pool"
-              >
-                {t(n.key)}
-              </Link>
+              <div key={n.to}>
+                <Link
+                  to={n.to}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-md px-3 py-2 text-sm font-semibold text-ink/85 hover:bg-pool/10 hover:text-pool"
+                >
+                  {t(n.key)}
+                </Link>
+                {"children" in n && n.children && (
+                  <div className="ml-3 mt-1 mb-1 flex flex-col gap-0.5 border-l border-ocean/10 pl-3">
+                    {n.children.map((c) => (
+                      <Link
+                        key={c.to}
+                        to={c.to}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-md px-3 py-1.5 text-sm text-ink/70 hover:bg-pool/10 hover:text-pool"
+                      >
+                        {t(c.key)}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
+            <a
+              href={SITE.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white"
+            >
+              {t("cta.book")}
+            </a>
           </div>
         </nav>
       )}
