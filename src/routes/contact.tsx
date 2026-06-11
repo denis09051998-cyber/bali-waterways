@@ -78,50 +78,9 @@ function Contact() {
   return (
     <>
       <PageHero eyebrow={t("ct.eyebrow")} title={t("ct.title")} subtitle={t("ct.sub")} />
-      <section className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-10 py-8 sm:py-12">
-        <div className="overflow-hidden rounded-2xl border border-ocean/10 bg-white shadow-sm">
-          <iframe
-            title="UNITY Swimming School Bali — Google Maps"
-            src="https://www.google.com/maps?q=UNITY+Swimming+School+Bali&z=12&output=embed"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="h-[240px] w-full sm:h-[320px]"
-          />
-          <div className="flex items-center justify-between gap-3 px-4 py-2.5 text-xs sm:text-sm">
-            <span className="font-semibold text-ocean">{t("ct.map.heading")}</span>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=UNITY+Swimming+School+Bali"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-pool hover:text-ocean"
-            >
-              {t("ct.map.open")} →
-            </a>
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-10 pb-12 sm:pb-16 grid gap-6 lg:gap-10 lg:grid-cols-[1fr_1.4fr]">
-        <aside className="space-y-4">
-          <div className="rounded-2xl border border-ocean/10 bg-white p-5">
-            <SectionEyebrow>{t("ct.whatsapp")}</SectionEyebrow>
-            <p className="mt-1.5 font-display text-lg text-ocean">{SITE.whatsappNumber}</p>
-            <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full bg-pool px-4 py-2 text-sm font-semibold text-surface hover:bg-ocean">
-              {t("ct.chatNow")}
-            </a>
-          </div>
-          <div className="rounded-2xl border border-ocean/10 bg-white p-5">
-            <SectionEyebrow>{t("ct.instagram")}</SectionEyebrow>
-            <p className="mt-1.5 font-display text-lg text-ocean">{SITE.instagramHandle}</p>
-            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface">
-              {t("ct.followUs")}
-            </a>
-          </div>
-          <div className="rounded-2xl border border-ocean/10 bg-sand/40 p-5">
-            <SectionEyebrow>{t("ct.areas")}</SectionEyebrow>
-            <p className="mt-1.5 text-sm text-ink/70">{SITE.areas.join(" · ")}</p>
-          </div>
-        </aside>
 
+      {/* Booking form — primary focus */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-5 lg:px-10 pt-6 pb-8 sm:pt-8 sm:pb-10">
         <form onSubmit={onSubmit} className="rounded-2xl border border-ocean/10 bg-white p-4 sm:p-6 space-y-3">
           <div className="grid gap-3 sm:grid-cols-2">
             <Field label={t("ct.f.name")} name="name" value={form.name} onChange={onChange} required />
@@ -153,6 +112,54 @@ function Contact() {
           </button>
           <p className="text-xs text-ink/50 text-center">{t("ct.f.note")}</p>
         </form>
+      </section>
+
+      {/* Google Maps — compact, below form */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-10 pb-6 sm:pb-8">
+        <div className="overflow-hidden rounded-2xl border border-ocean/10 bg-white shadow-sm">
+          <iframe
+            title="UNITY Swimming School Bali — Google Maps"
+            src="https://www.google.com/maps?q=UNITY+Swimming+School+Bali&z=12&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[200px] w-full sm:h-[280px]"
+          />
+          <div className="flex items-center justify-between gap-3 px-4 py-2.5 text-xs sm:text-sm">
+            <span className="font-semibold text-ocean">{t("ct.map.heading")}</span>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=UNITY+Swimming+School+Bali"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-pool hover:text-ocean"
+            >
+              {t("ct.map.open")} →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional contact info */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-10 pb-12 sm:pb-16">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border border-ocean/10 bg-white p-5">
+            <SectionEyebrow>{t("ct.whatsapp")}</SectionEyebrow>
+            <p className="mt-1.5 font-display text-lg text-ocean">{SITE.whatsappNumber}</p>
+            <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full bg-pool px-4 py-2 text-sm font-semibold text-surface hover:bg-ocean">
+              {t("ct.chatNow")}
+            </a>
+          </div>
+          <div className="rounded-2xl border border-ocean/10 bg-white p-5">
+            <SectionEyebrow>{t("ct.instagram")}</SectionEyebrow>
+            <p className="mt-1.5 font-display text-lg text-ocean">{SITE.instagramHandle}</p>
+            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface">
+              {t("ct.followUs")}
+            </a>
+          </div>
+          <div className="rounded-2xl border border-ocean/10 bg-sand/40 p-5">
+            <SectionEyebrow>{t("ct.areas")}</SectionEyebrow>
+            <p className="mt-1.5 text-sm text-ink/70">{SITE.areas.join(" · ")}</p>
+          </div>
+        </div>
       </section>
     </>
   );
