@@ -23,11 +23,11 @@ function Adults() {
 
   const priceRows = [
     { label: t("ad.price.g.t"), price: t("ad.price.g.p") },
-    { label: t("ad.price.g.pack"), price: "" },
+    { label: t("ad.price.g.pack"), price: "2 MLN IDR" },
     { label: t("ad.price.p45.t"), price: t("ad.price.p45.p") },
-    { label: t("ad.price.p45.pack"), price: "" },
+    { label: t("ad.price.p45.pack"), price: "4.2 MLN IDR" },
     { label: t("ad.price.p60.t"), price: t("ad.price.p60.p") },
-    { label: t("ad.price.p60.pack"), price: "" },
+    { label: t("ad.price.p60.pack"), price: "5 MLN IDR" },
   ];
 
   return (
@@ -119,16 +119,15 @@ function Adults() {
         <div className="mx-auto max-w-2xl px-5 lg:px-10">
           <SectionEyebrow>{t("ad.price.header")}</SectionEyebrow>
           <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("ad.price.title")}</h2>
-          <ul className="mt-6 divide-y divide-ocean/10 rounded-2xl border border-ocean/10 bg-white">
+          <div className="mt-6 space-y-1">
             {priceRows.map((row, i) => (
-              <li key={i} className="flex items-baseline justify-between gap-4 px-4 py-3 sm:px-5">
-                <span className="text-sm text-ink/80">{row.label}</span>
-                {row.price && (
-                  <span className="font-display text-sm font-semibold text-pool whitespace-nowrap">{row.price}</span>
-                )}
-              </li>
+              <div key={i} className="flex items-baseline gap-2 py-2">
+                <span className="text-sm text-ink/80 shrink-0">{row.label}</span>
+                <span className="flex-1 border-b border-dotted border-ink/20 self-end mb-1.5 min-w-[1rem]" />
+                <span className="text-sm font-semibold text-pool whitespace-nowrap">{row.price}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
