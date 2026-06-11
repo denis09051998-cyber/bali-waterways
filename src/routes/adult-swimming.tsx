@@ -77,24 +77,38 @@ function Adults() {
 
         <div className="mt-6 overflow-hidden rounded-2xl border border-ocean/10 shadow-sm">
           <iframe
-            title="UNITY Swimming locations on Bali"
-            src="https://maps.google.com/maps?q=Bukit%20Bali%7CSanur%20Bali%7CUbud%20Bali%7CCanggu%20Bali&z=10&output=embed"
+            title="UNITY Swimming School Bali on Google Maps"
+            src="https://maps.google.com/maps?q=UNITY+Swimming+School+Bali&z=11&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="block h-[260px] w-full sm:h-[340px]"
             allowFullScreen
           />
         </div>
-        <p className="mt-2 text-xs text-ink/60">
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
+          <span className="inline-flex items-center gap-1.5 font-semibold text-ocean">
+            <span aria-hidden>📍</span> UNITY Swimming School Bali
+          </span>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Bukit+Sanur+Ubud+Canggu+Bali"
+            href="https://www.google.com/maps/search/?api=1&query=UNITY+Swimming+School+Bali"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-pool hover:underline"
+            className="text-pool font-medium hover:underline"
           >
-            Открыть в Google Maps →
+            Open in Google Maps →
           </a>
-        </p>
+        </div>
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px]">
+          <span className="font-semibold uppercase tracking-[0.16em] text-ink/60">Service areas:</span>
+          {["Bukit", "Sanur", "Ubud", "Canggu"].map((area) => (
+            <span
+              key={area}
+              className="rounded-full border border-ocean/15 bg-white px-2.5 py-0.5 text-ink/75"
+            >
+              {area}
+            </span>
+          ))}
+        </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-ocean/10 bg-white p-4 sm:p-5">
