@@ -28,7 +28,7 @@ function Adults() {
       {/* Who these lessons are for */}
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
         <div className="max-w-3xl">
-          <SectionEyebrow>{t("ad.who.title")}</SectionEyebrow>
+          <SectionEyebrow>{t("ad.eyebrow")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold text-ocean">{t("ad.who.title")}</h2>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -55,7 +55,7 @@ function Adults() {
               className="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl"
             />
             <div>
-              <SectionEyebrow>{t("ad.learn.title")}</SectionEyebrow>
+              <SectionEyebrow>UNITY</SectionEyebrow>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold text-ocean">{t("ad.learn.title")}</h2>
               <div className="mt-8 grid gap-5 sm:grid-cols-2">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -73,7 +73,7 @@ function Adults() {
       {/* Why adults choose UNITY */}
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
         <div className="max-w-3xl">
-          <SectionEyebrow>{t("ad.why.title")}</SectionEyebrow>
+          <SectionEyebrow>UNITY</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold text-ocean">{t("ad.why.title")}</h2>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -90,7 +90,7 @@ function Adults() {
       <section className="bg-ocean/5 py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="max-w-3xl">
-            <SectionEyebrow>{t("ad.res.title")}</SectionEyebrow>
+            <SectionEyebrow>Results</SectionEyebrow>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold text-ocean">{t("ad.res.title")}</h2>
           </div>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
