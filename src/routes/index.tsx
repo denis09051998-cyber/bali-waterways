@@ -38,15 +38,6 @@ const PROGRAMS = [
   { to: "/freediving", img: freediveImg.url, k: "freedive" },
 ] as const;
 
-const PHILOSOPHY = [
-  { slug: "water-safety", k: "safety" },
-  { slug: "learn-to-swim", k: "learn" },
-  { slug: "technique", k: "technique" },
-  { slug: "ocean-swimming", k: "ocean" },
-  { slug: "freediving", k: "freedive" },
-  { slug: "confidence", k: "confidence" },
-] as const;
-
 const LOCATIONS = [
   { k: "bukit" },
   { k: "sanur" },
@@ -56,7 +47,7 @@ const LOCATIONS = [
 
 const MOMENTS = [moment1, moment2, moment3, moment4] as const;
 const REVIEWS = [1, 2, 3, 4] as const;
-const FAQS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
+const FAQS = [1, 2, 3, 4, 5] as const;
 
 function Index() {
   const { t } = useI18n();
@@ -67,13 +58,13 @@ function Index() {
         <img src={heroImg.url} alt="Swimmer practicing freestyle stroke in clear blue pool" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-ocean/85 via-ocean/55 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-ocean/80 via-transparent to-transparent" />
-        <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-10 pb-16 pt-32 sm:pb-24 sm:pt-40">
-          <div className="max-w-3xl">
+        <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-10 pb-16 pt-28 sm:pb-24 sm:pt-40">
+          <div className="max-w-2xl">
             <p className="text-[11px] font-semibold tracking-[0.25em] text-surface/85 uppercase">{t("home.eyebrow")}</p>
-            <h1 className="mt-5 font-display text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.02] text-balance">
+            <h1 className="mt-5 font-display text-[clamp(2.25rem,6vw,4.25rem)] font-semibold leading-[1.05] text-balance">
               <BrandText /> {t("home.title").replace(/UNITY\s*/i, "")}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg sm:text-xl text-surface/90 text-pretty">
+            <p className="mt-6 max-w-xl text-base sm:text-lg text-surface/90 text-pretty">
               {t("home.sub")}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -139,33 +130,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Coaching Philosophy — interactive cards */}
-      <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
-        <div className="max-w-2xl">
-          <SectionEyebrow>{t("home.philosophy")}</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.philosophyTitle")}</h2>
-          <p className="mt-3 text-ink/65">{t("home.philosophySub")}</p>
-        </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {PHILOSOPHY.map((p, i) => (
-            <Link
-              key={p.slug}
-              to="/philosophy/$topic"
-              params={{ topic: p.slug }}
-              className="group relative overflow-hidden rounded-2xl border border-ocean/10 bg-gradient-to-br from-ocean to-pool p-6 text-surface min-h-[180px] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-tropical/30 opacity-0 transition-opacity group-hover:opacity-100" />
-              <p className="relative text-[11px] font-semibold tracking-widest uppercase text-surface/70">{String(i + 1).padStart(2, "0")}</p>
-              <div className="relative">
-                <h3 className="font-display text-xl font-semibold">{t(`phil.${p.k}.t`)}</h3>
-                <p className="mt-1 text-sm text-surface/80">{t(`phil.${p.k}.d`)}</p>
-                  <p className="mt-4 text-xs font-semibold tracking-widest uppercase text-surface group-hover:text-tropical">{t("home.philosophyRead")} →</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* Why us with real image */}
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -226,11 +190,6 @@ function Index() {
                 <p className="mt-2 text-sm text-ink/65">{t(`loc.${l.k}.d`)}</p>
                 <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool group-hover:text-ocean">{t("cta.learnMore")} →</p>
               </Link>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {SITE.areas.map((a) => (
-              <span key={a} className="rounded-full border border-ocean/15 bg-white px-3 py-1 text-xs font-medium text-ink/70">{a}</span>
             ))}
           </div>
         </div>
