@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
-import phAdults from "@/assets/ph_adults.jpg.asset.json";
 import phOcean from "@/assets/ph_ocean.jpg.asset.json";
 
 export const Route = createFileRoute("/adult-swimming")({
