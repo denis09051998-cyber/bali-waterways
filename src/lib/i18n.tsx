@@ -1496,7 +1496,7 @@ const id: Dict = {
   "faq.q6": "Apakah Anda mengajar pemula?",
   "faq.a6": "Pemula adalah inti dari yang kami lakukan — anak dan dewasa.",
   "faq.q7": "Apakah Anda menawarkan renang laut?",
-  "faq.a7": "Ya, untuk perenang kolam percaya diri yang siap air terbuka.",
+  "faq.a7": "Ya, untuk perenang kolam yang percaya diri dan siap ke perairan terbuka, serta untuk pemula yang ingin mencoba dengan pengawasan ketat dari pelatih.",
   "faq.q8": "Area mana yang Anda layani?",
   "faq.a8": "Bukit (Uluwatu, Pecatu, Ungasan, Jimbaran, Kutuh, Nusa Dua), Sanur, Ubud dan Canggu.",
   "faq.q9": "Bagaimana cara memesan?",
