@@ -41,6 +41,24 @@ function About() {
           <SectionEyebrow>{t("ab.phil")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl font-semibold">{t("ab.philTitle")}</h2>
           <p className="mt-5 text-ink/70 leading-relaxed">{t("ab.philBody")}</p>
+          <p className="mt-4 text-ink/70 leading-relaxed">{t("ab.philExtraIntro")}</p>
+          <ul className="mt-3 space-y-2 text-ink/80">
+            {[1,2,3].map((i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="mt-2 size-1.5 rounded-full bg-pool shrink-0" />
+                <span className="leading-relaxed">{t(`ab.philExtraLi${i}`)}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-ink/70 leading-relaxed">{t("ab.philExtraClose")}</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[2,3].map((i) => (
+              <div key={i} className="rounded-2xl border border-ocean/10 bg-white p-5">
+                <h3 className="font-display text-base font-semibold text-ocean">{t(`ab.v${i}.t`)}</h3>
+                <p className="mt-2 text-sm text-ink/65 leading-relaxed">{t(`ab.v${i}.d`)}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="rounded-2xl border border-ocean/10 bg-white p-6 sm:p-8">
@@ -64,15 +82,6 @@ function About() {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="grid gap-6 sm:grid-cols-2">
-          {[2,3].map((i) => (
-            <div key={i} className="rounded-2xl border border-ocean/10 bg-white p-6">
-              <h3 className="font-display text-lg font-semibold text-ocean">{t(`ab.v${i}.t`)}</h3>
-              <p className="mt-2 text-sm text-ink/65">{t(`ab.v${i}.d`)}</p>
-            </div>
-          ))}
         </div>
 
         <div>
