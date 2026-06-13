@@ -3,13 +3,13 @@ import { PageHero, WhatsAppCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 
 const FAQS_EN: [string, string][] = [
-  ["Do you teach kids?", "Yes — from age 2 months upwards with our Head Coach, and from age 3 with our second Coach."],
-  ["Do you teach adults?", "Absolutely. Many of our students are adult beginners, returners, or improvers."],
+  ["What age do you start teaching children?", "From 2 months old with the Head Coach. We specialize in gentle, play-based learning."],
+  ["Do you teach adults?", "Yes. Many of our students are adult beginners or swimmers looking to improve their technique."],
   ["Can you come to our villa?", "Yes — most private lessons happen in our students' own villa pools across Bukit, Sanur, Ubud and Canggu."],
-  ["Do you offer group classes?", "Yes — small groups of 2–4 students of similar level."],
+  ["Do you offer group classes?", "Yes — small groups of 4–6 students of a similar level. Very popular for families and friends."],
   ["Can you help with fear of water?", "Yes. Our Fear of Water program is built specifically for adults and children."],
   ["Do you teach beginners?", "Beginners are the heart of what we do — both kids and adults."],
-  ["Do you offer ocean swimming?", "Yes, for confident pool swimmers ready for open water."],
+  ["Do you offer ocean swimming?", "Yes, for confident pool swimmers ready for open water, as well as beginners who would like to try it under close supervision from a coach."],
   ["Which areas do you cover?", "Bukit, Sanur, Ubud and Canggu."],
   ["How do I book?", "Message us on WhatsApp at +62 821-4723-2648 or use our booking form."],
   ["How many lessons are usually needed?", "It depends on age and starting point. Children typically need 6–12 lessons."],
