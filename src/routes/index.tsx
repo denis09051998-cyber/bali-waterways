@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { SectionEyebrow } from "@/components/site/CTA";
-import { SITE } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
@@ -38,28 +38,14 @@ const PROGRAMS = [
   { to: "/freediving", img: freediveImg.url, k: "freedive" },
 ] as const;
 
-const PHILOSOPHY = [
-  { slug: "water-safety", k: "safety" },
-  { slug: "learn-to-swim", k: "learn" },
-  { slug: "technique", k: "technique" },
-  { slug: "ocean-swimming", k: "ocean" },
-  { slug: "freediving", k: "freedive" },
-  { slug: "confidence", k: "confidence" },
-] as const;
-
-const LOCATIONS = [
-  { k: "bukit" },
-  { k: "sanur" },
-  { k: "ubud" },
-  { k: "canggu" },
-] as const;
-
 const MOMENTS = [moment1, moment2, moment3, moment4] as const;
 const REVIEWS = [1, 2, 3, 4] as const;
 const FAQS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
 function Index() {
   const { t } = useI18n();
+  const [faqExpanded, setFaqExpanded] = useState(false);
+  const visibleFaqs = faqExpanded ? FAQS : FAQS.slice(0, 3);
   return (
     <>
       {/* Hero — full-bleed swimming photo */}
