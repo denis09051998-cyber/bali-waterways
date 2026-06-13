@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
+import { PageHero, SectionEyebrow } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
 
