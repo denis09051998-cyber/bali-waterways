@@ -62,7 +62,9 @@ function Contact() {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const locationValue = form.location === "Other" ? (form.locationOther || t("ct.loc.other")) : form.location;
+    const locationValue = isKidGroup
+      ? t(`ct.loc.${kidsLoc}`)
+      : (form.location === "Other" ? (form.locationOther || t("ct.loc.other")) : form.location);
     const msg = [
       `${t("ct.heading")} — UNITY Swimming Bali`,
       `${t("ct.line.name")}: ${form.name}`,
@@ -117,7 +119,7 @@ function Contact() {
           </div>
 
           {isAdultGroup && (
-            <ScheduleBlock eyebrow={t("ct.sched.eyebrow")} title={t("ct.adult.sched.title")}
+            <ScheduleBlock eyebrow={t("ct.adult.sched.eyebrow")} title={t("ct.adult.sched.title")}
               items={[t("ct.adult.sched.m"), t("ct.adult.sched.w"), t("ct.adult.sched.f")]} />
           )}
 
@@ -151,12 +153,14 @@ function Contact() {
             </div>
           )}
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            <Select label={t("ct.f.location")} name="location" value={form.location} onChange={onChange} options={locationOptions} />
-            {form.location === "Other" && (
-              <Field label={t("ct.loc.other")} name="locationOther" value={form.locationOther} onChange={onChange} placeholder={t("ct.f.ph.location.other")} required />
-            )}
-          </div>
+          {!isKidGroup && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Select label={t("ct.f.location")} name="location" value={form.location} onChange={onChange} options={locationOptions} />
+              {form.location === "Other" && (
+                <Field label={t("ct.loc.other")} name="locationOther" value={form.locationOther} onChange={onChange} placeholder={t("ct.f.ph.location.other")} required />
+              )}
+            </div>
+          )}
 
           <div>
             <label className="text-[11px] font-semibold tracking-widest uppercase text-tropical">{t("ct.f.message")}</label>

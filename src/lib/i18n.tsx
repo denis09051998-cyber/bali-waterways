@@ -460,6 +460,7 @@ const en: Dict = {
   "ct.sanur.th": "Thursday — 17:00",
   "ct.canggu.title": "Group Lessons",
   "ct.canggu.note": "Schedule available upon request. Please contact us for current group availability.",
+  "ct.adult.sched.eyebrow": "Group Schedule in Bukit",
   "ct.sched.eyebrow": "Group schedule",
   // philosophy article
   "phart.back": "Back home",
@@ -904,6 +905,7 @@ const ru: Dict = {
   "ct.sanur.th": "Четверг — 17:00",
   "ct.canggu.title": "Групповые занятия",
   "ct.canggu.note": "Расписание уточняется. Напишите нам, чтобы узнать доступные группы.",
+  "ct.adult.sched.eyebrow": "Расписание групп на Буките",
   "ct.sched.eyebrow": "Расписание групп",
   "phart.back": "На главную",
   "phart.related": "Связанные программы",
@@ -1346,6 +1348,7 @@ const id: Dict = {
   "ct.sanur.th": "Kamis — 17:00",
   "ct.canggu.title": "Kelas Grup",
   "ct.canggu.note": "Jadwal tersedia berdasarkan permintaan. Silakan hubungi kami untuk ketersediaan grup terkini.",
+  "ct.adult.sched.eyebrow": "Jadwal Grup di Bukit",
   "ct.sched.eyebrow": "Jadwal grup",
   "phart.back": "Kembali ke beranda",
   "phart.related": "Program terkait",
