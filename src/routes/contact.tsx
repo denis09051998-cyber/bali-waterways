@@ -62,7 +62,9 @@ function Contact() {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const locationValue = form.location === "Other" ? (form.locationOther || t("ct.loc.other")) : form.location;
+    const locationValue = isKidGroup
+      ? t(`ct.loc.${kidsLoc}`)
+      : (form.location === "Other" ? (form.locationOther || t("ct.loc.other")) : form.location);
     const msg = [
       `${t("ct.heading")} — UNITY Swimming Bali`,
       `${t("ct.line.name")}: ${form.name}`,
