@@ -97,6 +97,29 @@ function Kids() {
           </div>
         </div>
 
+        <div>
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("kids.pr.title")}</h2>
+          <div className="mt-4 space-y-1">
+            {[
+              { label: t("pr.kids.g.t"), price: t("pr.kids.g.p") },
+              { label: t("pr.kids.g.pack"), price: t("pr.kids.g.packP") },
+              { label: t("pr.kids.p30.t"), price: t("pr.kids.p30.p") },
+              { label: t("pr.kids.p30.pack"), price: t("pr.kids.p30.packP") },
+              { label: t("pr.kids.p45.t"), price: t("pr.kids.p45.p") },
+              { label: t("pr.kids.p45.pack"), price: t("pr.kids.p45.packP") },
+              { label: t("pr.kids.villa.t"), price: t("pr.kids.villa.p") },
+              { label: t("pr.kids.villa.pack"), price: t("pr.kids.villa.packP") },
+            ].map((row, i) => (
+              <div key={i} className="flex items-baseline gap-2 py-2">
+                <span className="text-sm text-ink/80 shrink-0">{row.label}</span>
+                <span className="flex-1 border-b border-dotted border-ink/20 self-end mb-1.5 min-w-[1rem]" />
+                <span className="text-sm font-semibold text-pool whitespace-nowrap">{row.price}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-ink/55 leading-relaxed">{t("pr.cancel")}</p>
+        </div>
+
         <div className="rounded-3xl bg-ocean p-8 text-center text-surface">
           <h3 className="font-display text-2xl">{t("kids.ctaTitle")}</h3>
           <p className="mt-2 text-surface/80">{t("kids.ctaSub")}</p>

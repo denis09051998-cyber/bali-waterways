@@ -306,6 +306,7 @@ const en: Dict = {
   "kids.sanur.t": "Tuesday — 5:00 PM",
   "kids.sanur.th": "Thursday — 5:00 PM",
   "kids.canggu.note": "Schedule available upon request via WhatsApp — we will help choose the right group based on the child's age and level.",
+  "kids.pr.title": "Lesson Prices",
   // adults page
   "ad.eyebrow": "Adult Lessons",
   "ad.title": "Adult Swimming Lessons in Bali",
@@ -811,6 +812,7 @@ const ru: Dict = {
   "kids.sanur.t": "Вторник — 17:00",
   "kids.sanur.th": "Четверг — 17:00",
   "kids.canggu.note": "Расписание уточняйте в WhatsApp — мы подберём подходящую группу по возрасту и уровню ребёнка.",
+  "kids.pr.title": "Стоимость занятий",
   "ad.eyebrow": "Взрослым",
   "ad.title": "Уроки плавания для взрослых на Бали",
   "ad.sub": "Профессиональное обучение плаванию для взрослых любого уровня — совершенствование техники и уверенное плавание в бассейне и открытой воде.",
@@ -1308,6 +1310,7 @@ const id: Dict = {
   "kids.sanur.t": "Selasa — 17:00",
   "kids.sanur.th": "Kamis — 17:00",
   "kids.canggu.note": "Jadwal tersedia berdasarkan permintaan melalui WhatsApp — kami akan membantu memilih grup yang sesuai dengan usia dan level anak.",
+  "kids.pr.title": "Harga Kelas",
   "ad.eyebrow": "Pelajaran Dewasa",
   "ad.title": "Pelajaran Renang Dewasa di Bali",
   "ad.sub": "Pelatihan renang profesional untuk dewasa di semua tingkat — sempurnakan teknik dan berenang dengan percaya diri di kolam maupun perairan terbuka.",
