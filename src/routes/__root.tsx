@@ -90,6 +90,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "UNITY Swimming School Bali" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "UNITY Swimming School Bali — Lessons for Kids & Adults" },
+      { name: "twitter:title", content: "UNITY Swimming School Bali — Lessons for Kids & Adults" },
+      { property: "og:description", content: "Professional private and group swimming lessons in Bukit, Sanur, Ubud and Canggu. Kids, adults, beginners, ocean swimming, freediving." },
+      { name: "twitter:description", content: "Professional private and group swimming lessons in Bukit, Sanur, Ubud and Canggu. Kids, adults, beginners, ocean swimming, freediving." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e2a2bf54-3ded-426b-b4ca-1c5a22d1b4bb/id-preview-e6745d63--553d2965-bf71-4830-a209-f602a54ab4a1.lovable.app-1781353941097.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e2a2bf54-3ded-426b-b4ca-1c5a22d1b4bb/id-preview-e6745d63--553d2965-bf71-4830-a209-f602a54ab4a1.lovable.app-1781353941097.png" },
     ],
     links: [
       {
