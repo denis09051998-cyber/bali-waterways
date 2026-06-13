@@ -68,6 +68,50 @@ function Adults() {
         </div>
       </section>
 
+      {/* Why swimming matters in Bali + Health */}
+      <section className="mx-auto max-w-7xl px-5 lg:px-10 py-12 sm:py-16">
+        <div className="grid gap-5 lg:grid-cols-2">
+          <div className="rounded-2xl border border-ocean/10 bg-white p-5 sm:p-6">
+            <h3 className="font-display text-lg sm:text-xl font-semibold text-ocean">{t("ad.bali.title")}</h3>
+            <p className="mt-3 text-sm text-ink/75 leading-relaxed">{t("ad.bali.lead")}</p>
+            <ul className="mt-2 space-y-1.5 text-sm text-ink/80">
+              {[1, 2, 3].map((i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-2 size-1.5 rounded-full bg-pool shrink-0" />
+                  <span>{t(`ad.bali.l${i}`)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-ink/75 leading-relaxed">{t("ad.bali.risk")}</p>
+            <p className="mt-4 text-sm font-semibold text-ocean">{t("ad.bali.teach")}</p>
+            <ul className="mt-2 space-y-1.5 text-sm text-ink/80">
+              {[1, 2, 3].map((i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-pool text-surface text-[9px] font-bold">✓</span>
+                  <span>{t(`ad.bali.t${i}`)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm font-medium text-pool">{t("ad.bali.foot")}</p>
+          </div>
+
+          <div className="rounded-2xl border border-ocean/10 bg-white p-5 sm:p-6">
+            <h3 className="font-display text-lg sm:text-xl font-semibold text-ocean">{t("ad.health.title")}</h3>
+            <p className="mt-3 text-sm text-ink/75 leading-relaxed">{t("ad.health.lead")}</p>
+            <p className="mt-4 text-sm font-semibold text-ocean">{t("ad.health.fit")}</p>
+            <ul className="mt-2 space-y-1.5 text-sm text-ink/80">
+              {[1, 2, 3].map((i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-2 size-1.5 rounded-full bg-pool shrink-0" />
+                  <span>{t(`ad.health.f${i}`)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm font-medium text-pool">{t("ad.health.foot")}</p>
+          </div>
+        </div>
+      </section>
+
       {/* Location & Schedule */}
       <section className="mx-auto max-w-7xl px-5 lg:px-10 py-12 sm:py-16">
         <div className="max-w-3xl">
