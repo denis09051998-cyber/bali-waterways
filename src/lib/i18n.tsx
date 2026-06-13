@@ -306,6 +306,7 @@ const en: Dict = {
   "kids.sanur.t": "Tuesday — 5:00 PM",
   "kids.sanur.th": "Thursday — 5:00 PM",
   "kids.canggu.note": "Schedule available upon request via WhatsApp — we will help choose the right group based on the child's age and level.",
+  "kids.pr.title": "Lesson Prices",
   // adults page
   "ad.eyebrow": "Adult Lessons",
   "ad.title": "Adult Swimming Lessons in Bali",
