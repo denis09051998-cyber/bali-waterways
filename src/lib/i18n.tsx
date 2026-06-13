@@ -1481,7 +1481,7 @@ const id: Dict = {
   "loc.canggu.t": "Pelajaran renang di Canggu",
   "loc.canggu.d": "Pelajaran kolam villa di Canggu dan area Berawa, Pererenan dan Echo Beach. Ideal untuk keluarga kota surfing dan digital nomad.",
   "faq.eyebrow": "FAQ",
-  "faq.title": "Pertanyaan yang sering diajukan.",
+  "faq.title": "Pertanyaan yang sering diajukan",
   "faq.sub": "Semua yang perlu Anda ketahui sebelum memesan pelajaran di UNITY Swimming Bali.",
   "faq.q1": "Apakah Anda mengajar anak?",
   "faq.a1": "Ya — mulai usia 2 bulan dengan Pelatih Kepala dan mulai 3 tahun dengan Pelatih kedua. Kami spesialis pengajaran lembut berbasis permainan.",
