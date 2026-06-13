@@ -461,7 +461,7 @@ const en: Dict = {
   "faq.q6": "Do you teach beginners?",
   "faq.a6": "Beginners are the heart of what we do — both kids and adults.",
   "faq.q7": "Do you offer ocean swimming?",
-  "faq.a7": "Yes, for confident pool swimmers ready for open water. See our Ocean Swimming page.",
+  "faq.a7": "Yes, for confident pool swimmers ready for open water, as well as beginners who would like to try it under close supervision from a coach.",
   "faq.q8": "Which areas do you cover?",
   "faq.a8": "Bukit (Uluwatu, Pecatu, Ungasan, Jimbaran, Kutuh, Nusa Dua), Sanur, Ubud and Canggu.",
   "faq.q9": "How do I book?",
