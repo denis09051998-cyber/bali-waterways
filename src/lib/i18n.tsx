@@ -1490,7 +1490,7 @@ const id: Dict = {
   "faq.q3": "Bisakah Anda datang ke villa kami?",
   "faq.a3": "Ya — sebagian besar pelajaran privat berlangsung di kolam villa murid di Bukit, Sanur, Ubud dan Canggu.",
   "faq.q4": "Apakah Anda menawarkan kelas grup?",
-  "faq.a4": "Ya — grup kecil 2–4 murid dengan level serupa. Saudara dan grup teman sangat populer.",
+  "faq.a4": "Ya — kelompok kecil berisi 4–6 murid dengan tingkat kemampuan yang sama. Sangat populer untuk keluarga dan teman.",
   "faq.q5": "Bisakah membantu dengan takut air?",
   "faq.a5": "Ya. Program Takut Air dirancang khusus untuk dewasa dan anak dengan kecemasan air.",
   "faq.q6": "Apakah Anda mengajar pemula?",
