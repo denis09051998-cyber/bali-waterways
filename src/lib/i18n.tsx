@@ -455,7 +455,7 @@ const en: Dict = {
   "faq.q3": "Can you come to our villa?",
   "faq.a3": "Yes — most private lessons happen in our students' own villa pools across Bukit, Sanur, Ubud and Canggu.",
   "faq.q4": "Do you offer group classes?",
-  "faq.a4": "Yes — small groups of 2–4 students of similar level. Siblings and friend groups are very popular.",
+  "faq.a4": "Yes — small groups of 4–6 students of a similar level. Very popular for families and friends.",
   "faq.q5": "Can you help with fear of water?",
   "faq.a5": "Yes. Our Fear of Water program is built specifically for adults and children with water anxiety.",
   "faq.q6": "Do you teach beginners?",
