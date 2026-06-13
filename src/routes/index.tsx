@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SectionEyebrow } from "@/components/site/CTA";
+import { SITE } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
@@ -126,29 +127,30 @@ function Index() {
       </section>
 
       {/* Coaching Philosophy — interactive cards */}
-      <section className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
-        <div className="max-w-2xl">
-          <SectionEyebrow>{t("home.philosophy")}</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.philosophyTitle")}</h2>
-          <p className="mt-3 text-ink/65">{t("home.philosophySub")}</p>
-        </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {PHILOSOPHY.map((p, i) => (
-            <Link
-              key={p.slug}
-              to="/philosophy/$topic"
-              params={{ topic: p.slug }}
-              className="group relative overflow-hidden rounded-2xl border border-ocean/10 bg-gradient-to-br from-ocean to-pool p-6 text-surface min-h-[180px] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="pointer-events-none absolute -right-8 -top-8 size-32 rounded-full bg-tropical/30 opacity-0 transition-opacity group-hover:opacity-100" />
-              <p className="relative text-[11px] font-semibold tracking-widest uppercase text-surface/70">{String(i + 1).padStart(2, "0")}</p>
-              <div className="relative">
-                <h3 className="font-display text-xl font-semibold">{t(`phil.${p.k}.t`)}</h3>
-                <p className="mt-1 text-sm text-surface/80">{t(`phil.${p.k}.d`)}</p>
-                  <p className="mt-4 text-xs font-semibold tracking-widest uppercase text-surface group-hover:text-tropical">{t("home.philosophyRead")} →</p>
-              </div>
-            </Link>
-          ))}
+      {/* Why swimming matters in Bali */}
+      <section className="mx-auto max-w-5xl px-5 lg:px-10 py-16 sm:py-20">
+        <div className="rounded-3xl border border-ocean/10 bg-white p-6 sm:p-10 shadow-sm">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("ad.bali.title")}</h2>
+          <p className="mt-4 text-ink/75 leading-relaxed">{t("ad.bali.lead")}</p>
+          <ul className="mt-3 space-y-2 text-ink/80">
+            {[1,2,3].map((i) => (
+              <li key={i} className="flex items-start gap-2.5">
+                <span className="mt-2 size-1.5 rounded-full bg-pool shrink-0" />
+                <span>{t(`ad.bali.l${i}`)}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-ink/75 leading-relaxed">{t("ad.bali.risk")}</p>
+          <p className="mt-5 font-semibold text-ocean">{t("ad.bali.teach")}</p>
+          <ul className="mt-3 space-y-2 text-ink/80">
+            {[1,2,3].map((i) => (
+              <li key={i} className="flex items-start gap-2.5">
+                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-pool text-surface text-[10px] font-bold">✓</span>
+                <span>{t(`ad.bali.t${i}`)}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 font-medium text-pool">{t("ad.bali.foot")}</p>
         </div>
       </section>
 
@@ -197,31 +199,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Locations */}
-      <section className="bg-sand/40 border-y border-ocean/10">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
-          <div className="max-w-2xl">
-            <SectionEyebrow>{t("home.areas")}</SectionEyebrow>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.areasTitle")}</h2>
-            <p className="mt-3 text-ink/65">{t("home.areasSub")}</p>
-          </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {LOCATIONS.map((l) => (
-              <Link key={l.k} to="/locations" className="group rounded-2xl border border-ocean/10 bg-white p-6 hover:border-pool/40">
-                <h3 className="font-display text-xl font-semibold text-ocean">{t(`loc.${l.k}.t`)}</h3>
-                <p className="mt-2 text-sm text-ink/65">{t(`loc.${l.k}.d`)}</p>
-                <p className="mt-6 text-xs font-semibold tracking-widest uppercase text-pool group-hover:text-ocean">{t("cta.learnMore")} →</p>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {SITE.areas.map((a) => (
-              <span key={a} className="rounded-full border border-ocean/15 bg-white px-3 py-1 text-xs font-medium text-ink/70">{a}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="bg-gradient-to-b from-ocean to-ocean/90 text-surface">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 py-24">
@@ -255,7 +232,7 @@ function Index() {
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.faqTitle")}</h2>
         </div>
         <div className="mt-10 space-y-3">
-          {FAQS.map((i) => (
+          {visibleFaqs.map((i) => (
             <details key={i} className="group rounded-xl border border-ocean/10 bg-white p-5">
               <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-ocean">
                 {t(`home.faq${i}.q`)}
@@ -265,6 +242,17 @@ function Index() {
             </details>
           ))}
         </div>
+        {FAQS.length > 3 && (
+          <div className="mt-6 text-center">
+            <button
+              type="button"
+              onClick={() => setFaqExpanded((v) => !v)}
+              className="inline-flex items-center justify-center rounded-full border border-ocean/20 bg-white px-5 py-2.5 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface transition-colors"
+            >
+              {faqExpanded ? t("home.faqLess") : t("home.faqMore")}
+            </button>
+          </div>
+        )}
         <div className="mt-8 text-center">
           <Link to="/faq" className="text-sm font-semibold text-pool hover:text-ocean">{t("home.viewFaq")} →</Link>
         </div>
