@@ -551,7 +551,7 @@ const en: Dict = {
 
 const ru: Dict = {
   "nav.home": "Главная",
-  "nav.about": "О школе",
+  "nav.about": "О нас",
   "nav.programs": "Программы",
   "nav.kids": "Детям",
   "nav.adults": "Взрослым",
@@ -1069,7 +1069,7 @@ const ru: Dict = {
 
 const id: Dict = {
   "nav.home": "Beranda",
-  "nav.about": "Tentang",
+  "nav.about": "Tentang Kami",
   "nav.programs": "Program",
   "nav.kids": "Anak",
   "nav.adults": "Dewasa",
