@@ -11,10 +11,9 @@ const NAV = [
   { to: "/programs", key: "nav.programs" },
   { to: "/kids-swimming", key: "nav.kids" },
   { to: "/adult-swimming", key: "nav.adults" },
-  { to: "/ocean-swimming", key: "nav.ocean" },
   { to: "/freediving", key: "nav.freediving" },
   { to: "/coaches", key: "nav.coaches" },
-  { to: "/locations", key: "nav.locations" },
+  { to: "/prices", key: "nav.prices" },
   { to: "/faq", key: "nav.faq" },
   { to: "/contact", key: "nav.contact" },
 ] as const;

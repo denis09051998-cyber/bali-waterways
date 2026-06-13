@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as PricesRouteImport } from './routes/prices'
 import { Route as OceanSwimmingRouteImport } from './routes/ocean-swimming'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as KidsSwimmingRouteImport } from './routes/kids-swimming'
@@ -31,6 +32,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricesRoute = PricesRouteImport.update({
+  id: '/prices',
+  path: '/prices',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OceanSwimmingRoute = OceanSwimmingRouteImport.update({
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
+  '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
+  '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/kids-swimming': typeof KidsSwimmingRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
+  '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/kids-swimming'
     | '/locations'
     | '/ocean-swimming'
+    | '/prices'
     | '/programs'
     | '/sitemap.xml'
     | '/philosophy/$topic'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/kids-swimming'
     | '/locations'
     | '/ocean-swimming'
+    | '/prices'
     | '/programs'
     | '/sitemap.xml'
     | '/philosophy/$topic'
@@ -178,6 +189,7 @@ export interface FileRouteTypes {
     | '/kids-swimming'
     | '/locations'
     | '/ocean-swimming'
+    | '/prices'
     | '/programs'
     | '/sitemap.xml'
     | '/philosophy/$topic'
@@ -194,6 +206,7 @@ export interface RootRouteChildren {
   KidsSwimmingRoute: typeof KidsSwimmingRoute
   LocationsRoute: typeof LocationsRoute
   OceanSwimmingRoute: typeof OceanSwimmingRoute
+  PricesRoute: typeof PricesRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   PhilosophyTopicRoute: typeof PhilosophyTopicRoute
@@ -213,6 +226,13 @@ declare module '@tanstack/react-router' {
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices': {
+      id: '/prices'
+      path: '/prices'
+      fullPath: '/prices'
+      preLoaderRoute: typeof PricesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ocean-swimming': {
@@ -306,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
   KidsSwimmingRoute: KidsSwimmingRoute,
   LocationsRoute: LocationsRoute,
   OceanSwimmingRoute: OceanSwimmingRoute,
+  PricesRoute: PricesRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   PhilosophyTopicRoute: PhilosophyTopicRoute,
@@ -313,3 +334,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
