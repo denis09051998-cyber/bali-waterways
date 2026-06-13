@@ -499,6 +499,7 @@ const ru: Dict = {
   "nav.freediving": "Фридайвинг",
   "nav.coaches": "Тренеры",
   "nav.locations": "Локации",
+  "nav.prices": "Цены",
   "nav.faq": "Вопросы",
   "nav.contact": "Контакты",
   "menu.toggle": "Открыть меню",
