@@ -153,12 +153,14 @@ function Contact() {
             </div>
           )}
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            <Select label={t("ct.f.location")} name="location" value={form.location} onChange={onChange} options={locationOptions} />
-            {form.location === "Other" && (
-              <Field label={t("ct.loc.other")} name="locationOther" value={form.locationOther} onChange={onChange} placeholder={t("ct.f.ph.location.other")} required />
-            )}
-          </div>
+          {!isKidGroup && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Select label={t("ct.f.location")} name="location" value={form.location} onChange={onChange} options={locationOptions} />
+              {form.location === "Other" && (
+                <Field label={t("ct.loc.other")} name="locationOther" value={form.locationOther} onChange={onChange} placeholder={t("ct.f.ph.location.other")} required />
+              )}
+            </div>
+          )}
 
           <div>
             <label className="text-[11px] font-semibold tracking-widest uppercase text-tropical">{t("ct.f.message")}</label>
