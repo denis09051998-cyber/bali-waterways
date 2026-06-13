@@ -1462,6 +1462,7 @@ const id: Dict = {
   "ct.lvl.advanced": "Lanjutan",
   "ct.fmt.private": "Privat",
   "ct.fmt.group": "Grup",
+  "ct.fmt.freediving": "Freediving",
   "ct.student.child": "Anak",
   "ct.student.adult": "Dewasa",
   "ct.loc.other": "Lainnya",
