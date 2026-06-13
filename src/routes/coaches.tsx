@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, WhatsAppCTA } from "@/components/site/CTA";
+import { PageHero, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import denisImg from "@/assets/coach_denis.png.asset.json";
 import assistantImg from "@/assets/coach_assistant.png.asset.json";
@@ -64,7 +64,7 @@ function CoachCard({ c }: { c: Coach }) {
           ))}
         </div>
         <div className="mt-auto pt-6">
-          <WhatsAppCTA message={`Hi UNITY! I'd like to book a lesson with the ${t(c.roleKey)}.`} label={t("cta.bookLesson")} />
+          <BookingCTA label={t("cta.bookLesson")} />
         </div>
       </div>
     </article>
