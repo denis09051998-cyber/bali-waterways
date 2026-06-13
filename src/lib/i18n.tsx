@@ -460,6 +460,7 @@ const en: Dict = {
   "ct.sanur.th": "Thursday — 17:00",
   "ct.canggu.title": "Group Lessons",
   "ct.canggu.note": "Schedule available upon request. Please contact us for current group availability.",
+  "ct.adult.sched.eyebrow": "Group Schedule in Bukit",
   "ct.sched.eyebrow": "Group schedule",
   // philosophy article
   "phart.back": "Back home",
