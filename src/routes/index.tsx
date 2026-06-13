@@ -88,7 +88,7 @@ function Index() {
               </Link>
             </div>
             <div className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-surface/20 pt-6">
-              <div><p className="font-display text-3xl">500+</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.students")}</p></div>
+              <div><p className="font-display text-3xl">1000+</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.students")}</p></div>
               <div><p className="font-display text-3xl">9</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.areas")}</p></div>
               <div><p className="font-display text-3xl">100%</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.safety")}</p></div>
             </div>
