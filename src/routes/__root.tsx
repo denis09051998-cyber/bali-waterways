@@ -161,6 +161,20 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("config", "G-LT0H4Y7S4G", {
+        page_path: pathname,
+      });
+    }
+  }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
