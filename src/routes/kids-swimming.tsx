@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
+import { PageHero, SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/kids-swimming")({
@@ -23,7 +23,7 @@ function Kids() {
     <>
       <PageHero eyebrow={t("kids.eyebrow")} title={t("kids.title")} subtitle={t("kids.sub")} />
       <section className="mx-auto max-w-4xl px-5 lg:px-10 py-20 space-y-10">
-        {[1,2,3,4,5].map((i) => (
+        {[1,2,3,5].map((i) => (
           <div key={i}>
             <h2 className="font-display text-2xl font-semibold text-ocean">{t(`kids.b${i}.t`)}</h2>
             <p className="mt-3 text-ink/70 leading-relaxed">{t(`kids.b${i}.d`)}</p>
@@ -33,7 +33,10 @@ function Kids() {
         <div>
           <SectionEyebrow>KIDS</SectionEyebrow>
           <h2 className="mt-2 font-display text-2xl font-semibold text-ocean">{t("kids.sched.title")}</h2>
-          <div className="mt-5 space-y-3">
+          <div className="mt-5 space-y-6">
+            <div>
+              <h3 className="font-display text-lg font-semibold text-ocean">{t("kids.area.nusadua")}</h3>
+              <div className="mt-3 space-y-3">
             <div className="rounded-xl border border-ocean/10 bg-white p-4">
               <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-pool">{t("kids.sched.adv")}</h3>
               <ul className="mt-2 space-y-1 text-sm text-ink/80">
@@ -56,6 +59,27 @@ function Kids() {
                 <li className="flex items-center gap-2"><span className="inline-block h-1.5 w-1.5 rounded-full bg-pool" />{t("kids.sched.f3")}</li>
               </ul>
             </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-display text-lg font-semibold text-ocean">{t("kids.area.sanur")}</h3>
+              <div className="mt-3 rounded-xl border border-ocean/10 bg-white p-4">
+                <h4 className="font-display text-sm font-semibold uppercase tracking-wide text-pool">{t("kids.group.title")}</h4>
+                <ul className="mt-2 space-y-1 text-sm text-ink/80">
+                  <li className="flex items-center gap-2"><span className="inline-block h-1.5 w-1.5 rounded-full bg-pool" />{t("kids.sanur.t")}</li>
+                  <li className="flex items-center gap-2"><span className="inline-block h-1.5 w-1.5 rounded-full bg-pool" />{t("kids.sanur.th")}</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-display text-lg font-semibold text-ocean">{t("kids.area.canggu")}</h3>
+              <div className="mt-3 rounded-xl border border-ocean/10 bg-white p-4">
+                <h4 className="font-display text-sm font-semibold uppercase tracking-wide text-pool">{t("kids.group.title")}</h4>
+                <p className="mt-2 text-sm text-ink/80">{t("kids.canggu.note")}</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -77,7 +101,7 @@ function Kids() {
           <h3 className="font-display text-2xl">{t("kids.ctaTitle")}</h3>
           <p className="mt-2 text-surface/80">{t("kids.ctaSub")}</p>
           <div className="mt-6 flex justify-center">
-            <WhatsAppCTA message={t("kids.msg")} label={t("loc.bookOnWa")} />
+            <BookingCTA label={t("cta.bookLesson")} />
           </div>
         </div>
       </section>
