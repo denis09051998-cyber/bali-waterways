@@ -55,8 +55,7 @@ function Prices() {
       <PageHero eyebrow={t("pr.eyebrow")} title={t("pr.title")} subtitle={t("pr.sub")} />
       <section className="mx-auto max-w-2xl px-5 lg:px-10 py-12 sm:py-16 space-y-10">
         <div>
-          <SectionEyebrow>{t("ad.price.header")}</SectionEyebrow>
-          <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("ad.price.header")}</h2>
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("ad.price.header")}</h2>
           <PriceList rows={adultRows} />
         </div>
         <div>

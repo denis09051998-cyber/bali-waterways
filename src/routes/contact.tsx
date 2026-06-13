@@ -89,6 +89,7 @@ function Contact() {
   const formats = [
     { v: "private", k: "ct.fmt.private" },
     { v: "group", k: "ct.fmt.group" },
+    { v: "freediving", k: "ct.fmt.freediving" },
   ];
   const studentTypes = [
     { v: "child", k: "ct.student.child" },
