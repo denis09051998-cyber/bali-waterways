@@ -480,6 +480,7 @@ const en: Dict = {
   "ct.lvl.advanced": "Advanced",
   "ct.fmt.private": "Private",
   "ct.fmt.group": "Group",
+  "ct.fmt.freediving": "Freediving",
   "ct.student.child": "Child",
   "ct.student.adult": "Adult",
   "ct.loc.other": "Other",
