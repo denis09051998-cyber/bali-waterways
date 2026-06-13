@@ -55,7 +55,16 @@ function About() {
         <div>
           <SectionEyebrow>{t("co.eyebrow")}</SectionEyebrow>
           <h2 className="mt-3 font-display text-3xl font-semibold">{t("co.title")}</h2>
-          <p className="mt-5 text-ink/70">{t("ab.teamBody")}</p>
+          <h3 className="mt-5 font-display text-xl font-semibold text-ocean">{t("ab.teamTitle")}</h3>
+          <ul className="mt-3 space-y-2 text-ink/70">
+            {[1,2,3].map((i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="mt-2 size-1.5 rounded-full bg-pool shrink-0" />
+                <span>{t(`ab.teamLi${i}`)}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-ink/70">{t("ab.teamClosing")}</p>
           <div className="mt-6">
             <Link to="/coaches" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("nav.coaches")} →</Link>
           </div>
@@ -65,7 +74,7 @@ function About() {
           <h3 className="font-display text-2xl font-semibold text-ocean">{t("cta.start")}</h3>
           <p className="mt-2 text-ink/70">{t("cta.startSub")}</p>
           <div className="mt-6 flex justify-center">
-            <WhatsAppCTA message="Hi UNITY! I'd like to learn more about your lessons." label={t("cta.book")} />
+            <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("cta.bookLesson")}</Link>
           </div>
         </div>
       </section>
