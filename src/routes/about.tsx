@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
-import kidsGroupImg from "@/assets/ph_kids_group.jpg.asset.json";
+import aboutImg from "@/assets/ph_about_us.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -28,7 +28,7 @@ function About() {
         subtitle={t("ab.sub")}
       />
       <section className="mx-auto max-w-7xl px-5 lg:px-10 -mt-10">
-        <img src={kidsGroupImg.url} alt="Coach teaching kids by the pool in Bali" className="aspect-[16/9] w-full rounded-3xl object-cover shadow-xl" />
+        <img src={aboutImg.url} alt="UNITY coach guiding kids through a poolside warm-up in Bali" loading="lazy" className="aspect-[4/5] sm:aspect-[16/9] w-full rounded-3xl object-cover object-center shadow-xl" />
       </section>
       <section className="mx-auto max-w-4xl px-5 lg:px-10 py-20 space-y-12">
         <div>
@@ -44,7 +44,7 @@ function About() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {[1,2,3,4].map((i) => (
+          {[2,3].map((i) => (
             <div key={i} className="rounded-2xl border border-ocean/10 bg-white p-6">
               <h3 className="font-display text-lg font-semibold text-ocean">{t(`ab.v${i}.t`)}</h3>
               <p className="mt-2 text-sm text-ink/65">{t(`ab.v${i}.d`)}</p>
