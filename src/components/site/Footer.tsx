@@ -18,7 +18,20 @@ export function Footer() {
               {t("footer.tagline")}
             </p>
             <div className="mt-5 flex gap-3">
-              <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="rounded-md border border-ocean/15 px-3 py-1.5 text-xs font-medium hover:bg-pool/10">Instagram</a>
+              <a
+                href={SITE.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:brightness-110 hover:shadow-md"
+                style={{ background: "linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4)" }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+                Instagram
+              </a>
               <Link to="/contact" className="rounded-md bg-pool px-3 py-1.5 text-xs font-medium text-surface">{t("cta.bookLesson")}</Link>
             </div>
           </div>

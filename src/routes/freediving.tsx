@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import freediveImg from "@/assets/ph_freediving_hero.jpg.asset.json";
-import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 
 export const Route = createFileRoute("/freediving")({
   head: () => ({
@@ -51,9 +50,6 @@ function Freediving() {
             </Link>
           </div>
         </div>
-      </section>
-      <section className="mx-auto max-w-6xl px-5 lg:px-10 py-16">
-        <img src={oceanImg.url} alt="Swimmers and seagrass in clear ocean water" className="aspect-[16/9] w-full rounded-3xl object-cover" loading="lazy" />
       </section>
       <section className="mx-auto max-w-4xl px-5 lg:px-10 pb-20 space-y-10">
         {[1,2,3,4,5,6,7].map((i) => (
