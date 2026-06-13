@@ -957,6 +957,7 @@ const id: Dict = {
   "nav.freediving": "Freediving",
   "nav.coaches": "Pelatih",
   "nav.locations": "Lokasi",
+  "nav.prices": "Harga",
   "nav.faq": "FAQ",
   "nav.contact": "Kontak",
   "menu.toggle": "Buka menu",
