@@ -446,7 +446,7 @@ const en: Dict = {
   "loc.canggu.d": "Private villa pool lessons in Canggu and surrounding Berawa, Pererenan and Echo Beach areas. Ideal for surf-town families and digital nomads.",
   // FAQ page
   "faq.eyebrow": "FAQ",
-  "faq.title": "Frequently asked questions.",
+  "faq.title": "Frequently asked questions",
   "faq.sub": "Everything you need to know before booking a lesson with UNITY Swimming Bali.",
   "faq.q1": "Do you teach kids?",
   "faq.a1": "Yes — from age 2 months upwards with our Head Coach, and from age 3 with our second Coach. We specialise in gentle, game-based teaching that builds water confidence.",
