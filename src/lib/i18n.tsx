@@ -451,7 +451,7 @@ const en: Dict = {
   "faq.q1": "What age do you start teaching children?",
   "faq.a1": "From 2 months old with the Head Coach. We specialize in gentle, play-based learning.",
   "faq.q2": "Do you teach adults?",
-  "faq.a2": "Absolutely. Many of our students are adult beginners, returners, or improvers.",
+  "faq.a2": "Yes. Many of our students are adult beginners or swimmers looking to improve their technique.",
   "faq.q3": "Can you come to our villa?",
   "faq.a3": "Yes — most private lessons happen in our students' own villa pools across Bukit, Sanur, Ubud and Canggu.",
   "faq.q4": "Do you offer group classes?",
