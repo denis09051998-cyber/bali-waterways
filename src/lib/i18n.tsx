@@ -972,6 +972,7 @@ const ru: Dict = {
   "ct.lvl.advanced": "Продвинутый",
   "ct.fmt.private": "Индивидуально",
   "ct.fmt.group": "Группа",
+  "ct.fmt.freediving": "Фридайвинг",
   "ct.student.child": "Ребёнок",
   "ct.student.adult": "Взрослый",
   "ct.loc.other": "Другое",
