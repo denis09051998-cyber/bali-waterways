@@ -905,6 +905,7 @@ const ru: Dict = {
   "ct.sanur.th": "Четверг — 17:00",
   "ct.canggu.title": "Групповые занятия",
   "ct.canggu.note": "Расписание уточняется. Напишите нам, чтобы узнать доступные группы.",
+  "ct.adult.sched.eyebrow": "Расписание групп на Буките",
   "ct.sched.eyebrow": "Расписание групп",
   "phart.back": "На главную",
   "phart.related": "Связанные программы",
