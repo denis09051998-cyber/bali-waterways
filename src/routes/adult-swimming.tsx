@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, SectionEyebrow, WhatsAppCTA } from "@/components/site/CTA";
+import { PageHero, SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import phOcean from "@/assets/ph_ocean.jpg.asset.json";
 
@@ -153,7 +153,7 @@ function Adults() {
             <h3 className="font-display text-2xl sm:text-3xl font-semibold">{t("ad.ctaTitle")}</h3>
             <p className="mt-3 mx-auto max-w-2xl text-sm sm:text-base text-surface/85 leading-relaxed">{t("ad.ctaBody")}</p>
             <div className="mt-6 flex justify-center">
-              <WhatsAppCTA message={t("ad.msg")} label={t("cta.book")} />
+              <BookingCTA label={t("cta.bookLesson")} />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { waLink } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
+import { Link } from "@tanstack/react-router";
 
 export function WhatsAppCTA({
   message,
@@ -22,6 +23,27 @@ export function WhatsAppCTA({
     <a href={waLink(message)} target="_blank" rel="noopener noreferrer" className={`${base} ${styles}`}>
       {displayLabel}
     </a>
+  );
+}
+
+export function BookingCTA({
+  label,
+  variant = "primary",
+}: {
+  label?: string;
+  variant?: "primary" | "outline";
+}) {
+  const { t } = useI18n();
+  const base =
+    "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-colors";
+  const styles =
+    variant === "primary"
+      ? "bg-pool text-surface hover:bg-ocean"
+      : "border border-ocean/20 text-ocean hover:bg-ocean hover:text-surface";
+  return (
+    <Link to="/contact" className={`${base} ${styles}`}>
+      {label ?? t("cta.bookLesson")}
+    </Link>
   );
 }
 
