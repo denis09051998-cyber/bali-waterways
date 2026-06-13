@@ -51,9 +51,6 @@ function Freediving() {
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-5 lg:px-10 py-16">
-        <img src={oceanImg.url} alt="Swimmers and seagrass in clear ocean water" className="aspect-[16/9] w-full rounded-3xl object-cover" loading="lazy" />
-      </section>
       <section className="mx-auto max-w-4xl px-5 lg:px-10 pb-20 space-y-10">
         {[1,2,3,4,5,6,7].map((i) => (
           <div key={i}>
