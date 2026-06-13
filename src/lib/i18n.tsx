@@ -1486,7 +1486,7 @@ const id: Dict = {
   "faq.q1": "Mulai usia berapa anak dapat belajar berenang?",
   "faq.a1": "Mulai usia 2 bulan bersama Head Coach. Kami mengutamakan metode belajar yang lembut melalui permainan.",
   "faq.q2": "Apakah Anda mengajar dewasa?",
-  "faq.a2": "Tentu saja. Banyak murid kami adalah pemula dewasa, kembali aktif, atau peningkatan.",
+  "faq.a2": "Ya. Banyak murid kami adalah pemula dewasa atau perenang yang ingin meningkatkan teknik mereka.",
   "faq.q3": "Bisakah Anda datang ke villa kami?",
   "faq.a3": "Ya — sebagian besar pelajaran privat berlangsung di kolam villa murid di Bukit, Sanur, Ubud dan Canggu.",
   "faq.q4": "Apakah Anda menawarkan kelas grup?",
