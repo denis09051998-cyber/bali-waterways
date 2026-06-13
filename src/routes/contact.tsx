@@ -117,7 +117,7 @@ function Contact() {
           </div>
 
           {isAdultGroup && (
-            <ScheduleBlock eyebrow={t("ct.sched.eyebrow")} title={t("ct.adult.sched.title")}
+            <ScheduleBlock eyebrow={t("ct.adult.sched.eyebrow")} title={t("ct.adult.sched.title")}
               items={[t("ct.adult.sched.m"), t("ct.adult.sched.w"), t("ct.adult.sched.f")]} />
           )}
 
