@@ -1348,6 +1348,7 @@ const id: Dict = {
   "ct.sanur.th": "Kamis — 17:00",
   "ct.canggu.title": "Kelas Grup",
   "ct.canggu.note": "Jadwal tersedia berdasarkan permintaan. Silakan hubungi kami untuk ketersediaan grup terkini.",
+  "ct.adult.sched.eyebrow": "Jadwal Grup di Bukit",
   "ct.sched.eyebrow": "Jadwal grup",
   "phart.back": "Kembali ke beranda",
   "phart.related": "Program terkait",
