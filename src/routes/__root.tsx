@@ -160,6 +160,16 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function isWhatsAppLink(href: string | null): boolean {
+  if (!href) return false;
+  const lower = href.toLowerCase();
+  return (
+    lower.startsWith("https://wa.me/") ||
+    lower.includes("whatsapp") ||
+    lower.includes("api.whatsapp.com")
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -176,6 +186,26 @@ function RootComponent() {
       });
     }
   }, [pathname]);
+
+  useEffect(() => {
+    function handleClick(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+      const anchor = target.closest("a") as HTMLAnchorElement | null;
+      if (!anchor) return;
+      const href = anchor.getAttribute("href") || anchor.href;
+      if (!isWhatsAppLink(href)) return;
+      const gtag = (window as any).gtag;
+      if (!gtag) return;
+      gtag("event", "conversion", {
+        send_to: "AW-18236650901/xw8DCNvnuMECeJXr9PdD",
+        value: 1.0,
+        currency: "IDR",
+      });
+      gtag("event", "whatsapp_click");
+    }
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
