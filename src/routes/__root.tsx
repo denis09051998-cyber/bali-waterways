@@ -171,7 +171,7 @@ function RootComponent() {
       return;
     }
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("config", "G-LT0H4Y7S4G", {
+      (window as any).gtag("config", "G-KG89N6QTW", {
         page_path: pathname,
       });
     }
