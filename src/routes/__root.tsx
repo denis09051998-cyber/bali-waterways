@@ -121,7 +121,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-KG89N6QTW');
-          gtag('config', 'AW-18236650901');
         `,
       },
       {
@@ -165,6 +164,7 @@ function isWhatsAppLink(href: string | null): boolean {
   const lower = href.toLowerCase();
   return (
     lower.startsWith("https://wa.me/") ||
+    lower.includes("wa.me") ||
     lower.includes("whatsapp") ||
     lower.includes("api.whatsapp.com")
   );
@@ -196,15 +196,10 @@ function RootComponent() {
       if (!isWhatsAppLink(href)) return;
       const gtag = (window as any).gtag;
       if (!gtag) return;
-      gtag("event", "conversion", {
-        send_to: "AW-18236650901/xw8DCNvnuMECeJXr9PdD",
-        value: 1.0,
-        currency: "IDR",
-      });
       gtag("event", "whatsapp_click", {
         event_category: "contact",
         event_label: "whatsapp",
-        link_url: href,
+        link_url: anchor.href,
       });
     }
     document.addEventListener("click", handleClick);
