@@ -111,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        src: "https://www.googletagmanager.com/gtag/js?id=G-LT0H4Y7S4G",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-KG89N6QTW",
         async: true,
       },
       {
@@ -120,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-LT0H4Y7S4G');
+          gtag('config', 'G-KG89N6QTW');
           gtag('config', 'AW-18236650901');
         `,
       },
@@ -171,7 +171,7 @@ function RootComponent() {
       return;
     }
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("config", "G-LT0H4Y7S4G", {
+      (window as any).gtag("config", "G-KG89N6QTW", {
         page_path: pathname,
       });
     }
