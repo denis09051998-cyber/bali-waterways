@@ -189,21 +189,28 @@ function RootComponent() {
 
   useEffect(() => {
     function handleClick(event: MouseEvent) {
-      const target = event.target as HTMLElement;
-      const anchor = target.closest("a") as HTMLAnchorElement | null;
-      if (!anchor) return;
-      const href = anchor.getAttribute("href") || anchor.href;
-      if (!isWhatsAppLink(href)) return;
-      const gtag = (window as any).gtag;
-      if (!gtag) return;
-      gtag("event", "whatsapp_click", {
-        event_category: "contact",
-        event_label: "whatsapp",
-        link_url: anchor.href,
-      });
+      let el: Element | null = event.target as Element | null;
+      while (el && el !== document.body) {
+        if (el.tagName === "A") {
+          const anchor = el as HTMLAnchorElement;
+          const href = anchor.getAttribute("href") || anchor.href;
+          if (isWhatsAppLink(href)) {
+            const gtag = (window as any).gtag;
+            if (gtag) {
+              gtag("event", "whatsapp_click", {
+                event_category: "contact",
+                event_label: "whatsapp",
+                link_url: anchor.href,
+              });
+            }
+          }
+          break;
+        }
+        el = el.parentElement;
+      }
     }
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    document.addEventListener("click", handleClick, true);
+    return () => document.removeEventListener("click", handleClick, true);
   }, []);
 
   return (
