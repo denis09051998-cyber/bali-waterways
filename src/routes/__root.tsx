@@ -201,7 +201,11 @@ function RootComponent() {
         value: 1.0,
         currency: "IDR",
       });
-      gtag("event", "whatsapp_click");
+      gtag("event", "whatsapp_click", {
+        event_category: "contact",
+        event_label: "whatsapp",
+        link_url: href,
+      });
     }
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
