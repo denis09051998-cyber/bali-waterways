@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { useRouterState } from "@tanstack/react-router";
 
 export type Lang = "en" | "ru" | "id";
 
@@ -1591,8 +1592,22 @@ type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string };
 const I18nCtx = createContext<Ctx>({ lang: "en", setLang: () => {}, t: (k) => k });
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  // Derive language from the URL prefix so each language has a crawlable URL.
+  // /ru or /ru/... -> Russian, /id or /id/... -> Indonesian, otherwise English.
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const urlLang: Lang | null =
+    pathname === "/ru" || pathname.startsWith("/ru/") ? "ru"
+    : pathname === "/id" || pathname.startsWith("/id/") ? "id"
+    : pathname === "/en" || pathname.startsWith("/en/") ? "en"
+    : null;
+  const [lang, setLangState] = useState<Lang>(urlLang ?? "en");
+  // Keep state in sync when navigating between language-prefixed URLs.
   useEffect(() => {
+    if (urlLang && urlLang !== lang) setLangState(urlLang);
+  }, [urlLang]);
+  useEffect(() => {
+    // Only fall back to saved/browser language for non-prefixed URLs.
+    if (urlLang) return;
     try {
       const saved = localStorage.getItem("unity.lang") as Lang | null;
       if (saved && DICTS[saved]) setLangState(saved);

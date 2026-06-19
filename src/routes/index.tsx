@@ -23,11 +23,18 @@ export const Route = createFileRoute("/")({
       { name: "keywords", content: "swimming lessons Bali, swimming school Bali, kids swimming lessons Bali, adult swimming lessons Bali, private swimming coach Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu, open water swimming Bali, freediving Bali" },
       { property: "og:title", content: "Swimming Lessons Bali — UNITY Swimming School" },
       { property: "og:description", content: "Kids and adult swimming lessons with a private coach in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Open water swimming and freediving Bali." },
-      { property: "og:url", content: "/" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:url", content: "https://unityswimmingbali.com/" },
       { property: "og:image", content: heroImg.url },
       { name: "twitter:image", content: heroImg.url },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "https://unityswimmingbali.com/" },
+      { rel: "alternate", hrefLang: "en", href: "https://unityswimmingbali.com/" },
+      { rel: "alternate", hrefLang: "ru", href: "https://unityswimmingbali.com/ru/" },
+      { rel: "alternate", hrefLang: "id", href: "https://unityswimmingbali.com/id/" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://unityswimmingbali.com/" },
+    ],
   }),
   component: Index,
 });
@@ -43,7 +50,7 @@ const MOMENTS = [moment1, moment2, moment3, moment4] as const;
 const REVIEWS = [1, 2, 3, 4] as const;
 const FAQS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
-function Index() {
+export function Index() {
   const { t } = useI18n();
   const [faqExpanded, setFaqExpanded] = useState(false);
   const visibleFaqs = faqExpanded ? FAQS : FAQS.slice(0, 3);

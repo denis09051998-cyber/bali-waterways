@@ -13,7 +13,13 @@ export const Route = createFileRoute("/adult-swimming-lessons-bali")({
       { property: "og:description", content: "Adult swimming lessons in Bali — beginners, technique, confidence. Private and group classes by Unity Swimming School." },
       { property: "og:url", content: "https://unityswimmingbali.com/adult-swimming-lessons-bali" },
     ],
-    links: [{ rel: "canonical", href: "https://unityswimmingbali.com/adult-swimming-lessons-bali" }],
+    links: [
+      { rel: "canonical", href: "https://unityswimmingbali.com/adult-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "en", href: "https://unityswimmingbali.com/adult-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "ru", href: "https://unityswimmingbali.com/ru/adult-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "id", href: "https://unityswimmingbali.com/id/adult-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://unityswimmingbali.com/adult-swimming-lessons-bali" },
+    ],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
@@ -33,7 +39,7 @@ export const Route = createFileRoute("/adult-swimming-lessons-bali")({
   component: Adults,
 });
 
-function Adults() {
+export function Adults() {
   const { t } = useI18n();
 
   const priceRows = [
