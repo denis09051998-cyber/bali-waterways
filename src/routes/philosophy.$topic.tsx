@@ -26,7 +26,7 @@ const TOPICS: Record<string, Topic> = {
       "Children learn rescue posture, controlled breathing and self-rescue floats before they learn strokes. Adults learn the same skills with calm, judgement-free progression.",
       "Our safety curriculum includes pool exits, recognising fatigue, buddy awareness and basic ocean awareness — the foundation that lets everything else become possible.",
     ],
-    gallery: [kidsGroupImg, kidImg], related: [{ to: "/kids-swimming", label: "Kids Swimming" }, { to: "/ocean-swimming", label: "Ocean Swimming" }],
+    gallery: [kidsGroupImg, kidImg], related: [{ to: "/kids-swimming-lessons-bali", label: "Kids Swimming" }, { to: "/ocean-swimming", label: "Ocean Swimming" }],
   },
   "learn-to-swim": {
     slug: "learn-to-swim", titleKey: "phil.learn.t", descKey: "phil.learn.d", hero: kidImg,
@@ -35,7 +35,7 @@ const TOPICS: Record<string, Topic> = {
       "Once the foundations are confident, we layer in kicking, then arm patterns, then full coordination. The pace is yours.",
       "Most of our students go from 'I can't swim' to a calm, continuous 25m within weeks — not because we rush, but because we never skip a step.",
     ],
-    gallery: [kidImg, kidsGroupImg], related: [{ to: "/kids-swimming", label: "Kids Swimming" }, { to: "/adult-swimming", label: "Adult Lessons" }],
+    gallery: [kidImg, kidsGroupImg], related: [{ to: "/kids-swimming-lessons-bali", label: "Kids Swimming" }, { to: "/adult-swimming-lessons-bali", label: "Adult Lessons" }],
   },
   "technique": {
     slug: "technique", titleKey: "phil.technique.t", descKey: "phil.technique.d", hero: crawlImg,
@@ -44,7 +44,7 @@ const TOPICS: Record<string, Topic> = {
       "We use simple, focused drills that isolate one element at a time, then reassemble them into smooth full-stroke swimming.",
       "Video feedback is available on request for intermediate and advanced swimmers refining freestyle, backstroke or breaststroke.",
     ],
-    gallery: [crawlImg, adultsImg], related: [{ to: "/programs", label: "All Programs" }, { to: "/adult-swimming", label: "Adult Lessons" }],
+    gallery: [crawlImg, adultsImg], related: [{ to: "/programs", label: "All Programs" }, { to: "/adult-swimming-lessons-bali", label: "Adult Lessons" }],
   },
   "ocean-swimming": {
     slug: "ocean-swimming", titleKey: "phil.ocean.t", descKey: "phil.ocean.d", hero: oceanImg,
@@ -53,7 +53,7 @@ const TOPICS: Record<string, Topic> = {
       "Sessions begin with safety briefings — buddy systems, exit points, how to read a rip current. Then we work on sighting, breathing in chop and pacing.",
       "Available only to confident pool swimmers (200m+) for everyone's safety.",
     ],
-    gallery: [oceanImg, crawlImg], related: [{ to: "/ocean-swimming", label: "Ocean Swimming" }, { to: "/freediving", label: "Freediving" }],
+    gallery: [oceanImg, crawlImg], related: [{ to: "/ocean-swimming", label: "Ocean Swimming" }, { to: "/freediving-bali", label: "Freediving" }],
   },
   "freediving": {
     slug: "freediving", titleKey: "phil.freedive.t", descKey: "phil.freedive.d", hero: freediveImg,
@@ -62,7 +62,7 @@ const TOPICS: Record<string, Topic> = {
       "Beginner courses cover static apnea, CO2/O2 tolerance, equalization (Frenzel) and rescue protocols before we head to Bali's clear coastal water.",
       "Always with a safety buddy, surface signals and recovery protocols. Calm, patient, certified-style coaching.",
     ],
-    gallery: [freediveImg, oceanImg], related: [{ to: "/freediving", label: "Freediving Page" }, { to: "/ocean-swimming", label: "Ocean Swimming" }],
+    gallery: [freediveImg, oceanImg], related: [{ to: "/freediving-bali", label: "Freediving Page" }, { to: "/ocean-swimming", label: "Ocean Swimming" }],
   },
   "confidence": {
     slug: "confidence", titleKey: "phil.confidence.t", descKey: "phil.confidence.d", hero: adultsImg,
@@ -71,7 +71,7 @@ const TOPICS: Record<string, Topic> = {
       "Trust comes first. We move at your pace, with no pressure, no audience and no embarrassing drills. Just calm, patient, professional coaching.",
       "Most adults who were terrified at lesson one are floating, breathing and laughing within a few sessions.",
     ],
-    gallery: [adultsImg, kidImg], related: [{ to: "/adult-swimming", label: "Adult Lessons" }, { to: "/programs", label: "Fear of Water Program" }],
+    gallery: [adultsImg, kidImg], related: [{ to: "/adult-swimming-lessons-bali", label: "Adult Lessons" }, { to: "/programs", label: "Fear of Water Program" }],
   },
 };
 
