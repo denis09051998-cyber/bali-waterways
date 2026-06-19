@@ -11,9 +11,24 @@ export const Route = createFileRoute("/adult-swimming-lessons-bali")({
       { name: "keywords", content: "adult swimming lessons Bali, learn to swim Bali, private swimming lessons Bali, private swimming coach Bali, fear of water Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua" },
       { property: "og:title", content: "Adult Swimming Lessons Bali | Unity Swimming School" },
       { property: "og:description", content: "Adult swimming lessons in Bali — beginners, technique, confidence. Private and group classes by Unity Swimming School." },
-      { property: "og:url", content: "/adult-swimming-lessons-bali" },
+      { property: "og:url", content: "https://unityswimmingbali.com/adult-swimming-lessons-bali" },
     ],
-    links: [{ rel: "canonical", href: "/adult-swimming-lessons-bali" }],
+    links: [{ rel: "canonical", href: "https://unityswimmingbali.com/adult-swimming-lessons-bali" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Do you offer adult swimming lessons in Bali?", acceptedAnswer: { "@type": "Answer", text: "Yes. Unity Swimming School Bali offers swimming lessons for adults across Bali — beginners, intermediate swimmers, and people working on technique." } },
+          { "@type": "Question", name: "Can complete beginner adults learn to swim with you?", acceptedAnswer: { "@type": "Answer", text: "Yes. Many of our adult students start from zero. We focus on breathing, floating, and water confidence before introducing strokes." } },
+          { "@type": "Question", name: "Can you help me improve my swimming technique?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our coaches work on freestyle, breaststroke and backstroke technique, breathing patterns, and efficiency for swimmers who already know the basics." } },
+          { "@type": "Question", name: "Do you offer private and group adult classes?", acceptedAnswer: { "@type": "Answer", text: "Yes. We offer 1-on-1 private adult swimming lessons and small group classes. Private lessons are best for fast progress or specific goals." } },
+          { "@type": "Question", name: "I am afraid of water. Can you still help me?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. We regularly work with adults who are afraid of water. Lessons begin in shallow water with calm, step-by-step exercises to build trust and confidence." } },
+          { "@type": "Question", name: "How do I book an adult swimming lesson?", acceptedAnswer: { "@type": "Answer", text: "Book directly via WhatsApp at +62 821-4723-2648. We will confirm location, coach, and schedule." } },
+        ],
+      }),
+    }],
   }),
   component: Adults,
 });

@@ -10,9 +10,24 @@ export const Route = createFileRoute("/kids-swimming-lessons-bali")({
       { name: "keywords", content: "kids swimming lessons Bali, children swimming Bali, kids swimming school Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu" },
       { property: "og:title", content: "Kids Swimming Lessons Bali | Unity Swimming School" },
       { property: "og:description", content: "Safe and fun kids swimming lessons in Bali with professional coaches across Nusa Dua, Jimbaran, Ungasan, Sanur, Ubud, and Canggu." },
-      { property: "og:url", content: "/kids-swimming-lessons-bali" },
+      { property: "og:url", content: "https://unityswimmingbali.com/kids-swimming-lessons-bali" },
     ],
-    links: [{ rel: "canonical", href: "/kids-swimming-lessons-bali" }],
+    links: [{ rel: "canonical", href: "https://unityswimmingbali.com/kids-swimming-lessons-bali" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Do you offer kids swimming lessons in Bali?", acceptedAnswer: { "@type": "Answer", text: "Yes. Unity Swimming School Bali offers group and private kids swimming lessons across Bali, including Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud, and Canggu." } },
+          { "@type": "Question", name: "What is the minimum age for kids swimming lessons?", acceptedAnswer: { "@type": "Answer", text: "We typically start kids swimming lessons from around 4 years old. For younger children we recommend private lessons so the coach can adjust the pace to the child." } },
+          { "@type": "Question", name: "Do you offer private and group swimming classes for kids?", acceptedAnswer: { "@type": "Answer", text: "Yes. We offer both private 1-on-1 swimming lessons and small group classes for children, depending on age, level, and location." } },
+          { "@type": "Question", name: "Can you teach children who are afraid of water?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our coaches specialize in helping kids who are afraid of water. We start with gentle water-confidence exercises and progress at the child's pace." } },
+          { "@type": "Question", name: "Where in Bali are the kids swimming lessons held?", acceptedAnswer: { "@type": "Answer", text: "Kids lessons are available in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud, and Canggu. Private villa visits are also possible." } },
+          { "@type": "Question", name: "How do I book a kids swimming lesson?", acceptedAnswer: { "@type": "Answer", text: "You can book directly via WhatsApp at +62 821-4723-2648. We will confirm a time, location, and coach for your child." } },
+        ],
+      }),
+    }],
   }),
   component: Kids,
 });
