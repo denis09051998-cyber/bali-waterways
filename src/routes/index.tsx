@@ -18,11 +18,11 @@ import moment4 from "@/assets/ph_moment_4.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UNITY Swimming School Bali — Lessons in Bukit, Sanur, Ubud & Canggu" },
-      { name: "description", content: "Private and group swimming lessons for kids and adults in Bali. Safety-first coaching across Bukit, Sanur and Ubud. Book via WhatsApp." },
-      { name: "keywords", content: "swimming school Bali, kids swimming lessons Bali, adult swimming lessons Bali, freediving Bali, private swimming lessons Bali, ocean swimming Bali, swimming lessons Bukit, swimming lessons Sanur, swimming lessons Ubud" },
-      { property: "og:title", content: "UNITY Swimming School Bali" },
-      { property: "og:description", content: "Private and group swimming lessons for kids and adults across Bukit, Sanur and Ubud." },
+      { title: "Swimming Lessons Bali — Kids, Adults & Private Coach | UNITY Swimming School" },
+      { name: "description", content: "Swimming school in Bali. Kids and adult swimming lessons with a private swimming coach in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Open water swimming and freediving. Book on WhatsApp." },
+      { name: "keywords", content: "swimming lessons Bali, swimming school Bali, kids swimming lessons Bali, adult swimming lessons Bali, private swimming coach Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu, open water swimming Bali, freediving Bali" },
+      { property: "og:title", content: "Swimming Lessons Bali — UNITY Swimming School" },
+      { property: "og:description", content: "Kids and adult swimming lessons with a private coach in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Open water swimming and freediving Bali." },
       { property: "og:url", content: "/" },
       { property: "og:image", content: heroImg.url },
       { name: "twitter:image", content: heroImg.url },

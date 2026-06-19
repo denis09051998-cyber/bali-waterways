@@ -6,9 +6,9 @@ import oceanImg from "@/assets/ph_ocean_swimming_bali.jpg.asset.json";
 export const Route = createFileRoute("/ocean-swimming")({
   head: () => ({
     meta: [
-      { title: "Ocean Swimming Bali — Open Water Confidence & Coaching | UNITY" },
-      { name: "description", content: "Ocean swimming sessions in Bali for confident pool swimmers. Open water confidence, sighting, current reading and safety with UNITY Swimming School." },
-      { name: "keywords", content: "ocean swimming Bali, open water swimming Bali, UNITY Swimming School" },
+      { title: "Open Water Swimming Bali — Ocean Swimming Coaching | UNITY" },
+      { name: "description", content: "Open water swimming in Bali. Ocean swimming sessions for confident pool swimmers and supervised beginners — sighting, current reading and safety with UNITY Swimming School." },
+      { name: "keywords", content: "open water swimming Bali, ocean swimming Bali, sea swimming Bali, swimming coach Bali" },
       { property: "og:title", content: "Ocean Swimming in Bali" },
       { property: "og:description", content: "Open water confidence coaching for confident swimmers in Bali." },
       { property: "og:url", content: "/ocean-swimming" },
