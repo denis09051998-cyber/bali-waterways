@@ -3,7 +3,7 @@ import { PageHero, SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import phOcean from "@/assets/ph_ocean.jpg.asset.json";
 
-export const Route = createFileRoute("/adult-swimming")({
+export const Route = createFileRoute("/adult-swimming-lessons-bali")({
   head: () => ({
     meta: [
       { title: "Adult Swimming Lessons Bali — Private Swimming Coach | UNITY" },

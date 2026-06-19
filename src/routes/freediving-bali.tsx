@@ -3,7 +3,7 @@ import { SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import freediveImg from "@/assets/ph_freediving_hero.jpg.asset.json";
 
-export const Route = createFileRoute("/freediving")({
+export const Route = createFileRoute("/freediving-bali")({
   head: () => ({
     meta: [
       { title: "Freediving Bali — Breath-hold Courses & Ocean Sessions | UNITY" },

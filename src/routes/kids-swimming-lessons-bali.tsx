@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 
-export const Route = createFileRoute("/kids-swimming")({
+export const Route = createFileRoute("/kids-swimming-lessons-bali")({
   head: () => ({
     meta: [
       { title: "Kids Swimming Lessons Bali — Children Swimming School | UNITY" },
