@@ -66,6 +66,17 @@ function Freediving() {
             <BookingCTA label={t("cta.bookLesson")} />
           </div>
         </div>
+        <p className="text-sm text-ink/70 leading-relaxed">
+          New to the water? Start with our{" "}
+          <Link to="/kids-swimming-lessons-bali" className="text-pool font-semibold hover:underline">
+            kids swimming lessons in Bali
+          </Link>{" "}
+          or{" "}
+          <Link to="/adult-swimming-lessons-bali" className="text-pool font-semibold hover:underline">
+            adult swimming lessons in Bali
+          </Link>{" "}
+          to build confidence before going deeper.
+        </p>
       </section>
     </>
   );

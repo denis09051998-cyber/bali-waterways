@@ -175,6 +175,17 @@ function Adults() {
             </div>
           </div>
         </div>
+        <p className="mt-8 text-center text-sm text-ink/70 leading-relaxed">
+          Bringing the family? See our{" "}
+          <Link to="/kids-swimming-lessons-bali" className="text-pool font-semibold hover:underline">
+            kids swimming lessons in Bali
+          </Link>
+          , or take it deeper with{" "}
+          <Link to="/freediving-bali" className="text-pool font-semibold hover:underline">
+            freediving in Bali
+          </Link>
+          .
+        </p>
       </section>
     </>
   );

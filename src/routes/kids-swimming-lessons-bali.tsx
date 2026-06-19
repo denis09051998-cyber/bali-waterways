@@ -127,6 +127,20 @@ function Kids() {
             <BookingCTA label={t("cta.bookLesson")} />
           </div>
         </div>
+
+        <div className="text-sm text-ink/70 leading-relaxed">
+          <p>
+            Looking for more? Explore our{" "}
+            <Link to="/adult-swimming-lessons-bali" className="text-pool font-semibold hover:underline">
+              adult swimming lessons in Bali
+            </Link>{" "}
+            or try{" "}
+            <Link to="/freediving-bali" className="text-pool font-semibold hover:underline">
+              freediving in Bali
+            </Link>{" "}
+            with Unity Swimming School.
+          </p>
+        </div>
       </section>
     </>
   );

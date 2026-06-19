@@ -15,7 +15,7 @@ import { Route as PricesRouteImport } from './routes/prices'
 import { Route as OceanSwimmingRouteImport } from './routes/ocean-swimming'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as KidsSwimmingLessonsBaliRouteImport } from './routes/kids-swimming-lessons-bali'
-import { Route as FreedivingRouteImport } from './routes/freediving'
+import { Route as FreedivingBaliRouteImport } from './routes/freediving-bali'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CoachesRouteImport } from './routes/coaches'
@@ -54,9 +54,9 @@ const KidsSwimmingLessonsBaliRoute = KidsSwimmingLessonsBaliRouteImport.update({
   path: '/kids-swimming-lessons-bali',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FreedivingRoute = FreedivingRouteImport.update({
-  id: '/freediving',
-  path: '/freediving',
+const FreedivingBaliRoute = FreedivingBaliRouteImport.update({
+  id: '/freediving-bali',
+  path: '/freediving-bali',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -103,7 +103,7 @@ export interface FileRoutesByFullPath {
   '/coaches': typeof CoachesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/freediving': typeof FreedivingRoute
+  '/freediving-bali': typeof FreedivingBaliRoute
   '/kids-swimming-lessons-bali': typeof KidsSwimmingLessonsBaliRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
@@ -119,7 +119,7 @@ export interface FileRoutesByTo {
   '/coaches': typeof CoachesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/freediving': typeof FreedivingRoute
+  '/freediving-bali': typeof FreedivingBaliRoute
   '/kids-swimming-lessons-bali': typeof KidsSwimmingLessonsBaliRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
@@ -136,7 +136,7 @@ export interface FileRoutesById {
   '/coaches': typeof CoachesRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/freediving': typeof FreedivingRoute
+  '/freediving-bali': typeof FreedivingBaliRoute
   '/kids-swimming-lessons-bali': typeof KidsSwimmingLessonsBaliRoute
   '/locations': typeof LocationsRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
@@ -154,7 +154,7 @@ export interface FileRouteTypes {
     | '/coaches'
     | '/contact'
     | '/faq'
-    | '/freediving'
+    | '/freediving-bali'
     | '/kids-swimming-lessons-bali'
     | '/locations'
     | '/ocean-swimming'
@@ -170,7 +170,7 @@ export interface FileRouteTypes {
     | '/coaches'
     | '/contact'
     | '/faq'
-    | '/freediving'
+    | '/freediving-bali'
     | '/kids-swimming-lessons-bali'
     | '/locations'
     | '/ocean-swimming'
@@ -186,7 +186,7 @@ export interface FileRouteTypes {
     | '/coaches'
     | '/contact'
     | '/faq'
-    | '/freediving'
+    | '/freediving-bali'
     | '/kids-swimming-lessons-bali'
     | '/locations'
     | '/ocean-swimming'
@@ -203,7 +203,7 @@ export interface RootRouteChildren {
   CoachesRoute: typeof CoachesRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
-  FreedivingRoute: typeof FreedivingRoute
+  FreedivingBaliRoute: typeof FreedivingBaliRoute
   KidsSwimmingLessonsBaliRoute: typeof KidsSwimmingLessonsBaliRoute
   LocationsRoute: typeof LocationsRoute
   OceanSwimmingRoute: typeof OceanSwimmingRoute
@@ -257,11 +257,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsSwimmingLessonsBaliRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/freediving': {
-      id: '/freediving'
-      path: '/freediving'
-      fullPath: '/freediving'
-      preLoaderRoute: typeof FreedivingRouteImport
+    '/freediving-bali': {
+      id: '/freediving-bali'
+      path: '/freediving-bali'
+      fullPath: '/freediving-bali'
+      preLoaderRoute: typeof FreedivingBaliRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -323,7 +323,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoachesRoute: CoachesRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
-  FreedivingRoute: FreedivingRoute,
+  FreedivingBaliRoute: FreedivingBaliRoute,
   KidsSwimmingLessonsBaliRoute: KidsSwimmingLessonsBaliRoute,
   LocationsRoute: LocationsRoute,
   OceanSwimmingRoute: OceanSwimmingRoute,
@@ -335,13 +335,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
