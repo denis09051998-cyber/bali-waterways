@@ -28,7 +28,7 @@ export function Header() {
           <Logo size={36} />
           <span className="hidden sm:inline"><BrandText /> Swimming</span>
         </Link>
-        <nav className="hidden xl:flex items-center gap-7">
+        <nav className="hidden xl:flex items-center xl:gap-5 2xl:gap-6">
           {NAV.map((n) => (
             <Link
               key={n.to}
@@ -36,7 +36,7 @@ export function Header() {
               activeOptions={{ exact: n.to === "/" }}
               activeProps={{ className: "text-pool" }}
               inactiveProps={{ className: "text-ink/70 hover:text-pool" }}
-              className="text-sm font-medium transition-colors"
+              className="whitespace-nowrap text-[13px] font-medium transition-colors 2xl:text-sm"
             >
               {t(n.key)}
             </Link>
