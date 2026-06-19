@@ -12,7 +12,13 @@ export const Route = createFileRoute("/kids-swimming-lessons-bali")({
       { property: "og:description", content: "Safe and fun kids swimming lessons in Bali with professional coaches across Nusa Dua, Jimbaran, Ungasan, Sanur, Ubud, and Canggu." },
       { property: "og:url", content: "https://unityswimmingbali.com/kids-swimming-lessons-bali" },
     ],
-    links: [{ rel: "canonical", href: "https://unityswimmingbali.com/kids-swimming-lessons-bali" }],
+    links: [
+      { rel: "canonical", href: "https://unityswimmingbali.com/kids-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "en", href: "https://unityswimmingbali.com/kids-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "ru", href: "https://unityswimmingbali.com/ru/kids-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "id", href: "https://unityswimmingbali.com/id/kids-swimming-lessons-bali" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://unityswimmingbali.com/kids-swimming-lessons-bali" },
+    ],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
@@ -32,7 +38,7 @@ export const Route = createFileRoute("/kids-swimming-lessons-bali")({
   component: Kids,
 });
 
-function Kids() {
+export function Kids() {
   const { t } = useI18n();
   return (
     <>

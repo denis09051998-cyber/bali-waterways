@@ -15,7 +15,13 @@ export const Route = createFileRoute("/freediving-bali")({
       { property: "og:image", content: freediveImg.url },
       { name: "twitter:image", content: freediveImg.url },
     ],
-    links: [{ rel: "canonical", href: "https://unityswimmingbali.com/freediving-bali" }],
+    links: [
+      { rel: "canonical", href: "https://unityswimmingbali.com/freediving-bali" },
+      { rel: "alternate", hrefLang: "en", href: "https://unityswimmingbali.com/freediving-bali" },
+      { rel: "alternate", hrefLang: "ru", href: "https://unityswimmingbali.com/ru/freediving-bali" },
+      { rel: "alternate", hrefLang: "id", href: "https://unityswimmingbali.com/id/freediving-bali" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://unityswimmingbali.com/freediving-bali" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -47,7 +53,7 @@ export const Route = createFileRoute("/freediving-bali")({
   component: Freediving,
 });
 
-function Freediving() {
+export function Freediving() {
   const { t } = useI18n();
   return (
     <>

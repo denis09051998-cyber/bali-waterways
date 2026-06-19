@@ -25,7 +25,15 @@ import { Route as AdultSwimmingLessonsBaliRouteImport } from './routes/adult-swi
 import { Route as AdultSwimmingRouteImport } from './routes/adult-swimming'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RuIndexRouteImport } from './routes/ru.index'
+import { Route as IdIndexRouteImport } from './routes/id.index'
+import { Route as RuKidsSwimmingLessonsBaliRouteImport } from './routes/ru.kids-swimming-lessons-bali'
+import { Route as RuFreedivingBaliRouteImport } from './routes/ru.freediving-bali'
+import { Route as RuAdultSwimmingLessonsBaliRouteImport } from './routes/ru.adult-swimming-lessons-bali'
 import { Route as PhilosophyTopicRouteImport } from './routes/philosophy.$topic'
+import { Route as IdKidsSwimmingLessonsBaliRouteImport } from './routes/id.kids-swimming-lessons-bali'
+import { Route as IdFreedivingBaliRouteImport } from './routes/id.freediving-bali'
+import { Route as IdAdultSwimmingLessonsBaliRouteImport } from './routes/id.adult-swimming-lessons-bali'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -108,11 +116,55 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RuIndexRoute = RuIndexRouteImport.update({
+  id: '/ru/',
+  path: '/ru/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IdIndexRoute = IdIndexRouteImport.update({
+  id: '/id/',
+  path: '/id/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuKidsSwimmingLessonsBaliRoute =
+  RuKidsSwimmingLessonsBaliRouteImport.update({
+    id: '/ru/kids-swimming-lessons-bali',
+    path: '/ru/kids-swimming-lessons-bali',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RuFreedivingBaliRoute = RuFreedivingBaliRouteImport.update({
+  id: '/ru/freediving-bali',
+  path: '/ru/freediving-bali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuAdultSwimmingLessonsBaliRoute =
+  RuAdultSwimmingLessonsBaliRouteImport.update({
+    id: '/ru/adult-swimming-lessons-bali',
+    path: '/ru/adult-swimming-lessons-bali',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PhilosophyTopicRoute = PhilosophyTopicRouteImport.update({
   id: '/philosophy/$topic',
   path: '/philosophy/$topic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IdKidsSwimmingLessonsBaliRoute =
+  IdKidsSwimmingLessonsBaliRouteImport.update({
+    id: '/id/kids-swimming-lessons-bali',
+    path: '/id/kids-swimming-lessons-bali',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IdFreedivingBaliRoute = IdFreedivingBaliRouteImport.update({
+  id: '/id/freediving-bali',
+  path: '/id/freediving-bali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IdAdultSwimmingLessonsBaliRoute =
+  IdAdultSwimmingLessonsBaliRouteImport.update({
+    id: '/id/adult-swimming-lessons-bali',
+    path: '/id/adult-swimming-lessons-bali',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -131,7 +183,15 @@ export interface FileRoutesByFullPath {
   '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
+  '/id/freediving-bali': typeof IdFreedivingBaliRoute
+  '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
+  '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
+  '/ru/freediving-bali': typeof RuFreedivingBaliRoute
+  '/ru/kids-swimming-lessons-bali': typeof RuKidsSwimmingLessonsBaliRoute
+  '/id/': typeof IdIndexRoute
+  '/ru/': typeof RuIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,7 +210,15 @@ export interface FileRoutesByTo {
   '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
+  '/id/freediving-bali': typeof IdFreedivingBaliRoute
+  '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
+  '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
+  '/ru/freediving-bali': typeof RuFreedivingBaliRoute
+  '/ru/kids-swimming-lessons-bali': typeof RuKidsSwimmingLessonsBaliRoute
+  '/id': typeof IdIndexRoute
+  '/ru': typeof RuIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,7 +238,15 @@ export interface FileRoutesById {
   '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
+  '/id/freediving-bali': typeof IdFreedivingBaliRoute
+  '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
+  '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
+  '/ru/freediving-bali': typeof RuFreedivingBaliRoute
+  '/ru/kids-swimming-lessons-bali': typeof RuKidsSwimmingLessonsBaliRoute
+  '/id/': typeof IdIndexRoute
+  '/ru/': typeof RuIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,7 +267,15 @@ export interface FileRouteTypes {
     | '/prices'
     | '/programs'
     | '/sitemap.xml'
+    | '/id/adult-swimming-lessons-bali'
+    | '/id/freediving-bali'
+    | '/id/kids-swimming-lessons-bali'
     | '/philosophy/$topic'
+    | '/ru/adult-swimming-lessons-bali'
+    | '/ru/freediving-bali'
+    | '/ru/kids-swimming-lessons-bali'
+    | '/id/'
+    | '/ru/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -210,7 +294,15 @@ export interface FileRouteTypes {
     | '/prices'
     | '/programs'
     | '/sitemap.xml'
+    | '/id/adult-swimming-lessons-bali'
+    | '/id/freediving-bali'
+    | '/id/kids-swimming-lessons-bali'
     | '/philosophy/$topic'
+    | '/ru/adult-swimming-lessons-bali'
+    | '/ru/freediving-bali'
+    | '/ru/kids-swimming-lessons-bali'
+    | '/id'
+    | '/ru'
   id:
     | '__root__'
     | '/'
@@ -229,7 +321,15 @@ export interface FileRouteTypes {
     | '/prices'
     | '/programs'
     | '/sitemap.xml'
+    | '/id/adult-swimming-lessons-bali'
+    | '/id/freediving-bali'
+    | '/id/kids-swimming-lessons-bali'
     | '/philosophy/$topic'
+    | '/ru/adult-swimming-lessons-bali'
+    | '/ru/freediving-bali'
+    | '/ru/kids-swimming-lessons-bali'
+    | '/id/'
+    | '/ru/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -249,7 +349,15 @@ export interface RootRouteChildren {
   PricesRoute: typeof PricesRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  IdAdultSwimmingLessonsBaliRoute: typeof IdAdultSwimmingLessonsBaliRoute
+  IdFreedivingBaliRoute: typeof IdFreedivingBaliRoute
+  IdKidsSwimmingLessonsBaliRoute: typeof IdKidsSwimmingLessonsBaliRoute
   PhilosophyTopicRoute: typeof PhilosophyTopicRoute
+  RuAdultSwimmingLessonsBaliRoute: typeof RuAdultSwimmingLessonsBaliRoute
+  RuFreedivingBaliRoute: typeof RuFreedivingBaliRoute
+  RuKidsSwimmingLessonsBaliRoute: typeof RuKidsSwimmingLessonsBaliRoute
+  IdIndexRoute: typeof IdIndexRoute
+  RuIndexRoute: typeof RuIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -366,11 +474,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ru/': {
+      id: '/ru/'
+      path: '/ru'
+      fullPath: '/ru/'
+      preLoaderRoute: typeof RuIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/id/': {
+      id: '/id/'
+      path: '/id'
+      fullPath: '/id/'
+      preLoaderRoute: typeof IdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/kids-swimming-lessons-bali': {
+      id: '/ru/kids-swimming-lessons-bali'
+      path: '/ru/kids-swimming-lessons-bali'
+      fullPath: '/ru/kids-swimming-lessons-bali'
+      preLoaderRoute: typeof RuKidsSwimmingLessonsBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/freediving-bali': {
+      id: '/ru/freediving-bali'
+      path: '/ru/freediving-bali'
+      fullPath: '/ru/freediving-bali'
+      preLoaderRoute: typeof RuFreedivingBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/adult-swimming-lessons-bali': {
+      id: '/ru/adult-swimming-lessons-bali'
+      path: '/ru/adult-swimming-lessons-bali'
+      fullPath: '/ru/adult-swimming-lessons-bali'
+      preLoaderRoute: typeof RuAdultSwimmingLessonsBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/philosophy/$topic': {
       id: '/philosophy/$topic'
       path: '/philosophy/$topic'
       fullPath: '/philosophy/$topic'
       preLoaderRoute: typeof PhilosophyTopicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/id/kids-swimming-lessons-bali': {
+      id: '/id/kids-swimming-lessons-bali'
+      path: '/id/kids-swimming-lessons-bali'
+      fullPath: '/id/kids-swimming-lessons-bali'
+      preLoaderRoute: typeof IdKidsSwimmingLessonsBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/id/freediving-bali': {
+      id: '/id/freediving-bali'
+      path: '/id/freediving-bali'
+      fullPath: '/id/freediving-bali'
+      preLoaderRoute: typeof IdFreedivingBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/id/adult-swimming-lessons-bali': {
+      id: '/id/adult-swimming-lessons-bali'
+      path: '/id/adult-swimming-lessons-bali'
+      fullPath: '/id/adult-swimming-lessons-bali'
+      preLoaderRoute: typeof IdAdultSwimmingLessonsBaliRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -393,7 +557,15 @@ const rootRouteChildren: RootRouteChildren = {
   PricesRoute: PricesRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  IdAdultSwimmingLessonsBaliRoute: IdAdultSwimmingLessonsBaliRoute,
+  IdFreedivingBaliRoute: IdFreedivingBaliRoute,
+  IdKidsSwimmingLessonsBaliRoute: IdKidsSwimmingLessonsBaliRoute,
   PhilosophyTopicRoute: PhilosophyTopicRoute,
+  RuAdultSwimmingLessonsBaliRoute: RuAdultSwimmingLessonsBaliRoute,
+  RuFreedivingBaliRoute: RuFreedivingBaliRoute,
+  RuKidsSwimmingLessonsBaliRoute: RuKidsSwimmingLessonsBaliRoute,
+  IdIndexRoute: IdIndexRoute,
+  RuIndexRoute: RuIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
