@@ -11,21 +11,38 @@ export const Route = createFileRoute("/freediving-bali")({
       { name: "keywords", content: "freediving Bali, freediving lessons Bali, freediving course Bali, breath hold Bali, apnea Bali" },
       { property: "og:title", content: "Freediving Bali | Beginner Freediving Lessons" },
       { property: "og:description", content: "Beginner freediving lessons in Bali. Breathing, relaxation, water confidence, and safe freediving basics with Unity Swimming School Bali." },
-      { property: "og:url", content: "/freediving-bali" },
+      { property: "og:url", content: "https://unityswimmingbali.com/freediving-bali" },
       { property: "og:image", content: freediveImg.url },
       { name: "twitter:image", content: freediveImg.url },
     ],
-    links: [{ rel: "canonical", href: "/freediving-bali" }],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Course",
-        name: "Freediving Bali — Beginner Course",
-        description: "Learn breath-hold, relaxation, equalization and ocean safety with UNITY Swimming School in Bali.",
-        provider: { "@type": "Organization", name: "UNITY Swimming School Bali" },
-      }),
-    }],
+    links: [{ rel: "canonical", href: "https://unityswimmingbali.com/freediving-bali" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Course",
+          name: "Freediving Bali — Beginner Course",
+          description: "Learn breath-hold, relaxation, equalization and ocean safety with UNITY Swimming School in Bali.",
+          provider: { "@type": "Organization", name: "UNITY Swimming School Bali" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "Do you offer beginner freediving lessons in Bali?", acceptedAnswer: { "@type": "Answer", text: "Yes. Unity Swimming School Bali offers beginner freediving lessons in Bali, focused on breathing, relaxation, and water confidence — no prior experience required." } },
+            { "@type": "Question", name: "Is beginner freediving safe?", acceptedAnswer: { "@type": "Answer", text: "Freediving is taught with strict safety rules. Beginner lessons are run with a qualified coach, one-on-one supervision in the water, and the buddy system at all times." } },
+            { "@type": "Question", name: "What will I learn about breathing and relaxation?", acceptedAnswer: { "@type": "Answer", text: "You will learn diaphragmatic breathing, calming techniques, breath-hold preparation, and how to stay relaxed underwater — the foundation of safe freediving." } },
+            { "@type": "Question", name: "How do you build water confidence?", acceptedAnswer: { "@type": "Answer", text: "We start in calm, shallow water with simple exercises: face in water, relaxed floating, equalization, and short breath holds. Progress is at your own pace." } },
+            { "@type": "Question", name: "Who can join freediving lessons in Bali?", acceptedAnswer: { "@type": "Answer", text: "Anyone in reasonable health who can swim a basic distance and is comfortable putting their face in the water. We screen each student before starting." } },
+            { "@type": "Question", name: "How do I book a freediving lesson?", acceptedAnswer: { "@type": "Answer", text: "Book via WhatsApp at +62 821-4723-2648. We will confirm location, coach, and schedule for your beginner freediving session." } },
+          ],
+        }),
+      },
+    ],
   }),
   component: Freediving,
 });
