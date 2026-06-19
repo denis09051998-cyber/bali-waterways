@@ -38,10 +38,10 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold tracking-wider text-ink/50 uppercase">{t("footer.programs")}</h4>
             <ul className="mt-4 space-y-2 text-sm text-ink/70">
-              <li><Link to="/kids-swimming" className="hover:text-pool">{t("prog.kids.t")}</Link></li>
-              <li><Link to="/adult-swimming" className="hover:text-pool">{t("prog.adults.t")}</Link></li>
+              <li><Link to="/kids-swimming-lessons-bali" className="hover:text-pool">{t("prog.kids.t")}</Link></li>
+              <li><Link to="/adult-swimming-lessons-bali" className="hover:text-pool">{t("prog.adults.t")}</Link></li>
               <li><Link to="/ocean-swimming" className="hover:text-pool">{t("prog.ocean.t")}</Link></li>
-              <li><Link to="/freediving" className="hover:text-pool">{t("prog.freedive.t")}</Link></li>
+              <li><Link to="/freediving-bali" className="hover:text-pool">{t("prog.freedive.t")}</Link></li>
               <li><Link to="/coaches" className="hover:text-pool">{t("nav.coaches")}</Link></li>
               <li><Link to="/programs" className="hover:text-pool">{t("cta.allPrograms")}</Link></li>
             </ul>

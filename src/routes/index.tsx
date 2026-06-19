@@ -33,10 +33,10 @@ export const Route = createFileRoute("/")({
 });
 
 const PROGRAMS = [
-  { to: "/kids-swimming", img: kidImg.url, k: "kids" },
-  { to: "/adult-swimming", img: adultsImg.url, k: "adults" },
+  { to: "/kids-swimming-lessons-bali", img: kidImg.url, k: "kids" },
+  { to: "/adult-swimming-lessons-bali", img: adultsImg.url, k: "adults" },
   { to: "/ocean-swimming", img: oceanImg.url, k: "ocean" },
-  { to: "/freediving", img: freediveImg.url, k: "freedive" },
+  { to: "/freediving-bali", img: freediveImg.url, k: "freedive" },
 ] as const;
 
 const MOMENTS = [moment1, moment2, moment3, moment4] as const;
