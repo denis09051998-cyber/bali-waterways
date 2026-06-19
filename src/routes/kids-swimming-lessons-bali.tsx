@@ -1,18 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/kids-swimming-lessons-bali")({
   head: () => ({
     meta: [
-      { title: "Kids Swimming Lessons Bali — Children Swimming School | UNITY" },
-      { name: "description", content: "Kids swimming lessons in Bali — safety-first, game-based teaching for children in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Private, sibling and small-group lessons." },
+      { title: "Kids Swimming Lessons Bali | Unity Swimming School" },
+      { name: "description", content: "Safe and fun kids swimming lessons in Bali with professional coaches. Unity Swimming School offers group and private swimming classes for children in Nusa Dua, Jimbaran, Ungasan, Sanur, Ubud, and Canggu." },
       { name: "keywords", content: "kids swimming lessons Bali, children swimming Bali, kids swimming school Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu" },
-      { property: "og:title", content: "Kids Swimming Lessons in Bali — UNITY Swimming School" },
-      { property: "og:description", content: "Children's swimming school in Bali — Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud, Canggu." },
-      { property: "og:url", content: "/kids-swimming" },
+      { property: "og:title", content: "Kids Swimming Lessons Bali | Unity Swimming School" },
+      { property: "og:description", content: "Safe and fun kids swimming lessons in Bali with professional coaches across Nusa Dua, Jimbaran, Ungasan, Sanur, Ubud, and Canggu." },
+      { property: "og:url", content: "/kids-swimming-lessons-bali" },
     ],
-    links: [{ rel: "canonical", href: "/kids-swimming" }],
+    links: [{ rel: "canonical", href: "/kids-swimming-lessons-bali" }],
   }),
   component: Kids,
 });

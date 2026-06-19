@@ -6,16 +6,16 @@ import freediveImg from "@/assets/ph_freediving_hero.jpg.asset.json";
 export const Route = createFileRoute("/freediving-bali")({
   head: () => ({
     meta: [
-      { title: "Freediving Bali — Breath-hold Courses & Ocean Sessions | UNITY" },
-      { name: "description", content: "Freediving Bali — beginner and improver courses. Breath-hold, relaxation, equalization and safe ocean practice with UNITY Swimming School in Jimbaran, Ungasan, Nusa Dua and across Bali." },
+      { title: "Freediving Bali | Beginner Freediving Lessons" },
+      { name: "description", content: "Beginner freediving lessons in Bali with professional coaches. Learn breathing, relaxation, water confidence, and safe freediving basics with Unity Swimming School Bali." },
       { name: "keywords", content: "freediving Bali, freediving lessons Bali, freediving course Bali, breath hold Bali, apnea Bali" },
-      { property: "og:title", content: "Freediving in Bali — UNITY Swimming School" },
-      { property: "og:description", content: "Beginner freediving courses in Bali. Breath-hold, relaxation, ocean safety." },
-      { property: "og:url", content: "/freediving" },
+      { property: "og:title", content: "Freediving Bali | Beginner Freediving Lessons" },
+      { property: "og:description", content: "Beginner freediving lessons in Bali. Breathing, relaxation, water confidence, and safe freediving basics with Unity Swimming School Bali." },
+      { property: "og:url", content: "/freediving-bali" },
       { property: "og:image", content: freediveImg.url },
       { name: "twitter:image", content: freediveImg.url },
     ],
-    links: [{ rel: "canonical", href: "/freediving" }],
+    links: [{ rel: "canonical", href: "/freediving-bali" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({

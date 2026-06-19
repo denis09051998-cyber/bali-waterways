@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import phOcean from "@/assets/ph_ocean.jpg.asset.json";
@@ -6,14 +6,14 @@ import phOcean from "@/assets/ph_ocean.jpg.asset.json";
 export const Route = createFileRoute("/adult-swimming-lessons-bali")({
   head: () => ({
     meta: [
-      { title: "Adult Swimming Lessons Bali — Private Swimming Coach | UNITY" },
-      { name: "description", content: "Adult swimming lessons in Bali with a private swimming coach. Beginners, fear of water, technique and endurance in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu." },
+      { title: "Adult Swimming Lessons Bali | Unity Swimming School" },
+      { name: "description", content: "Adult swimming lessons in Bali for beginners, swimmers who want to improve technique, and people who want to feel confident in the water. Private and group swimming classes by Unity Swimming School." },
       { name: "keywords", content: "adult swimming lessons Bali, learn to swim Bali, private swimming lessons Bali, private swimming coach Bali, fear of water Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua" },
-      { property: "og:title", content: "Adult Swimming Lessons in Bali — Private Coach" },
-      { property: "og:description", content: "Adult learn-to-swim, fear of water, technique and endurance coaching across Bali." },
-      { property: "og:url", content: "/adult-swimming" },
+      { property: "og:title", content: "Adult Swimming Lessons Bali | Unity Swimming School" },
+      { property: "og:description", content: "Adult swimming lessons in Bali — beginners, technique, confidence. Private and group classes by Unity Swimming School." },
+      { property: "og:url", content: "/adult-swimming-lessons-bali" },
     ],
-    links: [{ rel: "canonical", href: "/adult-swimming" }],
+    links: [{ rel: "canonical", href: "/adult-swimming-lessons-bali" }],
   }),
   component: Adults,
 });
