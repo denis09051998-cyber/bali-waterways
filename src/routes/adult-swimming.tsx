@@ -6,11 +6,11 @@ import phOcean from "@/assets/ph_ocean.jpg.asset.json";
 export const Route = createFileRoute("/adult-swimming")({
   head: () => ({
     meta: [
-      { title: "Adult Swimming Lessons Bali — Learn to Swim & Private Coach | UNITY" },
-      { name: "description", content: "Adult swimming lessons in Bali. Beginners, fear of water, breathing, technique and endurance with a private swimming coach in Bukit, Sanur, Ubud, Canggu." },
-      { name: "keywords", content: "adult swimming lessons Bali, learn to swim Bali, private swimming lessons Bali, fear of water Bali" },
-      { property: "og:title", content: "Adult Swimming Lessons in Bali" },
-      { property: "og:description", content: "Learn to swim Bali — adult beginners, fear of water, technique and endurance coaching." },
+      { title: "Adult Swimming Lessons Bali — Private Swimming Coach | UNITY" },
+      { name: "description", content: "Adult swimming lessons in Bali with a private swimming coach. Beginners, fear of water, technique and endurance in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu." },
+      { name: "keywords", content: "adult swimming lessons Bali, learn to swim Bali, private swimming lessons Bali, private swimming coach Bali, fear of water Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua" },
+      { property: "og:title", content: "Adult Swimming Lessons in Bali — Private Coach" },
+      { property: "og:description", content: "Adult learn-to-swim, fear of water, technique and endurance coaching across Bali." },
       { property: "og:url", content: "/adult-swimming" },
     ],
     links: [{ rel: "canonical", href: "/adult-swimming" }],

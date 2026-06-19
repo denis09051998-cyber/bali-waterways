@@ -6,10 +6,10 @@ export const Route = createFileRoute("/kids-swimming")({
   head: () => ({
     meta: [
       { title: "Kids Swimming Lessons Bali — Children Swimming School | UNITY" },
-      { name: "description", content: "Kids swimming lessons in Bali — safety-first, gentle, game-based teaching for children in Bukit, Sanur, Ubud and Canggu. Private and sibling lessons." },
-      { name: "keywords", content: "kids swimming lessons Bali, children swimming Bali, swimming lessons Bukit, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu" },
-      { property: "og:title", content: "Kids Swimming Lessons in Bali" },
-      { property: "og:description", content: "Gentle, safety-first children's swimming school in Bali — Bukit, Sanur, Ubud, Canggu." },
+      { name: "description", content: "Kids swimming lessons in Bali — safety-first, game-based teaching for children in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Private, sibling and small-group lessons." },
+      { name: "keywords", content: "kids swimming lessons Bali, children swimming Bali, kids swimming school Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu" },
+      { property: "og:title", content: "Kids Swimming Lessons in Bali — UNITY Swimming School" },
+      { property: "og:description", content: "Children's swimming school in Bali — Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud, Canggu." },
       { property: "og:url", content: "/kids-swimming" },
     ],
     links: [{ rel: "canonical", href: "/kids-swimming" }],

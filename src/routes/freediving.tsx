@@ -7,8 +7,8 @@ export const Route = createFileRoute("/freediving")({
   head: () => ({
     meta: [
       { title: "Freediving Bali — Breath-hold Courses & Ocean Sessions | UNITY" },
-      { name: "description", content: "Freediving lessons in Bali for beginners and improvers. Breath-hold techniques, relaxation, equalization and safe ocean practice with certified-style coaching." },
-      { name: "keywords", content: "freediving Bali, freediving lessons Bali, breath hold Bali, UNITY Swimming School" },
+      { name: "description", content: "Freediving Bali — beginner and improver courses. Breath-hold, relaxation, equalization and safe ocean practice with UNITY Swimming School in Jimbaran, Ungasan, Nusa Dua and across Bali." },
+      { name: "keywords", content: "freediving Bali, freediving lessons Bali, freediving course Bali, breath hold Bali, apnea Bali" },
       { property: "og:title", content: "Freediving in Bali — UNITY Swimming School" },
       { property: "og:description", content: "Beginner freediving courses in Bali. Breath-hold, relaxation, ocean safety." },
       { property: "og:url", content: "/freediving" },

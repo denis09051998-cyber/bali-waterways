@@ -5,11 +5,11 @@ import { useI18n } from "@/lib/i18n";
 export const Route = createFileRoute("/locations")({
   head: () => ({
     meta: [
-      { title: "Swimming Lessons Bukit, Sanur, Ubud, Canggu — UNITY Swimming Bali" },
-      { name: "description", content: "Swimming lessons in Bukit, Sanur, Ubud and Canggu. Private villa pool sessions across Bali — Ungasan, Jimbaran, Uluwatu, Nusa Dua included." },
-      { name: "keywords", content: "swimming lessons Bukit, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu, private swimming lessons Bali" },
-      { property: "og:title", content: "Swimming Lesson Locations in Bali" },
-      { property: "og:description", content: "Lessons in Bukit, Sanur, Ubud and Canggu." },
+      { title: "Swimming Lessons Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud & Canggu | UNITY Bali" },
+      { name: "description", content: "Swimming lessons across Bali — Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Private villa pool sessions with a swimming coach from UNITY Swimming School." },
+      { name: "keywords", content: "swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu, swimming lessons Bukit, private swimming lessons Bali" },
+      { property: "og:title", content: "Swimming Lesson Locations in Bali — Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud, Canggu" },
+      { property: "og:description", content: "Private and group swimming lessons across Bali's main areas." },
       { property: "og:url", content: "/locations" },
     ],
     links: [{ rel: "canonical", href: "/locations" }],
