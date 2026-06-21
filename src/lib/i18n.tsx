@@ -328,7 +328,7 @@ const en: Dict = {
   "ad.exp.4": "Pool and ocean training",
   "ad.exp.5": "Supportive, friendly atmosphere",
   "ad.exp.6": "Coaches who truly listen",
-  "ad.bali.title": "🌊 Why swimming matters in Bali",
+  "ad.bali.title": "🌊 Why It Is Important to Know How to Swim in Bali",
   "ad.bali.lead": "In Bali, water is all around you:",
   "ad.bali.l1": "Pools in every neighborhood",
   "ad.bali.l2": "Snorkeling, freediving, diving",
