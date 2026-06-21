@@ -1153,6 +1153,8 @@ const id: Dict = {
  "home.faqLess": "Sembunyikan",
   "home.finalTitle": "Siap Memulai?",
   "home.finalSub": "Kirim detail Anda — area, usia dan level — kami akan rekomendasikan format terbaik.",
+  "home.igRu": "Instagram Bahasa Rusia",
+  "home.igEn": "Instagram Bahasa Inggris",
   "home.faq1.q": "Berapa banyak pelajaran yang biasanya dibutuhkan?",
   "home.faq1.a": "Tergantung usia dan level awal. Anak-anak biasanya 6–12 pelajaran untuk berenang mandiri. Untuk dewasa sangat bervariasi.",
   "home.faq2.q": "Apa yang perlu dibawa?",
