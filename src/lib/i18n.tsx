@@ -96,6 +96,8 @@ const en: Dict = {
  "home.faqLess": "Show fewer",
   "home.finalTitle": "Ready to Start?",
   "home.finalSub": "Send us your details — area, age and level — and we'll recommend the best format.",
+  "home.igRu": "Russian Instagram",
+  "home.igEn": "English Instagram",
   // home FAQ shortlist
   "home.faq1.q": "How many lessons are usually needed?",
   "home.faq1.a": "It depends on age and starting level. Children typically need 6–12 lessons to swim independently. For adults it varies significantly.",
