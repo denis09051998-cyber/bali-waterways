@@ -44,7 +44,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
-          <div className="flex items-center flex-wrap gap-1.5">
+          <div className="flex items-center flex-wrap sm:flex-nowrap gap-2.5">
             <a
               href={SITE.instagramUrl}
               target="_blank"
