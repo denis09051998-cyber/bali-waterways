@@ -81,34 +81,6 @@ export function Index() {
                 {t("cta.viewPrograms")}
               </Link>
             </div>
-            <div className="mt-4 flex flex-col sm:flex-row gap-2">
-              <a
-                href={SITE.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-surface/30 bg-white/10 backdrop-blur px-4 py-2 text-xs font-semibold text-surface hover:bg-white/20 transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-                {t("home.igRu")}
-              </a>
-              <a
-                href="https://www.instagram.com/unity.swimming.school/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-surface/30 bg-white/10 backdrop-blur px-4 py-2 text-xs font-semibold text-surface hover:bg-white/20 transition-colors"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-                {t("home.igEn")}
-              </a>
-            </div>
             <div className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-surface/20 pt-6">
               <div><p className="font-display text-3xl">1000+</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.students")}</p></div>
               <div><p className="font-display text-3xl">9</p><p className="mt-1 text-xs text-surface/75">{t("home.stat.areas")}</p></div>
