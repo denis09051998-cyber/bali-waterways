@@ -6,10 +6,12 @@ export function WhatsAppCTA({
   message,
   label = "Book via WhatsApp",
   variant = "primary",
+  trackLead = false,
 }: {
   message: string;
   label?: string;
   variant?: "primary" | "outline";
+  trackLead?: boolean;
 }) {
   const { t } = useI18n();
   const base =
@@ -20,7 +22,13 @@ export function WhatsAppCTA({
       : "border border-ocean/20 text-ocean hover:bg-ocean hover:text-surface";
   const displayLabel = label === "Book via WhatsApp" ? t("cta.book") : label;
   return (
-    <a href={waLink(message)} target="_blank" rel="noopener noreferrer" className={`${base} ${styles}`}>
+    <a
+      href={waLink(message)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${base} ${styles}`}
+      {...(trackLead ? { "data-fbq-lead": "" } : {})}
+    >
       {displayLabel}
     </a>
   );
@@ -41,7 +49,7 @@ export function BookingCTA({
       ? "bg-pool text-surface hover:bg-ocean"
       : "border border-ocean/20 text-ocean hover:bg-ocean hover:text-surface";
   return (
-    <Link to="/contact" className={`${base} ${styles}`}>
+    <Link to="/contact" className={`${base} ${styles}`} data-fbq-lead="">
       {label ?? t("cta.bookLesson")}
     </Link>
   );
