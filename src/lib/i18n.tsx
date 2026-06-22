@@ -1588,8 +1588,8 @@ const id: Dict = {
 
 const DICTS: Record<Lang, Dict> = { en, ru, id };
 
-type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string; instagramUrl: string };
-const I18nCtx = createContext<Ctx>({ lang: "en", setLang: () => {}, t: (k) => k, instagramUrl: "https://www.instagram.com/unity.swimming.school/" });
+type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string };
+const I18nCtx = createContext<Ctx>({ lang: "en", setLang: () => {}, t: (k) => k });
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   // Derive language from the URL prefix so each language has a crawlable URL.
