@@ -59,7 +59,7 @@ export function Footer() {
             <h4 className="text-xs font-semibold tracking-wider text-ink/50 uppercase">{t("footer.contact")}</h4>
             <ul className="mt-4 space-y-2 text-sm text-ink/70">
               <li><a href={SITE.whatsappHref} className="hover:text-pool">WhatsApp: {SITE.whatsappNumber}</a></li>
-              <li><a href={SITE.instagramUrl} className="hover:text-pool">{SITE.instagramHandle}</a></li>
+              <li><a href={instagramUrl} className="hover:text-pool">{SITE.instagramHandle}</a></li>
               <li>Bali, Indonesia</li>
             </ul>
           </div>
