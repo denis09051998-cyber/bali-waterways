@@ -73,6 +73,7 @@ export function Index() {
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 to="/contact"
+                data-fbq-lead=""
                 className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean transition-colors"
               >
                 {t("cta.bookLesson")}
@@ -340,7 +341,7 @@ export function Index() {
             <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight">{t("home.finalTitle")}</h2>
             <p className="mt-4 text-surface/85">{t("home.finalSub")}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-surface px-5 py-3 text-sm font-semibold text-ocean hover:bg-white">
+              <Link to="/contact" data-fbq-lead="" className="inline-flex items-center justify-center rounded-full bg-surface px-5 py-3 text-sm font-semibold text-ocean hover:bg-white">
                 {t("cta.bookLesson")}
               </Link>
               <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-surface/40 px-5 py-3 text-sm font-semibold hover:bg-surface/10">

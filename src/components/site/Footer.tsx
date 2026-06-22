@@ -33,7 +33,7 @@ export function Footer() {
                 </svg>
                 Instagram
               </a>
-              <Link to="/contact" className="rounded-md bg-pool px-3 py-1.5 text-xs font-medium text-surface">{t("cta.bookLesson")}</Link>
+              <Link to="/contact" data-fbq-lead="" className="rounded-md bg-pool px-3 py-1.5 text-xs font-medium text-surface">{t("cta.bookLesson")}</Link>
             </div>
           </div>
           <div>
