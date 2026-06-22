@@ -21,6 +21,7 @@ const NAV = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const { t, lang } = useI18n();
+  const instagramUrl = t("social.instagramUrl");
   return (
     <header className="sticky top-0 z-40 border-b border-ocean/10 bg-surface/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-10">
@@ -45,7 +46,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <a
-            href={SITE.instagramUrl}
+            href={instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-all hover:brightness-110 hover:shadow-md"

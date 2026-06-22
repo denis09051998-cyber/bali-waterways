@@ -548,6 +548,7 @@ const en: Dict = {
   "phart.retry": "Try again",
   // language switcher
   "lang.label": "Language",
+  "social.instagramUrl": "https://www.instagram.com/unity.swimming.school/",
 };
 
 const ru: Dict = {
@@ -1066,6 +1067,7 @@ const ru: Dict = {
   "phart.error": "Что-то пошло не так",
   "phart.retry": "Попробовать снова",
   "lang.label": "Язык",
+  "social.instagramUrl": "https://www.instagram.com/swimming.unity.bali/",
 };
 
 const id: Dict = {
@@ -1584,6 +1586,7 @@ const id: Dict = {
   "phart.error": "Terjadi kesalahan",
   "phart.retry": "Coba lagi",
   "lang.label": "Bahasa",
+  "social.instagramUrl": "https://www.instagram.com/unity.swimming.school/",
 };
 
 const DICTS: Record<Lang, Dict> = { en, ru, id };

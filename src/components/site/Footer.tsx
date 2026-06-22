@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   const { t } = useI18n();
+  const instagramUrl = t("social.instagramUrl");
   return (
     <footer className="border-t border-ocean/10 bg-surface mt-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
@@ -19,7 +20,7 @@ export function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               <a
-                href={SITE.instagramUrl}
+                href={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:brightness-110 hover:shadow-md"
@@ -58,7 +59,7 @@ export function Footer() {
             <h4 className="text-xs font-semibold tracking-wider text-ink/50 uppercase">{t("footer.contact")}</h4>
             <ul className="mt-4 space-y-2 text-sm text-ink/70">
               <li><a href={SITE.whatsappHref} className="hover:text-pool">WhatsApp: {SITE.whatsappNumber}</a></li>
-              <li><a href={SITE.instagramUrl} className="hover:text-pool">{SITE.instagramHandle}</a></li>
+              <li><a href={instagramUrl} className="hover:text-pool">{SITE.instagramHandle}</a></li>
               <li>Bali, Indonesia</li>
             </ul>
           </div>

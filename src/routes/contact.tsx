@@ -22,6 +22,7 @@ const LOCATIONS = ["Bukit", "Sanur", "Ubud", "Canggu", "Ungasan", "Pecatu", "Jim
 
 function Contact() {
   const { t } = useI18n();
+  const instagramUrl = t("social.instagramUrl");
   const [form, setForm] = useState({
     name: "",
     whatsapp: "",
@@ -219,7 +220,7 @@ function Contact() {
           <div className="rounded-2xl border border-ocean/10 bg-white p-5">
             <SectionEyebrow>{t("ct.instagram")}</SectionEyebrow>
             <p className="mt-1.5 font-display text-lg text-ocean">{SITE.instagramHandle}</p>
-            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface">
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface">
               {t("ct.followUs")}
             </a>
           </div>
