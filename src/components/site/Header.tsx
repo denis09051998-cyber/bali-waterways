@@ -46,7 +46,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
           <a
-            href={SITE.instagramUrl}
+            href={instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-all hover:brightness-110 hover:shadow-md"
