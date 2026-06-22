@@ -1067,6 +1067,7 @@ const ru: Dict = {
   "phart.error": "Что-то пошло не так",
   "phart.retry": "Попробовать снова",
   "lang.label": "Язык",
+  "social.instagramUrl": "https://www.instagram.com/swimming.unity.bali/",
 };
 
 const id: Dict = {
