@@ -22,6 +22,7 @@ const LOCATIONS = ["Bukit", "Sanur", "Ubud", "Canggu", "Ungasan", "Pecatu", "Jim
 
 function Contact() {
   const { t } = useI18n();
+  const instagramUrl = t("social.instagramUrl");
   const [form, setForm] = useState({
     name: "",
     whatsapp: "",
