@@ -233,17 +233,34 @@ function RootComponent() {
     function handleClick(event: MouseEvent) {
       let el: Element | null = event.target as Element | null;
       while (el && el !== document.body) {
-        if (el.tagName === "A") {
-          const anchor = el as HTMLAnchorElement;
-          const href = anchor.getAttribute("href") || anchor.href;
-          if (isWhatsAppLink(href)) {
-            const gtag = (window as any).gtag;
-            if (gtag) {
-              gtag("event", "whatsapp_click", {
-                event_category: "contact",
-                event_label: "whatsapp",
-                link_url: anchor.href,
-              });
+        const tag = el.tagName;
+        if (tag === "A" || tag === "BUTTON") {
+          // Lead: lesson booking / signup buttons (explicit marker)
+          if (el.hasAttribute("data-fbq-lead")) {
+            const fbq = (window as any).fbq;
+            if (typeof fbq === "function") {
+              fbq("track", "Lead");
+            }
+            return;
+          }
+          // Contact: WhatsApp links
+          if (tag === "A") {
+            const anchor = el as HTMLAnchorElement;
+            const href = anchor.getAttribute("href") || anchor.href;
+            if (isWhatsAppLink(href)) {
+              const fbq = (window as any).fbq;
+              if (typeof fbq === "function") {
+                fbq("track", "Contact");
+              }
+              const gtag = (window as any).gtag;
+              if (gtag) {
+                gtag("event", "whatsapp_click", {
+                  event_category: "contact",
+                  event_label: "whatsapp",
+                  link_url: anchor.href,
+                });
+              }
+              break;
             }
           }
           break;

@@ -106,7 +106,7 @@ function About() {
           <h3 className="font-display text-2xl font-semibold text-ocean">{t("cta.start")}</h3>
           <p className="mt-2 text-ink/70">{t("cta.startSub")}</p>
           <div className="mt-6 flex justify-center">
-            <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("cta.bookLesson")}</Link>
+            <Link to="/contact" data-fbq-lead="" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("cta.bookLesson")}</Link>
           </div>
         </div>
       </section>

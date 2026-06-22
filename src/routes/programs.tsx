@@ -51,7 +51,7 @@ function Programs() {
               <Field label={t("pgs.benefits")} value={t(`pgs.p${i}.benefits`)} />
               <Field label={t("pgs.format")} value={t(`pgs.p${i}.format`)} />
               <div className="sm:col-span-2 mt-2">
-                <WhatsAppCTA message={t(`pgs.p${i}.msg`)} label={`${t("pgs.book")} — ${t(`pgs.p${i}.t`)}`} />
+                <WhatsAppCTA message={t(`pgs.p${i}.msg`)} label={`${t("pgs.book")} — ${t(`pgs.p${i}.t`)}`} trackLead />
               </div>
             </div>
           </article>

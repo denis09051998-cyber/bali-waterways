@@ -68,7 +68,7 @@ export function Freediving() {
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg text-surface/85 text-pretty">{t("fd.sub")}</p>
           <div className="mt-8">
-            <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-surface hover:text-ocean transition-colors">
+            <Link to="/contact" data-fbq-lead="" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-surface hover:text-ocean transition-colors">
               {t("cta.bookLesson")}
             </Link>
           </div>

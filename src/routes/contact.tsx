@@ -176,7 +176,7 @@ function Contact() {
               placeholder={t("ct.f.ph.message")}
             />
           </div>
-          <button type="submit" className="w-full rounded-full bg-pool py-3 text-sm font-semibold text-surface hover:bg-ocean transition-colors">
+          <button type="submit" data-fbq-lead="" className="w-full rounded-full bg-pool py-3 text-sm font-semibold text-surface hover:bg-ocean transition-colors">
             {t("ct.f.submit")}
           </button>
           <p className="text-xs text-ink/50 text-center">{t("ct.f.note")}</p>

@@ -80,7 +80,7 @@ function Prices() {
           <p className="mt-4 text-sm text-ink/70 leading-relaxed">{t("pr.trial.body")}</p>
           <p className="mt-3 text-sm text-ink/70 leading-relaxed">{t("pr.trial.body2")}</p>
           <div className="mt-6">
-            <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("pr.trial.cta")}</Link>
+            <Link to="/contact" data-fbq-lead="" className="inline-flex items-center justify-center rounded-full bg-pool px-5 py-3 text-sm font-semibold text-surface hover:bg-ocean">{t("pr.trial.cta")}</Link>
           </div>
         </div>
       </section>
