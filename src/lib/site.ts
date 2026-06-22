@@ -1,5 +1,3 @@
-import type { Lang } from "./i18n";
-
 export const SITE = {
   name: "UNITY Swimming School Bali",
   shortName: "UNITY Swimming",
@@ -20,12 +18,6 @@ export const SITE = {
     "Kutuh",
     "Nusa Dua",
   ],
-} as const;
-
-export const INSTAGRAM_URLS: Record<Lang, string> = {
-  en: "https://www.instagram.com/unity.swimming.school/",
-  ru: "https://www.instagram.com/swimming.unity.bali/",
-  id: "https://www.instagram.com/unity.swimming.school/",
 } as const;
 
 export function waLink(message: string) {
