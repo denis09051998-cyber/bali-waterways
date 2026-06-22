@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   const { t } = useI18n();
+  const instagramUrl = t("social.instagramUrl");
   return (
     <footer className="border-t border-ocean/10 bg-surface mt-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-10 py-16">
