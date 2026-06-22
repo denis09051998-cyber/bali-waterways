@@ -548,6 +548,7 @@ const en: Dict = {
   "phart.retry": "Try again",
   // language switcher
   "lang.label": "Language",
+  "social.instagramUrl": "https://www.instagram.com/unity.swimming.school/",
 };
 
 const ru: Dict = {
