@@ -1586,6 +1586,7 @@ const id: Dict = {
   "phart.error": "Terjadi kesalahan",
   "phart.retry": "Coba lagi",
   "lang.label": "Bahasa",
+  "social.instagramUrl": "https://www.instagram.com/unity.swimming.school/",
 };
 
 const DICTS: Record<Lang, Dict> = { en, ru, id };
