@@ -1371,7 +1371,7 @@ const id: Dict = {
   "ad.exp.4": "Kolam dan laut",
   "ad.exp.5": "Suasana hangat dan suportif",
   "ad.exp.6": "Pelatih yang benar-benar mendengarkan",
-  "ad.bali.title": "🌊 Mengapa berenang penting justru di Bali",
+  "ad.bali.title": "🌊 Mengapa Penting Bisa Berenang di Bali",
   "ad.bali.lead": "Di Bali, air ada di mana-mana:",
   "ad.bali.l1": "Kolam renang di setiap kawasan",
   "ad.bali.l2": "Snorkeling, freediving, diving",
