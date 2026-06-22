@@ -20,7 +20,7 @@ export function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               <a
-                href={SITE.instagramUrl}
+                href={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:brightness-110 hover:shadow-md"
