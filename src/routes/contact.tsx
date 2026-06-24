@@ -78,7 +78,15 @@ function Contact() {
       `${t("ct.line.time")}: ${scheduleSummary()}`,
       form.message && `${t("ct.line.message")}: ${form.message}`,
     ].filter(Boolean).join("\n");
-    window.open(waLink(msg), "_blank");
+    const waUrl = waLink(msg);
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "whatsapp_click", {
+        event_category: "contact",
+        event_label: "contact_form",
+        link_url: waUrl,
+      });
+    }
+    window.open(waUrl, "_blank");
   };
 
   const levels = [
