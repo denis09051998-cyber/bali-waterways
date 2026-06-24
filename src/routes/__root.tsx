@@ -213,6 +213,12 @@ function isWhatsAppLink(href: string | null): boolean {
   );
 }
 
+function isInstagramLink(href: string | null): boolean {
+  if (!href) return false;
+  const lower = href.toLowerCase();
+  return lower.includes("instagram.com");
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -269,6 +275,16 @@ function RootComponent() {
                 ga4Fallback("whatsapp_click", {
                   event_category: "contact",
                   event_label: "whatsapp",
+                  link_url: anchor.href,
+                });
+              }
+              break;
+            } else if (isInstagramLink(href)) {
+              const gtag = (window as any).gtag;
+              if (gtag) {
+                gtag("event", "instagram_click", {
+                  event_category: "social",
+                  event_label: "instagram",
                   link_url: anchor.href,
                 });
               }
