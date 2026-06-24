@@ -121,6 +121,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-KG89N6QTYW');
+          (function(){
+            function getClientId(){
+              var key = '_ga4_client_id';
+              try {
+                var existing = localStorage.getItem(key);
+                if (existing) return existing;
+                var id = (crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + '.' + Math.random().toString(16).slice(2);
+                localStorage.setItem(key, id);
+                return id;
+              } catch (e) {
+                return String(Date.now()) + '.' + Math.random().toString(16).slice(2);
+              }
+            }
+            function sendGa4Event(name, params){
+              var url = new URL('https://www.google-analytics.com/g/collect');
+              url.searchParams.set('v', '2');
+              url.searchParams.set('tid', 'G-KG89N6QTYW');
+              url.searchParams.set('cid', getClientId());
+              url.searchParams.set('en', name);
+              url.searchParams.set('dl', location.href);
+              url.searchParams.set('dt', document.title);
+              url.searchParams.set('dr', document.referrer || '');
+              url.searchParams.set('_p', String(Math.floor(Math.random() * 2147483647)));
+              url.searchParams.set('_s', '1');
+              url.searchParams.set('sid', String(Math.floor(Date.now() / 1000)));
+              url.searchParams.set('seg', '1');
+              if (params) {
+                Object.keys(params).forEach(function(key){
+                  var value = params[key];
+                  if (value != null) url.searchParams.set('ep.' + key, String(value));
+                });
+              }
+              if (navigator.sendBeacon) {
+                navigator.sendBeacon(url.toString());
+              } else {
+                fetch(url.toString(), { mode: 'no-cors', keepalive: true }).catch(function(){});
+              }
+            }
+            window.__unityGa4Fallback = sendGa4Event;
+            sendGa4Event('page_view');
+          })();
         `,
       },
       {
@@ -227,6 +268,9 @@ function RootComponent() {
         page_path: pathname,
       });
     }
+    if (typeof window !== "undefined" && typeof (window as any).__unityGa4Fallback === "function") {
+      (window as any).__unityGa4Fallback("page_view", { page_path: pathname });
+    }
   }, [pathname]);
 
   useEffect(() => {
@@ -255,6 +299,14 @@ function RootComponent() {
               const gtag = (window as any).gtag;
               if (gtag) {
                 gtag("event", "whatsapp_click", {
+                  event_category: "contact",
+                  event_label: "whatsapp",
+                  link_url: anchor.href,
+                });
+              }
+              const ga4Fallback = (window as any).__unityGa4Fallback;
+              if (typeof ga4Fallback === "function") {
+                ga4Fallback("whatsapp_click", {
                   event_category: "contact",
                   event_label: "whatsapp",
                   link_url: anchor.href,
