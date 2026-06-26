@@ -165,7 +165,7 @@ function RootShell({ children }: { children: ReactNode }) {
         {/* Google Analytics (GA4) — hardcoded to guarantee it ships in SSR HTML */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-KG89N6QTYW"
+          src="https://www.googletagmanager.com/gtag/js?id=GT-KD2F8C73"
         />
         <script
           type="text/javascript"
@@ -173,7 +173,7 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-KG89N6QTYW');`,
+gtag('config', 'GT-KD2F8C73');`,
           }}
         />
         {/* Meta Pixel Code */}
@@ -230,7 +230,7 @@ function RootComponent() {
       return;
     }
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("config", "G-KG89N6QTYW", {
+      (window as any).gtag("config", "GT-KD2F8C73", {
         page_path: pathname,
       });
     }
