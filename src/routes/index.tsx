@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { WhatsAppCTA, SectionEyebrow } from "@/components/site/CTA";
-import { SITE } from "@/lib/site";
+import { SectionEyebrow } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
@@ -267,9 +266,6 @@ export function Index() {
 
           <p className="relative mt-8 max-w-2xl mx-auto text-center text-base sm:text-lg text-ink/70">{t("home.trial.body")}</p>
 
-          <div className="relative mt-8 flex justify-center">
-            <WhatsAppCTA message={t("home.trial.msg")} label={t("home.trial.cta")} variant="primary" trackLead />
-          </div>
         </div>
       </section>
 
@@ -351,9 +347,6 @@ export function Index() {
               <Link to="/contact" data-fbq-lead="" className="inline-flex items-center justify-center rounded-full bg-surface px-5 py-3 text-sm font-semibold text-ocean hover:bg-white">
                 {t("cta.bookLesson")}
               </Link>
-              <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-surface/40 px-5 py-3 text-sm font-semibold hover:bg-surface/10">
-                {t("cta.book")}
-              </a>
             </div>
           </div>
         </div>
