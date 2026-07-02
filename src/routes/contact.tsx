@@ -25,7 +25,6 @@ function Contact() {
   const instagramUrl = t("social.instagramUrl");
   const [form, setForm] = useState({
     name: "",
-    whatsapp: "",
     location: "Bukit",
     locationOther: "",
     studentType: "child",
@@ -69,7 +68,6 @@ function Contact() {
     const msg = [
       `${t("ct.heading")} — UNITY Swimming Bali`,
       `${t("ct.line.name")}: ${form.name}`,
-      `${t("ct.line.whatsapp")}: ${form.whatsapp}`,
       `${t("ct.line.location")}: ${locationValue}`,
       `${t("ct.line.studentType")}: ${t(`ct.student.${form.studentType}`)}`,
       `${t("ct.line.age")}: ${form.age}`,
@@ -119,7 +117,6 @@ function Contact() {
           <div className="grid gap-3 sm:grid-cols-2">
             <Select label={t("ct.f.studentType")} name="studentType" value={form.studentType} onChange={onChange} options={studentTypes.map(s => ({ v: s.v, label: t(s.k) }))} />
             <Field label={t("ct.f.name")} name="name" value={form.name} onChange={onChange} required />
-            <Field label={t("ct.f.whatsapp")} name="whatsapp" value={form.whatsapp} onChange={onChange} required placeholder={t("ct.f.ph.whatsapp")} />
             <Field label={t("ct.f.age")} name="age" value={form.age} onChange={onChange} placeholder={t("ct.f.ph.age")} />
             <Select label={t("ct.f.level")} name="level" value={form.level} onChange={onChange} options={levels.map(l => ({ v: l.v, label: t(l.k) }))} />
             <Select label={t("ct.f.format")} name="format" value={form.format} onChange={onChange} options={formats.map(l => ({ v: l.v, label: t(l.k) }))} />
