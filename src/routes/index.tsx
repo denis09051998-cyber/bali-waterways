@@ -347,9 +347,6 @@ export function Index() {
               <Link to="/contact" data-fbq-lead="" className="inline-flex items-center justify-center rounded-full bg-surface px-5 py-3 text-sm font-semibold text-ocean hover:bg-white">
                 {t("cta.bookLesson")}
               </Link>
-              <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-surface/40 px-5 py-3 text-sm font-semibold hover:bg-surface/10">
-                {t("cta.book")}
-              </a>
             </div>
           </div>
         </div>
