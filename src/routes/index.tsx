@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { SectionEyebrow } from "@/components/site/CTA";
+import { WhatsAppCTA, SectionEyebrow } from "@/components/site/CTA";
 import { SITE } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
@@ -48,12 +47,9 @@ const PROGRAMS = [
 
 const MOMENTS = [moment1, moment2, moment3, moment4] as const;
 const REVIEWS = [1, 2, 3, 4] as const;
-const FAQS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
 export function Index() {
   const { t } = useI18n();
-  const [faqExpanded, setFaqExpanded] = useState(false);
-  const visibleFaqs = faqExpanded ? FAQS : FAQS.slice(0, 3);
   return (
     <>
       {/* Hero — full-bleed swimming photo */}
@@ -233,36 +229,47 @@ export function Index() {
         </div>
       </section>
 
-      {/* FAQ preview */}
-      <section className="mx-auto max-w-3xl px-5 lg:px-10 py-20">
-        <div className="text-center">
-          <SectionEyebrow>{t("home.faq")}</SectionEyebrow>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold">{t("home.faqTitle")}</h2>
-        </div>
-        <div className="mt-10 space-y-3">
-          {visibleFaqs.map((i) => (
-            <details key={i} className="group rounded-xl border border-ocean/10 bg-white p-5">
-              <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-ocean">
-                {t(`home.faq${i}.q`)}
-                <span className="text-pool group-open:rotate-45 transition-transform">+</span>
-              </summary>
-              <p className="mt-3 text-sm text-ink/70">{t(`home.faq${i}.a`)}</p>
-            </details>
-          ))}
-        </div>
-        {FAQS.length > 3 && (
-          <div className="mt-6 text-center">
-            <button
-              type="button"
-              onClick={() => setFaqExpanded((v) => !v)}
-              className="inline-flex items-center justify-center rounded-full border border-ocean/20 bg-white px-5 py-2.5 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface transition-colors"
-            >
-              {faqExpanded ? t("home.faqLess") : t("home.faqMore")}
-            </button>
+      {/* Trial Lessons — special offer */}
+      <section className="mx-auto max-w-5xl px-5 lg:px-10 py-20">
+        <div className="relative overflow-hidden rounded-3xl border border-ocean/10 bg-gradient-to-br from-white via-surface to-sand/40 p-8 sm:p-12 shadow-sm">
+          {/* Decorative ribbon */}
+          <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rotate-12 opacity-20 sm:h-48 sm:w-48">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full text-pool">
+              <path d="M60 0C60 0 65 35 85 55C105 75 120 60 120 60C120 60 85 65 65 85C45 105 60 120 60 120C60 120 55 85 35 65C15 45 0 60 0 60C0 60 35 55 55 35C75 15 60 0 60 0Z" fill="currentColor" />
+            </svg>
           </div>
-        )}
-        <div className="mt-8 text-center">
-          <Link to="/faq" className="text-sm font-semibold text-pool hover:text-ocean">{t("home.viewFaq")} →</Link>
+          {/* Decorative gift box */}
+          <div className="pointer-events-none absolute -left-6 -bottom-6 h-28 w-28 opacity-15 sm:h-36 sm:w-36">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full text-ocean">
+              <rect x="20" y="40" width="80" height="70" rx="6" fill="currentColor" />
+              <rect x="10" y="30" width="100" height="20" rx="4" fill="currentColor" />
+              <path d="M60 30C60 20 75 10 85 20C95 30 75 40 60 30Z" fill="currentColor" />
+              <path d="M60 30C60 20 45 10 35 20C25 30 45 40 60 30Z" fill="currentColor" />
+              <rect x="55" y="30" width="10" height="80" fill="currentColor" opacity="0.4" />
+            </svg>
+          </div>
+
+          <div className="relative text-center">
+            <SectionEyebrow>{t("home.trial.eyebrow")}</SectionEyebrow>
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl font-semibold text-ocean">{t("home.trial.title")}</h2>
+          </div>
+
+          <div className="relative mt-10 grid gap-5 sm:grid-cols-2">
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-ocean/10 bg-white p-6 sm:p-8 text-center shadow-sm">
+              <span className="text-[11px] font-semibold tracking-[0.2em] text-tropical uppercase">{t("home.trial.group")}</span>
+              <span className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-pool">{t("home.trial.free")}</span>
+            </div>
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-ocean/10 bg-white p-6 sm:p-8 text-center shadow-sm">
+              <span className="text-[11px] font-semibold tracking-[0.2em] text-tropical uppercase">{t("home.trial.private")}</span>
+              <span className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-pool">{t("home.trial.off50")}</span>
+            </div>
+          </div>
+
+          <p className="relative mt-8 max-w-2xl mx-auto text-center text-base sm:text-lg text-ink/70">{t("home.trial.body")}</p>
+
+          <div className="relative mt-8 flex justify-center">
+            <WhatsAppCTA message={t("home.trial.msg")} label={t("home.trial.cta")} variant="primary" trackLead />
+          </div>
         </div>
       </section>
 
