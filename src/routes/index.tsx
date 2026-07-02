@@ -266,9 +266,6 @@ export function Index() {
 
           <p className="relative mt-8 max-w-2xl mx-auto text-center text-base sm:text-lg text-ink/70">{t("home.trial.body")}</p>
 
-          <div className="relative mt-8 flex justify-center">
-            <WhatsAppCTA message={t("home.trial.msg")} label={t("home.trial.cta")} variant="primary" trackLead />
-          </div>
         </div>
       </section>
 
