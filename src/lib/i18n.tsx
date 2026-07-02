@@ -102,8 +102,6 @@ const en: Dict = {
   "home.trial.private": "Private Trial Lesson",
   "home.trial.off50": "50% Off",
   "home.trial.body": "Meet your coach, experience the lesson atmosphere, and choose the training format that suits you best.",
-  "home.trial.cta": "Book a Trial Lesson",
-  "home.trial.msg": "Hi UNITY! I'd like to book a trial swimming lesson.",
   "home.finalTitle": "Ready to Start?",
   "home.finalSub": "Send us your details — area, age and level — and we'll recommend the best format.",
   // home FAQ shortlist
