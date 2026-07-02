@@ -1537,8 +1537,6 @@ const id: Dict = {
   "home.trial.private": "Kelas Percobaan Privat",
   "home.trial.off50": "Diskon 50%",
   "home.trial.body": "Kenali pelatih Anda, rasakan suasana latihan, dan pilih format belajar yang paling sesuai untuk Anda.",
-  "home.trial.cta": "Pesan Kelas Percobaan",
-  "home.trial.msg": "Halo UNITY! Saya ingin memesan kelas percobaan renang.",
   "ct.eyebrow": "Kontak",
   "ct.title": "Daftar Pelajaran — Kirim Data Anda",
   "ct.sub": "Beri tahu kami area, usia murid, level renang, waktu yang disukai, dan format (privat/grup). Kami akan balas di WhatsApp.",
