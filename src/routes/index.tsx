@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { WhatsAppCTA, SectionEyebrow } from "@/components/site/CTA";
-import { SITE } from "@/lib/site";
+import { SectionEyebrow } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
