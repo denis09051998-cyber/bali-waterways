@@ -44,7 +44,7 @@ export function Adults() {
 
   const priceRows = [
     { label: t("ad.price.g.t"), price: t("ad.price.g.p") },
-    { label: t("ad.price.g.pack"), price: "2 MLN IDR" },
+    { label: t("ad.price.g.pack"), price: "2.8 MLN IDR" },
     { label: t("ad.price.p45.t"), price: t("ad.price.p45.p") },
     { label: t("ad.price.p45.pack"), price: "4.2 MLN IDR" },
     { label: t("ad.price.p60.t"), price: t("ad.price.p60.p") },
