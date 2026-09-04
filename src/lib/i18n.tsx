@@ -199,7 +199,7 @@ const en: Dict = {
   "pr.sub": "Single lessons and lesson packages. Contact us to calculate the cost of your lessons.",
   "pr.kids.header": "Kids",
   "pr.kids.g.t": "Group lesson",
-  "pr.kids.g.p": "250K RP",
+  "pr.kids.g.p": "300K RP",
   "pr.kids.g.pack": "8-lesson pack",
   "pr.kids.g.packP": "1.6 MLN RP",
   "pr.kids.p30.t": "Private lesson · 30 min",
