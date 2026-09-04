@@ -205,7 +205,7 @@ const en: Dict = {
   "pr.kids.p30.t": "Private lesson · 30 min",
   "pr.kids.p30.p": "550K RP",
   "pr.kids.p30.pack": "8-lesson pack",
-  "pr.kids.p30.packP": "3.5 MLN RP",
+  "pr.kids.p30.packP": "4 MLN RP",
   "pr.kids.p45.t": "Private lesson · 45 min",
   "pr.kids.p45.p": "600K RP",
   "pr.kids.p45.pack": "8-lesson pack",
