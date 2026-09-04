@@ -366,7 +366,7 @@ const en: Dict = {
   "ad.price.title": "Pricing",
   "ad.price.header": "Adults",
   "ad.price.g.t": "Group lesson",
-  "ad.price.g.p": "300K IDR",
+  "ad.price.g.p": "400K IDR",
   "ad.price.g.pack": "8-lesson pack",
   "ad.price.p45.t": "Private lesson · 45 min",
   "ad.price.p45.p": "600K IDR",
