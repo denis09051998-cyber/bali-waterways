@@ -18,34 +18,54 @@ export const Route = createFileRoute("/prices")({
 
 function Prices() {
   const { t } = useI18n();
-  const adultRows = [
-    { label: t("ad.price.g.t"), price: t("ad.price.g.p") },
-    { label: t("ad.price.g.pack"), price: "2.8 MLN IDR" },
-    { label: t("ad.price.p45.t"), price: t("ad.price.p45.p") },
-    { label: t("ad.price.p45.pack"), price: "4.2 MLN IDR" },
-    { label: t("ad.price.p60.t"), price: t("ad.price.p60.p") },
-    { label: t("ad.price.p60.pack"), price: "5 MLN IDR" },
+  const adultGroups = [
+    [
+      { label: t("ad.price.g.t"), price: t("ad.price.g.p") },
+      { label: t("ad.price.g.pack"), price: t("ad.price.g.packP"), strong: true },
+    ],
+    [
+      { label: t("ad.price.p45.t"), price: t("ad.price.p45.p") },
+      { label: t("ad.price.p45.pack"), price: t("ad.price.p45.packP"), strong: true },
+    ],
+    [
+      { label: t("ad.price.p60.t"), price: t("ad.price.p60.p") },
+      { label: t("ad.price.p60.pack"), price: t("ad.price.p60.packP"), strong: true },
+    ],
+    [
+      { label: t("ad.price.villa.t"), price: t("ad.price.villa.p") },
+      { label: t("ad.price.villa.pack"), price: t("ad.price.villa.packP"), strong: true },
+    ],
   ];
-  const kidsRows = [
-    { label: t("pr.kids.g.t"), price: t("pr.kids.g.p") },
-    { label: t("pr.kids.g.pack"), price: t("pr.kids.g.packP") },
-    { label: t("pr.kids.p30.t"), price: t("pr.kids.p30.p") },
-    { label: t("pr.kids.p30.pack"), price: t("pr.kids.p30.packP") },
-    { label: t("pr.kids.p45.t"), price: t("pr.kids.p45.p") },
-    { label: t("pr.kids.p45.pack"), price: t("pr.kids.p45.packP") },
-    { label: t("pr.kids.villa.t"), price: t("pr.kids.villa.p") },
-    { label: t("pr.kids.villa.pack"), price: t("pr.kids.villa.packP") },
+  const kidsGroups = [
+    [
+      { label: t("pr.kids.g.t"), price: t("pr.kids.g.p") },
+      { label: t("pr.kids.g.pack"), price: t("pr.kids.g.packP"), strong: true },
+    ],
+    [
+      { label: t("pr.kids.p30.t"), price: t("pr.kids.p30.p") },
+      { label: t("pr.kids.p30.pack"), price: t("pr.kids.p30.packP"), strong: true },
+    ],
+    [
+      { label: t("pr.kids.p45.t"), price: t("pr.kids.p45.p") },
+      { label: t("pr.kids.p45.pack"), price: t("pr.kids.p45.packP"), strong: true },
+    ],
+    [
+      { label: t("pr.kids.villa.t"), price: t("pr.kids.villa.p") },
+      { label: t("pr.kids.villa.pack"), price: t("pr.kids.villa.packP"), strong: true },
+    ],
   ];
-  const fdRows = [
-    { label: t("pr.fd.t"), price: t("pr.fd.p") },
-  ];
-  const PriceList = ({ rows }: { rows: { label: string; price: string }[] }) => (
-    <div className="mt-4 space-y-1">
-      {rows.map((row, i) => (
-        <div key={i} className="flex items-baseline gap-2 py-2">
-          <span className="text-sm text-ink/80 shrink-0">{row.label}</span>
-          <span className="flex-1 border-b border-dotted border-ink/20 self-end mb-1.5 min-w-[1rem]" />
-          <span className="text-sm font-semibold text-pool whitespace-nowrap">{row.price}</span>
+  const fdGroups = [[{ label: t("pr.fd.t"), price: t("pr.fd.p") }]];
+  type Row = { label: string; price: string; strong?: boolean };
+  const PriceList = ({ groups }: { groups: Row[][] }) => (
+    <div className="mt-6 space-y-6">
+      {groups.map((rows, gi) => (
+        <div key={gi} className="space-y-1">
+          {rows.map((row, i) => (
+            <div key={i} className="flex items-baseline justify-between gap-4">
+              <span className={`text-sm sm:text-base ${row.strong ? "font-semibold text-ink" : "text-ink/80"}`}>{row.label}</span>
+              <span className={`text-sm sm:text-base whitespace-nowrap text-right ${row.strong ? "font-semibold text-ocean" : "text-pool"}`}>{row.price}</span>
+            </div>
+          ))}
         </div>
       ))}
     </div>
@@ -53,19 +73,20 @@ function Prices() {
   return (
     <>
       <PageHero eyebrow={t("pr.eyebrow")} title={t("pr.title")} subtitle={t("pr.sub")} />
-      <section className="mx-auto max-w-2xl px-5 lg:px-10 py-12 sm:py-16 space-y-10">
+      <section className="mx-auto max-w-2xl px-5 lg:px-10 py-12 sm:py-16 space-y-12">
         <div>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("ad.price.header")}</h2>
-          <PriceList rows={adultRows} />
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean uppercase tracking-wide">{t("pr.kids.header")}</h2>
+          <PriceList groups={kidsGroups} />
         </div>
         <div>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("pr.kids.header")}</h2>
-          <PriceList rows={kidsRows} />
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean uppercase tracking-wide">{t("ad.price.header")}</h2>
+          <PriceList groups={adultGroups} />
         </div>
         <div>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean">{t("pr.fd.header")}</h2>
-          <PriceList rows={fdRows} />
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean uppercase tracking-wide">{t("pr.fd.header")}</h2>
+          <PriceList groups={fdGroups} />
         </div>
+
         <p className="text-xs text-ink/55 leading-relaxed">{t("pr.cancel")}</p>
         <div className="rounded-2xl border border-ocean/10 bg-sand/40 p-6 sm:p-8">
           <h3 className="font-display text-xl sm:text-2xl font-semibold text-ocean">{t("pr.trial.title")}</h3>
