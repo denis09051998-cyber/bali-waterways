@@ -3,7 +3,7 @@ import { SectionEyebrow } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import { BrandText } from "@/components/site/Logo";
 import heroImg from "@/assets/ph_crawl.jpg.asset.json";
-import kidImg from "@/assets/ph_kid.jpg.asset.json";
+import kidImg from "@/assets/ph_kid_homepage.jpg.asset.json";
 import freediveImg from "@/assets/ph_freediving_v6.jpg.asset.json";
 import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 import adultsImg from "@/assets/ph_adults.jpg.asset.json";
