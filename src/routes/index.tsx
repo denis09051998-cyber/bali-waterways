@@ -47,7 +47,7 @@ const PROGRAMS = [
   { to: "/freediving-bali", img: freediveImg.url, k: "freedive" },
 ] as const;
 
-const MOMENTS = [moment1, moment2, moment3, moment4] as const;
+const MOMENTS = [newMoment1, newMoment2, newMoment3, newMoment4, moment3, moment4] as const;
 const REVIEWS = [1, 2, 3, 4] as const;
 
 export function Index() {
