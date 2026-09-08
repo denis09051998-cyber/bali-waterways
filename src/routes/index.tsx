@@ -8,8 +8,10 @@ import freediveImg from "@/assets/ph_freediving_v6.jpg.asset.json";
 import oceanImg from "@/assets/ph_ocean.jpg.asset.json";
 import adultsImg from "@/assets/ph_adults_homepage.jpg.asset.json";
 import kidsGroupImg from "@/assets/ph_why_unity.jpg.asset.json";
-import moment1 from "@/assets/ph_moment_1.jpg.asset.json";
-import moment2 from "@/assets/ph_moment_2.jpg.asset.json";
+import newMoment1 from "@/assets/IMG_0080.JPEG.asset.json";
+import newMoment2 from "@/assets/IMG_3440.JPG.asset.json";
+import newMoment3 from "@/assets/IMG_5434.PNG.asset.json";
+import newMoment4 from "@/assets/IMG_0191.JPG.asset.json";
 import moment3 from "@/assets/ph_moment_3.webp.asset.json";
 import moment4 from "@/assets/ph_moment_4.jpg.asset.json";
 
