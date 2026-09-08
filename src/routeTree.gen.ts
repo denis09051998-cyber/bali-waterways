@@ -32,6 +32,11 @@ import { Route as RuKidsSwimmingLessonsBaliRouteImport } from './routes/ru.kids-
 import { Route as RuFreedivingBaliRouteImport } from './routes/ru.freediving-bali'
 import { Route as RuAdultSwimmingLessonsBaliRouteImport } from './routes/ru.adult-swimming-lessons-bali'
 import { Route as PhilosophyTopicRouteImport } from './routes/philosophy.$topic'
+import { Route as LocationsUbudRouteImport } from './routes/locations.ubud'
+import { Route as LocationsSanurRouteImport } from './routes/locations.sanur'
+import { Route as LocationsNusaDuaRouteImport } from './routes/locations.nusa-dua'
+import { Route as LocationsJimbaranUngasanRouteImport } from './routes/locations.jimbaran-ungasan'
+import { Route as LocationsCangguRouteImport } from './routes/locations.canggu'
 import { Route as IdKidsSwimmingLessonsBaliRouteImport } from './routes/id.kids-swimming-lessons-bali'
 import { Route as IdFreedivingBaliRouteImport } from './routes/id.freediving-bali'
 import { Route as IdAdultSwimmingLessonsBaliRouteImport } from './routes/id.adult-swimming-lessons-bali'
@@ -154,6 +159,32 @@ const PhilosophyTopicRoute = PhilosophyTopicRouteImport.update({
   path: '/philosophy/$topic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocationsUbudRoute = LocationsUbudRouteImport.update({
+  id: '/ubud',
+  path: '/ubud',
+  getParentRoute: () => LocationsRoute,
+} as any)
+const LocationsSanurRoute = LocationsSanurRouteImport.update({
+  id: '/sanur',
+  path: '/sanur',
+  getParentRoute: () => LocationsRoute,
+} as any)
+const LocationsNusaDuaRoute = LocationsNusaDuaRouteImport.update({
+  id: '/nusa-dua',
+  path: '/nusa-dua',
+  getParentRoute: () => LocationsRoute,
+} as any)
+const LocationsJimbaranUngasanRoute =
+  LocationsJimbaranUngasanRouteImport.update({
+    id: '/jimbaran-ungasan',
+    path: '/jimbaran-ungasan',
+    getParentRoute: () => LocationsRoute,
+  } as any)
+const LocationsCangguRoute = LocationsCangguRouteImport.update({
+  id: '/canggu',
+  path: '/canggu',
+  getParentRoute: () => LocationsRoute,
+} as any)
 const IdKidsSwimmingLessonsBaliRoute =
   IdKidsSwimmingLessonsBaliRouteImport.update({
     id: '/id/kids-swimming-lessons-bali',
@@ -192,6 +223,11 @@ export interface FileRoutesByFullPath {
   '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
   '/id/freediving-bali': typeof IdFreedivingBaliRoute
   '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
+  '/locations/canggu': typeof LocationsCangguRoute
+  '/locations/jimbaran-ungasan': typeof LocationsJimbaranUngasanRoute
+  '/locations/nusa-dua': typeof LocationsNusaDuaRoute
+  '/locations/sanur': typeof LocationsSanurRoute
+  '/locations/ubud': typeof LocationsUbudRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
   '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
   '/ru/freediving-bali': typeof RuFreedivingBaliRoute
@@ -219,6 +255,11 @@ export interface FileRoutesByTo {
   '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
   '/id/freediving-bali': typeof IdFreedivingBaliRoute
   '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
+  '/locations/canggu': typeof LocationsCangguRoute
+  '/locations/jimbaran-ungasan': typeof LocationsJimbaranUngasanRoute
+  '/locations/nusa-dua': typeof LocationsNusaDuaRoute
+  '/locations/sanur': typeof LocationsSanurRoute
+  '/locations/ubud': typeof LocationsUbudRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
   '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
   '/ru/freediving-bali': typeof RuFreedivingBaliRoute
@@ -248,6 +289,11 @@ export interface FileRoutesById {
   '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
   '/id/freediving-bali': typeof IdFreedivingBaliRoute
   '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
+  '/locations/canggu': typeof LocationsCangguRoute
+  '/locations/jimbaran-ungasan': typeof LocationsJimbaranUngasanRoute
+  '/locations/nusa-dua': typeof LocationsNusaDuaRoute
+  '/locations/sanur': typeof LocationsSanurRoute
+  '/locations/ubud': typeof LocationsUbudRoute
   '/philosophy/$topic': typeof PhilosophyTopicRoute
   '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
   '/ru/freediving-bali': typeof RuFreedivingBaliRoute
@@ -278,6 +324,11 @@ export interface FileRouteTypes {
     | '/id/adult-swimming-lessons-bali'
     | '/id/freediving-bali'
     | '/id/kids-swimming-lessons-bali'
+    | '/locations/canggu'
+    | '/locations/jimbaran-ungasan'
+    | '/locations/nusa-dua'
+    | '/locations/sanur'
+    | '/locations/ubud'
     | '/philosophy/$topic'
     | '/ru/adult-swimming-lessons-bali'
     | '/ru/freediving-bali'
@@ -305,6 +356,11 @@ export interface FileRouteTypes {
     | '/id/adult-swimming-lessons-bali'
     | '/id/freediving-bali'
     | '/id/kids-swimming-lessons-bali'
+    | '/locations/canggu'
+    | '/locations/jimbaran-ungasan'
+    | '/locations/nusa-dua'
+    | '/locations/sanur'
+    | '/locations/ubud'
     | '/philosophy/$topic'
     | '/ru/adult-swimming-lessons-bali'
     | '/ru/freediving-bali'
@@ -333,6 +389,11 @@ export interface FileRouteTypes {
     | '/id/adult-swimming-lessons-bali'
     | '/id/freediving-bali'
     | '/id/kids-swimming-lessons-bali'
+    | '/locations/canggu'
+    | '/locations/jimbaran-ungasan'
+    | '/locations/nusa-dua'
+    | '/locations/sanur'
+    | '/locations/ubud'
     | '/philosophy/$topic'
     | '/ru/adult-swimming-lessons-bali'
     | '/ru/freediving-bali'
@@ -533,6 +594,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PhilosophyTopicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/locations/ubud': {
+      id: '/locations/ubud'
+      path: '/ubud'
+      fullPath: '/locations/ubud'
+      preLoaderRoute: typeof LocationsUbudRouteImport
+      parentRoute: typeof LocationsRoute
+    }
+    '/locations/sanur': {
+      id: '/locations/sanur'
+      path: '/sanur'
+      fullPath: '/locations/sanur'
+      preLoaderRoute: typeof LocationsSanurRouteImport
+      parentRoute: typeof LocationsRoute
+    }
+    '/locations/nusa-dua': {
+      id: '/locations/nusa-dua'
+      path: '/nusa-dua'
+      fullPath: '/locations/nusa-dua'
+      preLoaderRoute: typeof LocationsNusaDuaRouteImport
+      parentRoute: typeof LocationsRoute
+    }
+    '/locations/jimbaran-ungasan': {
+      id: '/locations/jimbaran-ungasan'
+      path: '/jimbaran-ungasan'
+      fullPath: '/locations/jimbaran-ungasan'
+      preLoaderRoute: typeof LocationsJimbaranUngasanRouteImport
+      parentRoute: typeof LocationsRoute
+    }
+    '/locations/canggu': {
+      id: '/locations/canggu'
+      path: '/canggu'
+      fullPath: '/locations/canggu'
+      preLoaderRoute: typeof LocationsCangguRouteImport
+      parentRoute: typeof LocationsRoute
+    }
     '/id/kids-swimming-lessons-bali': {
       id: '/id/kids-swimming-lessons-bali'
       path: '/id/kids-swimming-lessons-bali'
@@ -558,10 +654,20 @@ declare module '@tanstack/react-router' {
 }
 
 interface LocationsRouteChildren {
+  LocationsCangguRoute: typeof LocationsCangguRoute
+  LocationsJimbaranUngasanRoute: typeof LocationsJimbaranUngasanRoute
+  LocationsNusaDuaRoute: typeof LocationsNusaDuaRoute
+  LocationsSanurRoute: typeof LocationsSanurRoute
+  LocationsUbudRoute: typeof LocationsUbudRoute
   LocationsIndexRoute: typeof LocationsIndexRoute
 }
 
 const LocationsRouteChildren: LocationsRouteChildren = {
+  LocationsCangguRoute: LocationsCangguRoute,
+  LocationsJimbaranUngasanRoute: LocationsJimbaranUngasanRoute,
+  LocationsNusaDuaRoute: LocationsNusaDuaRoute,
+  LocationsSanurRoute: LocationsSanurRoute,
+  LocationsUbudRoute: LocationsUbudRoute,
   LocationsIndexRoute: LocationsIndexRoute,
 }
 

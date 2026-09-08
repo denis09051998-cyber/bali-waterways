@@ -13,6 +13,7 @@ const NAV = [
   { to: "/adult-swimming-lessons-bali", key: "nav.adults" },
   { to: "/freediving-bali", key: "nav.freediving" },
   { to: "/coaches", key: "nav.coaches" },
+  { to: "/locations", key: "nav.locations" },
   { to: "/prices", key: "nav.prices" },
   { to: "/faq", key: "nav.faq" },
   { to: "/contact", key: "nav.contact" },
