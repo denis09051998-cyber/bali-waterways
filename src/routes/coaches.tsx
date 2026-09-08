@@ -50,7 +50,7 @@ function CoachCard({ c }: { c: Coach }) {
         )}
         <div className="absolute inset-x-0 bottom-0 p-5 text-surface">
           <p className="text-[11px] font-semibold tracking-[0.2em] uppercase opacity-90">{t(c.roleKey)}</p>
-          <h3 className="mt-1 font-display text-xl sm:text-2xl font-semibold leading-tight">{name}</h3>
+          <h2 className="mt-1 font-display text-xl sm:text-2xl font-semibold leading-tight">{name}</h2>
         </div>
       </div>
       <div className="p-6 sm:p-8 flex-1 flex flex-col">

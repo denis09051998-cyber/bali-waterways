@@ -20,7 +20,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Swimming school in Bali. Kids and adult swimming lessons with a private swimming coach in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Open water swimming and freediving. Book on WhatsApp." },
       { name: "keywords", content: "swimming lessons Bali, swimming school Bali, kids swimming lessons Bali, adult swimming lessons Bali, private swimming coach Bali, swimming lessons Jimbaran, swimming lessons Ungasan, swimming lessons Nusa Dua, swimming lessons Sanur, swimming lessons Ubud, swimming lessons Canggu, open water swimming Bali, freediving Bali" },
       { property: "og:title", content: "Swimming Lessons Bali — UNITY Swimming School" },
-      { property: "og:description", content: "Kids and adult swimming lessons with a private coach in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Open water swimming and freediving Bali." },
+      { property: "og:description", content: "Learn to swim in Bali with UNITY: kids and adult lessons, private coaching, group classes and villa visits in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu. Book a trial on WhatsApp." },
+      { name: "twitter:description", content: "Learn to swim in Bali with UNITY: kids and adult lessons, private coaching, group classes and villa visits across the island. Book a trial on WhatsApp." },
       { property: "og:locale", content: "en_US" },
       { property: "og:url", content: "https://unityswimmingbali.com/" },
       { property: "og:image", content: heroImg.url },
@@ -121,7 +122,7 @@ export function Index() {
                   <p className="text-[11px] font-semibold tracking-widest uppercase text-tropical">{t(`prog.${p.k}.tag`)}</p>
                   <h3 className="mt-2 font-display text-xl font-semibold text-ocean">{t(`prog.${p.k}.t`)}</h3>
                   <p className="mt-2 text-sm text-ink/60">{t(`prog.${p.k}.d`)}</p>
-                  <p className="mt-4 text-sm font-semibold text-pool group-hover:text-ocean">{t("cta.learnMore")} →</p>
+                  <p className="mt-4 text-sm font-semibold text-pool group-hover:text-ocean">{t("cta.learnMore")} {t(`prog.${p.k}.t`)} →</p>
                 </div>
               </Link>
             ))}
@@ -174,7 +175,7 @@ export function Index() {
                     <div className="size-2 rounded-full bg-pool" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-ocean">{t(`home.why.${i}.t`)}</h4>
+                    <h3 className="font-semibold text-ocean">{t(`home.why.${i}.t`)}</h3>
                     <p className="mt-1 text-sm text-ink/65">{t(`home.why.${i}.d`)}</p>
                   </div>
                 </div>

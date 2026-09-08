@@ -62,7 +62,7 @@ function FAQ() {
           ))}
         </div>
         <div className="mt-12 rounded-3xl bg-ocean p-8 text-center text-surface">
-          <h3 className="font-display text-2xl">{t("faq.stillQ")}</h3>
+          <h2 className="font-display text-2xl">{t("faq.stillQ")}</h2>
           <p className="mt-2 text-surface/80">{t("faq.stillQSub")}</p>
           <div className="mt-6 flex justify-center">
             <WhatsAppCTA message={t("faq.msg")} />
