@@ -2,8 +2,21 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, SectionEyebrow } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
 import { LOCATION_SLUGS, LOCATION_ROUTES, locKey } from "@/components/site/LocationPage";
+import cangguImage from "@/assets/location-canggu.jpg.asset.json";
+import ubudImage from "@/assets/location-ubud.png.asset.json";
+import nusaDuaImage from "@/assets/location-nusa-dua.png.asset.json";
+import sanurImage from "@/assets/location-sanur.png.asset.json";
+import jimbaranUngasanImage from "@/assets/location-jimbaran-ungasan.png.asset.json";
 
 const BASE = "https://unityswimmingbali.com";
+
+const LOCATION_IMAGES = {
+  canggu: cangguImage.url,
+  ubud: ubudImage.url,
+  "nusa-dua": nusaDuaImage.url,
+  sanur: sanurImage.url,
+  "jimbaran-ungasan": jimbaranUngasanImage.url,
+} as const;
 
 export const Route = createFileRoute("/locations/")({
   head: () => ({
@@ -45,7 +58,12 @@ function LocationsHub() {
                 key={s}
                 className="flex flex-col rounded-3xl border border-ocean/10 bg-white p-6 transition-colors hover:border-pool/40"
               >
-                <div className="aspect-[16/9] w-full rounded-2xl bg-gradient-to-br from-pool/30 via-ocean/20 to-tropical/20" />
+                <img
+                  src={LOCATION_IMAGES[s]}
+                  alt={t(`lx.${k}.name`)}
+                  className="aspect-[16/9] w-full rounded-2xl object-cover"
+                  loading="lazy"
+                />
                 <h3 className="mt-5 font-display text-xl font-semibold text-ocean">{t(`lx.${k}.name`)}</h3>
                 <p className="mt-2 flex-1 text-sm text-ink/70 leading-relaxed">{t(`lx.${k}.card`)}</p>
                 <Link
