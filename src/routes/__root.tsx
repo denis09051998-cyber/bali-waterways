@@ -85,8 +85,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "UNITY Swimming School Bali" },
-      { name: "description", content: "UNITY Swimming School Bali — swimming lessons, coaching and freediving across Bali." },
       { name: "author", content: "UNITY Swimming School Bali" },
       { property: "og:site_name", content: "UNITY Swimming School Bali" },
       { property: "og:type", content: "website" },
