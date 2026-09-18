@@ -78,10 +78,14 @@ function Contact() {
     ].filter(Boolean).join("\n");
     const waUrl = waLink(msg);
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "whatsapp_click", {
+      const gtag = (window as any).gtag;
+      gtag("event", "whatsapp_click", {
         event_category: "contact",
         event_label: "contact_form",
         link_url: waUrl,
+      });
+      gtag("event", "conversion", {
+        send_to: "AW-18236650901/xw8DCNvnuMEcEJXr9PdD",
       });
     }
     window.open(waUrl, "_blank");
