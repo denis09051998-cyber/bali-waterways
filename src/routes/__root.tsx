@@ -242,52 +242,57 @@ function RootComponent() {
       while (el && el !== document.body) {
         const tag = el.tagName;
         if (tag === "A" || tag === "BUTTON") {
+          const anchor = tag === "A" ? (el as HTMLAnchorElement) : null;
+          const href = anchor ? anchor.getAttribute("href") || anchor.href : null;
+
           // Lead: lesson booking / signup buttons (explicit marker)
           if (el.hasAttribute("data-fbq-lead")) {
             const fbq = (window as any).fbq;
             if (typeof fbq === "function") {
               fbq("track", "Lead");
             }
-            return;
           }
+
           // Contact: WhatsApp links
-          if (tag === "A") {
-            const anchor = el as HTMLAnchorElement;
-            const href = anchor.getAttribute("href") || anchor.href;
-            if (isWhatsAppLink(href)) {
-              const fbq = (window as any).fbq;
-              if (typeof fbq === "function") {
-                fbq("track", "Contact");
-              }
-              const gtag = (window as any).gtag;
-              if (gtag) {
-                gtag("event", "whatsapp_click", {
-                  event_category: "contact",
-                  event_label: "whatsapp",
-                  link_url: anchor.href,
-                });
-              }
-              const ga4Fallback = (window as any).__unityGa4Fallback;
-              if (typeof ga4Fallback === "function") {
-                ga4Fallback("whatsapp_click", {
-                  event_category: "contact",
-                  event_label: "whatsapp",
-                  link_url: anchor.href,
-                });
-              }
-              break;
-            } else if (isInstagramLink(href)) {
-              const gtag = (window as any).gtag;
-              if (gtag) {
-                gtag("event", "instagram_click", {
-                  event_category: "social",
-                  event_label: "instagram",
-                  link_url: anchor.href,
-                });
-              }
-              break;
+          if (anchor && isWhatsAppLink(href)) {
+            const fbq = (window as any).fbq;
+            if (typeof fbq === "function") {
+              fbq("track", "Contact");
             }
+            const gtag = (window as any).gtag;
+            if (gtag) {
+              gtag("event", "whatsapp_click", {
+                event_category: "contact",
+                event_label: "whatsapp",
+                link_url: anchor.href,
+              });
+              gtag("event", "conversion", {
+                send_to: "AW-18236650901/xw8DCNvnuMEcEJXr9PdD",
+              });
+            }
+            const ga4Fallback = (window as any).__unityGa4Fallback;
+            if (typeof ga4Fallback === "function") {
+              ga4Fallback("whatsapp_click", {
+                event_category: "contact",
+                event_label: "whatsapp",
+                link_url: anchor.href,
+              });
+            }
+            break;
           }
+
+          if (anchor && isInstagramLink(href)) {
+            const gtag = (window as any).gtag;
+            if (gtag) {
+              gtag("event", "instagram_click", {
+                event_category: "social",
+                event_label: "instagram",
+                link_url: anchor.href,
+              });
+            }
+            break;
+          }
+
           break;
         }
         el = el.parentElement;
