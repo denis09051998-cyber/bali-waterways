@@ -55,6 +55,12 @@ function Prices() {
     ],
   ];
   const fdGroups = [[{ label: t("pr.fd.t"), price: t("pr.fd.p") }]];
+  const oceanGroups = [
+    [
+      { label: t("pr.os.g.t"), price: t("pr.os.g.p") },
+      { label: t("pr.os.p.t"), price: t("pr.os.p.p") },
+    ],
+  ];
   type Row = { label: string; price: string; strong?: boolean };
   const PriceList = ({ groups }: { groups: Row[][] }) => (
     <div className="mt-6 space-y-6">
@@ -81,6 +87,10 @@ function Prices() {
         <div>
           <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean uppercase tracking-wide">{t("ad.price.header")}</h2>
           <PriceList groups={adultGroups} />
+        </div>
+        <div>
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean uppercase tracking-wide">{t("pr.os.header")}</h2>
+          <PriceList groups={oceanGroups} />
         </div>
         <div>
           <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ocean uppercase tracking-wide">{t("pr.fd.header")}</h2>
