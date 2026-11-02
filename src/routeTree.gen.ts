@@ -22,6 +22,7 @@ import { Route as KidsSwimmingRouteImport } from './routes/kids-swimming'
 import { Route as KidsSwimmingLessonsBaliRouteImport } from './routes/kids-swimming-lessons-bali'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as OceanSwimmingRouteImport } from './routes/ocean-swimming'
+import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as PricesRouteImport } from './routes/prices'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -29,6 +30,7 @@ import { Route as IdIndexRouteImport } from './routes/id.index'
 import { Route as IdAdultSwimmingLessonsBaliRouteImport } from './routes/id.adult-swimming-lessons-bali'
 import { Route as IdFreedivingBaliRouteImport } from './routes/id.freediving-bali'
 import { Route as IdKidsSwimmingLessonsBaliRouteImport } from './routes/id.kids-swimming-lessons-bali'
+import { Route as IdPartnersRouteImport } from './routes/id.partners'
 import { Route as LocationsIndexRouteImport } from './routes/locations.index'
 import { Route as LocationsCangguRouteImport } from './routes/locations.canggu'
 import { Route as LocationsJimbaranUngasanRouteImport } from './routes/locations.jimbaran-ungasan'
@@ -40,6 +42,7 @@ import { Route as RuIndexRouteImport } from './routes/ru.index'
 import { Route as RuAdultSwimmingLessonsBaliRouteImport } from './routes/ru.adult-swimming-lessons-bali'
 import { Route as RuFreedivingBaliRouteImport } from './routes/ru.freediving-bali'
 import { Route as RuKidsSwimmingLessonsBaliRouteImport } from './routes/ru.kids-swimming-lessons-bali'
+import { Route as RuPartnersRouteImport } from './routes/ru.partners'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -107,6 +110,11 @@ const OceanSwimmingRoute = OceanSwimmingRouteImport.update({
   path: '/ocean-swimming',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricesRoute = PricesRouteImport.update({
   id: '/prices',
   path: '/prices',
@@ -144,6 +152,11 @@ const IdKidsSwimmingLessonsBaliRoute =
     path: '/id/kids-swimming-lessons-bali',
     getParentRoute: () => rootRouteImport,
   } as any)
+const IdPartnersRoute = IdPartnersRouteImport.update({
+  id: '/id/partners',
+  path: '/id/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocationsIndexRoute = LocationsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -202,6 +215,11 @@ const RuKidsSwimmingLessonsBaliRoute =
     path: '/ru/kids-swimming-lessons-bali',
     getParentRoute: () => rootRouteImport,
   } as any)
+const RuPartnersRoute = RuPartnersRouteImport.update({
+  id: '/ru/partners',
+  path: '/ru/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -217,12 +235,14 @@ export interface FileRoutesByFullPath {
   '/kids-swimming-lessons-bali': typeof KidsSwimmingLessonsBaliRoute
   '/locations': typeof LocationsRouteWithChildren
   '/ocean-swimming': typeof OceanSwimmingRoute
+  '/partners': typeof PartnersRoute
   '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
   '/id/freediving-bali': typeof IdFreedivingBaliRoute
   '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
+  '/id/partners': typeof IdPartnersRoute
   '/locations/canggu': typeof LocationsCangguRoute
   '/locations/jimbaran-ungasan': typeof LocationsJimbaranUngasanRoute
   '/locations/nusa-dua': typeof LocationsNusaDuaRoute
@@ -232,6 +252,7 @@ export interface FileRoutesByFullPath {
   '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
   '/ru/freediving-bali': typeof RuFreedivingBaliRoute
   '/ru/kids-swimming-lessons-bali': typeof RuKidsSwimmingLessonsBaliRoute
+  '/ru/partners': typeof RuPartnersRoute
   '/id/': typeof IdIndexRoute
   '/locations/': typeof LocationsIndexRoute
   '/ru/': typeof RuIndexRoute
@@ -249,12 +270,14 @@ export interface FileRoutesByTo {
   '/kids-swimming': typeof KidsSwimmingRoute
   '/kids-swimming-lessons-bali': typeof KidsSwimmingLessonsBaliRoute
   '/ocean-swimming': typeof OceanSwimmingRoute
+  '/partners': typeof PartnersRoute
   '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
   '/id/freediving-bali': typeof IdFreedivingBaliRoute
   '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
+  '/id/partners': typeof IdPartnersRoute
   '/locations/canggu': typeof LocationsCangguRoute
   '/locations/jimbaran-ungasan': typeof LocationsJimbaranUngasanRoute
   '/locations/nusa-dua': typeof LocationsNusaDuaRoute
@@ -264,6 +287,7 @@ export interface FileRoutesByTo {
   '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
   '/ru/freediving-bali': typeof RuFreedivingBaliRoute
   '/ru/kids-swimming-lessons-bali': typeof RuKidsSwimmingLessonsBaliRoute
+  '/ru/partners': typeof RuPartnersRoute
   '/id': typeof IdIndexRoute
   '/locations': typeof LocationsIndexRoute
   '/ru': typeof RuIndexRoute
@@ -283,12 +307,14 @@ export interface FileRoutesById {
   '/kids-swimming-lessons-bali': typeof KidsSwimmingLessonsBaliRoute
   '/locations': typeof LocationsRouteWithChildren
   '/ocean-swimming': typeof OceanSwimmingRoute
+  '/partners': typeof PartnersRoute
   '/prices': typeof PricesRoute
   '/programs': typeof ProgramsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/id/adult-swimming-lessons-bali': typeof IdAdultSwimmingLessonsBaliRoute
   '/id/freediving-bali': typeof IdFreedivingBaliRoute
   '/id/kids-swimming-lessons-bali': typeof IdKidsSwimmingLessonsBaliRoute
+  '/id/partners': typeof IdPartnersRoute
   '/locations/canggu': typeof LocationsCangguRoute
   '/locations/jimbaran-ungasan': typeof LocationsJimbaranUngasanRoute
   '/locations/nusa-dua': typeof LocationsNusaDuaRoute
@@ -298,6 +324,7 @@ export interface FileRoutesById {
   '/ru/adult-swimming-lessons-bali': typeof RuAdultSwimmingLessonsBaliRoute
   '/ru/freediving-bali': typeof RuFreedivingBaliRoute
   '/ru/kids-swimming-lessons-bali': typeof RuKidsSwimmingLessonsBaliRoute
+  '/ru/partners': typeof RuPartnersRoute
   '/id/': typeof IdIndexRoute
   '/locations/': typeof LocationsIndexRoute
   '/ru/': typeof RuIndexRoute
@@ -318,12 +345,14 @@ export interface FileRouteTypes {
     | '/kids-swimming-lessons-bali'
     | '/locations'
     | '/ocean-swimming'
+    | '/partners'
     | '/prices'
     | '/programs'
     | '/sitemap.xml'
     | '/id/adult-swimming-lessons-bali'
     | '/id/freediving-bali'
     | '/id/kids-swimming-lessons-bali'
+    | '/id/partners'
     | '/locations/canggu'
     | '/locations/jimbaran-ungasan'
     | '/locations/nusa-dua'
@@ -333,6 +362,7 @@ export interface FileRouteTypes {
     | '/ru/adult-swimming-lessons-bali'
     | '/ru/freediving-bali'
     | '/ru/kids-swimming-lessons-bali'
+    | '/ru/partners'
     | '/id/'
     | '/locations/'
     | '/ru/'
@@ -350,12 +380,14 @@ export interface FileRouteTypes {
     | '/kids-swimming'
     | '/kids-swimming-lessons-bali'
     | '/ocean-swimming'
+    | '/partners'
     | '/prices'
     | '/programs'
     | '/sitemap.xml'
     | '/id/adult-swimming-lessons-bali'
     | '/id/freediving-bali'
     | '/id/kids-swimming-lessons-bali'
+    | '/id/partners'
     | '/locations/canggu'
     | '/locations/jimbaran-ungasan'
     | '/locations/nusa-dua'
@@ -365,6 +397,7 @@ export interface FileRouteTypes {
     | '/ru/adult-swimming-lessons-bali'
     | '/ru/freediving-bali'
     | '/ru/kids-swimming-lessons-bali'
+    | '/ru/partners'
     | '/id'
     | '/locations'
     | '/ru'
@@ -383,12 +416,14 @@ export interface FileRouteTypes {
     | '/kids-swimming-lessons-bali'
     | '/locations'
     | '/ocean-swimming'
+    | '/partners'
     | '/prices'
     | '/programs'
     | '/sitemap.xml'
     | '/id/adult-swimming-lessons-bali'
     | '/id/freediving-bali'
     | '/id/kids-swimming-lessons-bali'
+    | '/id/partners'
     | '/locations/canggu'
     | '/locations/jimbaran-ungasan'
     | '/locations/nusa-dua'
@@ -398,6 +433,7 @@ export interface FileRouteTypes {
     | '/ru/adult-swimming-lessons-bali'
     | '/ru/freediving-bali'
     | '/ru/kids-swimming-lessons-bali'
+    | '/ru/partners'
     | '/id/'
     | '/locations/'
     | '/ru/'
@@ -417,16 +453,19 @@ export interface RootRouteChildren {
   KidsSwimmingLessonsBaliRoute: typeof KidsSwimmingLessonsBaliRoute
   LocationsRoute: typeof LocationsRouteWithChildren
   OceanSwimmingRoute: typeof OceanSwimmingRoute
+  PartnersRoute: typeof PartnersRoute
   PricesRoute: typeof PricesRoute
   ProgramsRoute: typeof ProgramsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   IdAdultSwimmingLessonsBaliRoute: typeof IdAdultSwimmingLessonsBaliRoute
   IdFreedivingBaliRoute: typeof IdFreedivingBaliRoute
   IdKidsSwimmingLessonsBaliRoute: typeof IdKidsSwimmingLessonsBaliRoute
+  IdPartnersRoute: typeof IdPartnersRoute
   PhilosophyTopicRoute: typeof PhilosophyTopicRoute
   RuAdultSwimmingLessonsBaliRoute: typeof RuAdultSwimmingLessonsBaliRoute
   RuFreedivingBaliRoute: typeof RuFreedivingBaliRoute
   RuKidsSwimmingLessonsBaliRoute: typeof RuKidsSwimmingLessonsBaliRoute
+  RuPartnersRoute: typeof RuPartnersRoute
   IdIndexRoute: typeof IdIndexRoute
   RuIndexRoute: typeof RuIndexRoute
 }
@@ -524,6 +563,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OceanSwimmingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/prices': {
       id: '/prices'
       path: '/prices'
@@ -571,6 +617,13 @@ declare module '@tanstack/react-router' {
       path: '/id/kids-swimming-lessons-bali'
       fullPath: '/id/kids-swimming-lessons-bali'
       preLoaderRoute: typeof IdKidsSwimmingLessonsBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/id/partners': {
+      id: '/id/partners'
+      path: '/id/partners'
+      fullPath: '/id/partners'
+      preLoaderRoute: typeof IdPartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations/': {
@@ -650,6 +703,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RuKidsSwimmingLessonsBaliRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ru/partners': {
+      id: '/ru/partners'
+      path: '/ru/partners'
+      fullPath: '/ru/partners'
+      preLoaderRoute: typeof RuPartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -689,16 +749,19 @@ const rootRouteChildren: RootRouteChildren = {
   KidsSwimmingLessonsBaliRoute: KidsSwimmingLessonsBaliRoute,
   LocationsRoute: LocationsRouteWithChildren,
   OceanSwimmingRoute: OceanSwimmingRoute,
+  PartnersRoute: PartnersRoute,
   PricesRoute: PricesRoute,
   ProgramsRoute: ProgramsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   IdAdultSwimmingLessonsBaliRoute: IdAdultSwimmingLessonsBaliRoute,
   IdFreedivingBaliRoute: IdFreedivingBaliRoute,
   IdKidsSwimmingLessonsBaliRoute: IdKidsSwimmingLessonsBaliRoute,
+  IdPartnersRoute: IdPartnersRoute,
   PhilosophyTopicRoute: PhilosophyTopicRoute,
   RuAdultSwimmingLessonsBaliRoute: RuAdultSwimmingLessonsBaliRoute,
   RuFreedivingBaliRoute: RuFreedivingBaliRoute,
   RuKidsSwimmingLessonsBaliRoute: RuKidsSwimmingLessonsBaliRoute,
+  RuPartnersRoute: RuPartnersRoute,
   IdIndexRoute: IdIndexRoute,
   RuIndexRoute: RuIndexRoute,
 }

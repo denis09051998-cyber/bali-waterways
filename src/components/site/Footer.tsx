@@ -4,7 +4,7 @@ import { useI18n } from "@/lib/i18n";
 import { Logo } from "./Logo";
 
 export function Footer() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const instagramUrl = t("social.instagramUrl");
   return (
     <footer className="border-t border-ocean/10 bg-surface mt-24">
@@ -60,6 +60,11 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-ink/70">
               <li><a href={SITE.whatsappHref} className="hover:text-pool">WhatsApp: {SITE.whatsappNumber}</a></li>
               <li><a href={instagramUrl} className="hover:text-pool">{SITE.instagramHandle}</a></li>
+              <li>
+                {lang === "ru" ? <Link to="/ru/partners" className="hover:text-pool">Партнёрам</Link>
+                  : lang === "id" ? <Link to="/id/partners" className="hover:text-pool">Partner</Link>
+                  : <Link to="/partners" className="hover:text-pool">Partners</Link>}
+              </li>
               <li>Bali, Indonesia</li>
             </ul>
           </div>
