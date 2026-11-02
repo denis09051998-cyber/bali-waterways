@@ -228,7 +228,7 @@ function Contact() {
           </div>
           <div className="rounded-2xl border border-ocean/10 bg-white p-5">
             <SectionEyebrow>{t("ct.email")}</SectionEyebrow>
-            <p className="mt-1.5 font-display text-lg break-all text-ocean">{SITE.email}</p>
+            <p className="mt-1.5 font-display text-base break-all text-ocean">{SITE.email}</p>
             <a href={SITE.emailHref} className="mt-3 inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface">
               {t("ct.writeUs")}
             </a>
