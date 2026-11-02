@@ -229,18 +229,20 @@ export function PartnersPage() {
       d.network_description && `${c.f.network}: ${d.network_description}`,
     ].filter(Boolean).join("\n");
     const waUrl = waLink(msg);
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      const gtag = (window as any).gtag;
-      gtag("event", "whatsapp_click", {
-        event_category: "contact",
-        event_label: "partner_form",
-        link_url: waUrl,
+    const gtag = typeof window !== "undefined" ? (window as any).gtag : undefined;
+    const sendPartnerEvent = (name: string) => {
+      if (typeof gtag !== "function") return;
+      gtag("event", name, {
+        event_category: "partner",
+        partner_type: d.partner_type,
+        area: d.area,
+        language: lang,
+        partner_language: lang,
       });
-      gtag("event", "conversion", {
-        send_to: "AW-18236650901/xw8DCNvnuMEcEJXr9PdD",
-      });
-    }
-    window.open(waUrl, "_blank");
+    };
+    sendPartnerEvent("partner_application");
+    const waWindow = window.open(waUrl, "_blank");
+    if (waWindow) sendPartnerEvent("partner_whatsapp_open");
   };
 
   const btnPrimary = "inline-flex items-center justify-center rounded-full bg-pool px-6 py-3 text-sm font-semibold text-surface transition-colors hover:bg-ocean";
