@@ -25,6 +25,7 @@ const en: Dict = {
   "nav.prices": "Prices",
   "nav.faq": "FAQ",
   "nav.contact": "Contact",
+  "nav.partners": "Partners",
   "menu.toggle": "Toggle menu",
   // common
   "brand.short": "UNITY Swimming",
@@ -642,6 +643,7 @@ const ru: Dict = {
   "nav.prices": "Цены",
   "nav.faq": "Вопросы",
   "nav.contact": "Контакты",
+  "nav.partners": "Партнёрам",
   "menu.toggle": "Открыть меню",
   "brand.short": "UNITY Swimming",
   "brand.full": "UNITY Swimming School Bali",
@@ -1239,6 +1241,7 @@ const id: Dict = {
   "nav.prices": "Harga",
   "nav.faq": "FAQ",
   "nav.contact": "Kontak",
+  "nav.partners": "Partner",
   "menu.toggle": "Buka menu",
   "brand.short": "UNITY Swimming",
   "brand.full": "UNITY Swimming School Bali",
