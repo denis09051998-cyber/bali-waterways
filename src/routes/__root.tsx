@@ -120,6 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Swimming school in Bali offering kids and adult swimming lessons, private swimming coach services, open water swimming and freediving in Jimbaran, Ungasan, Nusa Dua, Sanur, Ubud and Canggu.",
           url: "https://unityswimmingbali.com",
           telephone: SITE.whatsappNumber,
+          email: SITE.email,
           image: "https://unityswimmingbali.com/favicon.png",
           priceRange: "$$",
           address: { "@type": "PostalAddress", addressRegion: "Bali", addressCountry: "ID" },
@@ -141,6 +142,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           contactPoint: {
             "@type": "ContactPoint",
             telephone: SITE.whatsappNumber,
+            email: SITE.email,
             contactType: "customer service",
             areaServed: "ID",
             availableLanguage: ["en", "id", "ru"],

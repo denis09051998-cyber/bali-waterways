@@ -5,7 +5,8 @@ export const SITE = {
   whatsappHref: "https://wa.me/6282147232648",
   instagramHandle: "@swimming.unity.bali",
   instagramUrl: "https://www.instagram.com/swimming.unity.bali/",
-  email: "hello@unityswimming.bali",
+  email: "unityswimmingbali@gmail.com",
+  emailHref: "mailto:unityswimmingbali@gmail.com",
   areas: [
     "Bukit",
     "Sanur",
