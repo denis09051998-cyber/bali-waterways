@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useI18n, type Lang } from "@/lib/i18n";
+import { waLink } from "@/lib/site";
 import { SectionEyebrow } from "@/components/site/CTA";
 import {
   Accordion,
