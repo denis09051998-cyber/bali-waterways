@@ -218,12 +218,19 @@ function Contact() {
 
       {/* Additional contact info */}
       <section className="mx-auto max-w-6xl px-4 sm:px-5 lg:px-10 pb-12 sm:pb-16">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-2xl border border-ocean/10 bg-white p-5">
             <SectionEyebrow>{t("ct.whatsapp")}</SectionEyebrow>
             <p className="mt-1.5 font-display text-lg text-ocean">{SITE.whatsappNumber}</p>
             <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full bg-pool px-4 py-2 text-sm font-semibold text-surface hover:bg-ocean">
               {t("ct.chatNow")}
+            </a>
+          </div>
+          <div className="rounded-2xl border border-ocean/10 bg-white p-5">
+            <SectionEyebrow>{t("ct.email")}</SectionEyebrow>
+            <p className="mt-1.5 font-display text-lg break-all text-ocean">{SITE.email}</p>
+            <a href={SITE.emailHref} className="mt-3 inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean hover:bg-ocean hover:text-surface">
+              {t("ct.writeUs")}
             </a>
           </div>
           <div className="rounded-2xl border border-ocean/10 bg-white p-5">
