@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useI18n, type Lang } from "@/lib/i18n";
+import { waLink } from "@/lib/site";
 import { SectionEyebrow } from "@/components/site/CTA";
 import {
   Accordion,
@@ -214,7 +215,32 @@ export function PartnersPage() {
       network_description: d.network_description || null,
       language: lang,
     });
-    setStatus(error ? "error" : "done");
+    if (error) { setStatus("error"); return; }
+    setStatus("done");
+    const msg = [
+      `${c.formTitle} — UNITY Swimming Bali`,
+      `${c.f.name}: ${d.full_name}`,
+      `${c.f.wa}: ${d.whatsapp}`,
+      d.email && `${c.f.email}: ${d.email}`,
+      d.company_name && `${c.f.company}: ${d.company_name}`,
+      `${c.f.type}: ${c.types[d.partner_type]}`,
+      `${c.f.area}: ${c.areas[d.area]}`,
+      d.instagram_website && `${c.f.ig}: ${d.instagram_website}`,
+      d.network_description && `${c.f.network}: ${d.network_description}`,
+    ].filter(Boolean).join("\n");
+    const waUrl = waLink(msg);
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      const gtag = (window as any).gtag;
+      gtag("event", "whatsapp_click", {
+        event_category: "contact",
+        event_label: "partner_form",
+        link_url: waUrl,
+      });
+      gtag("event", "conversion", {
+        send_to: "AW-18236650901/xw8DCNvnuMEcEJXr9PdD",
+      });
+    }
+    window.open(waUrl, "_blank");
   };
 
   const btnPrimary = "inline-flex items-center justify-center rounded-full bg-pool px-6 py-3 text-sm font-semibold text-surface transition-colors hover:bg-ocean";
