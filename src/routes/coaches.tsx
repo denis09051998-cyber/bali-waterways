@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, BookingCTA } from "@/components/site/CTA";
 import { useI18n } from "@/lib/i18n";
-import denisImg from "@/assets/coach_denis.png.asset.json";
-import assistantImg from "@/assets/coach_assistant.png.asset.json";
+import denisImg from "@/assets/coach-denis.jpg.asset.json";
+import sjenadeImg from "@/assets/coach-sjenade.jpg.asset.json";
 
 export const Route = createFileRoute("/coaches")({
   head: () => ({
@@ -26,8 +26,8 @@ type Coach = {
 };
 
 const COACHES: Coach[] = [
-  { num: 1, roleKey: "co.head", photo: denisImg.url, head: true },
-  { num: 2, roleKey: "co.coach", photo: assistantImg.url },
+  { num: 1, roleKey: "co.coach", photo: denisImg.url },
+  { num: 2, roleKey: "co.coach", photo: sjenadeImg.url },
 ];
 
 function CoachCard({ c }: { c: Coach }) {
