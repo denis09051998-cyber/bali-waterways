@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
+import { newsletterSubscriptionSchema } from "@/lib/newsletter";
+import { subscribeToNewsletter } from "@/lib/newsletter.functions";
 import { PageHero, SectionEyebrow } from "@/components/site/CTA";
 import { SITE, waLink } from "@/lib/site";
 import { useI18n } from "@/lib/i18n";
@@ -21,7 +24,8 @@ export const Route = createFileRoute("/contact")({
 const LOCATIONS = ["Bukit", "Sanur", "Ubud", "Canggu", "Ungasan", "Pecatu", "Jimbaran", "Uluwatu", "Kutuh", "Nusa Dua"];
 
 function Contact() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const subscribe = useServerFn(subscribeToNewsletter);
   const instagramUrl = t("social.instagramUrl");
   const [form, setForm] = useState({
     name: "",
@@ -35,6 +39,10 @@ function Contact() {
     message: "",
   });
   const [kidsLoc, setKidsLoc] = useState<"nusadua" | "sanur" | "canggu">("nusadua");
+  const [newsletterOptIn, setNewsletterOptIn] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+  const [newsletterFeedback, setNewsletterFeedback] = useState<{ kind: "success" | "error"; key: string } | null>(null);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -60,7 +68,7 @@ function Contact() {
     return form.time;
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const locationValue = isKidGroup
       ? t(`ct.loc.${kidsLoc}`)
@@ -89,6 +97,33 @@ function Contact() {
       });
     }
     window.open(waUrl, "_blank");
+
+    if (!newsletterOptIn) return;
+    setNewsletterSubmitting(true);
+    setNewsletterFeedback(null);
+    const parsed = newsletterSubscriptionSchema.safeParse({
+      email: newsletterEmail,
+      consent: true,
+      source: "contacts",
+      language: lang,
+    });
+    if (!parsed.success) {
+      setNewsletterFeedback({ kind: "error", key: "newsletter.invalid" });
+      setNewsletterSubmitting(false);
+      return;
+    }
+    try {
+      const result = await subscribe({ data: parsed.data });
+      if (result.ok) {
+        setNewsletterFeedback({ kind: "success", key: `newsletter.${result.state}` });
+      } else {
+        setNewsletterFeedback({ kind: "error", key: result.reason === "unsubscribed" ? "newsletter.unsubscribed" : "newsletter.error" });
+      }
+    } catch {
+      setNewsletterFeedback({ kind: "error", key: "newsletter.error" });
+    } finally {
+      setNewsletterSubmitting(false);
+    }
   };
 
   const levels = [
@@ -185,6 +220,47 @@ function Contact() {
               placeholder={t("ct.f.ph.message")}
             />
           </div>
+
+          <div className="rounded-xl border border-ocean/10 bg-sand/30 p-3.5">
+            <label className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-ink/75">
+              <input
+                type="checkbox"
+                checked={newsletterOptIn}
+                onChange={(e) => {
+                  setNewsletterOptIn(e.target.checked);
+                  setNewsletterFeedback(null);
+                }}
+                className="mt-0.5 size-4 shrink-0 accent-pool"
+              />
+              <span>{t("ct.newsletter.optIn")}</span>
+            </label>
+            {newsletterOptIn && (
+              <div className="mt-3">
+                <label htmlFor="contact-newsletter-email" className="text-[11px] font-semibold tracking-widest uppercase text-tropical">{t("ct.newsletter.email")}</label>
+                <input
+                  id="contact-newsletter-email"
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  maxLength={254}
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder={t("newsletter.placeholder")}
+                  required
+                  className="mt-1.5 w-full rounded-xl border border-ocean/15 bg-surface/60 px-3 py-2.5 text-sm outline-none focus:border-pool focus:ring-2 focus:ring-pool/30"
+                />
+              </div>
+            )}
+            <div aria-live="polite">
+              {newsletterSubmitting && <p className="mt-2 text-xs text-ink/55">{t("newsletter.submitting")}</p>}
+              {newsletterFeedback && (
+                <p role={newsletterFeedback.kind === "error" ? "alert" : "status"} className={`mt-2 text-xs font-medium ${newsletterFeedback.kind === "success" ? "text-pool" : "text-ocean"}`}>
+                  {t(newsletterFeedback.key)}
+                </p>
+              )}
+            </div>
+          </div>
+
           <button type="submit" data-fbq-lead="" className="w-full rounded-full bg-pool py-3 text-sm font-semibold text-surface hover:bg-ocean transition-colors">
             {t("ct.f.submit")}
           </button>
